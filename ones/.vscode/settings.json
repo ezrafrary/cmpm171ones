@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "1sattemp2.sln"
+    "dotnet.defaultSolution": "ones.sln"
 }
