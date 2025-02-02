@@ -61,9 +61,14 @@ public class Bullet : MonoBehaviour
         if(dealtDamage){
             return;
         }
+        //this line is breaking 
+        if(!pv){
+            return;
+        }
         if(!pv.IsMine){ //This line makes projectile collision clientside rather than serverside, but is the only way i could fix the player hitting themself bug
             return;
         }
+        
         if(other.transform.gameObject.GetComponent<Health>()){
             if(other.transform.gameObject.GetComponent<Health>().IsLocalPlayer){
                 //Debug.Log("localplayerhit");
@@ -90,7 +95,8 @@ public class Bullet : MonoBehaviour
                 PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
             }
             other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage);
-            Debug.Log("dealt damage");
+            //Debug.Log("dealt damage");
+            //hitmarker
             dealtDamage = true;
         }
             
