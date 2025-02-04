@@ -16,14 +16,18 @@ public class AmmoPickup : MonoBehaviour
             if(!hasBeenUsed){    
                 other.transform.gameObject.GetComponent<PhotonView>().RPC("refillCurrentWeapon",RpcTarget.All, magsGained);
                 itemHasBeenPickedUp();
-                PhotonNetwork.Destroy(gameObject);
+                if(PhotonNetwork.IsMasterClient){
+                    PhotonNetwork.Destroy(gameObject);
+                }
             }
         }
     }
 
 
     public void itemHasBeenPickedUp(){
+        hasBeenUsed = true;
         if(itemAttachedTo){
+            
             itemAttachedTo.GetComponent<ItemSpawnPedestal>().itemPickedUp();
         }
     }

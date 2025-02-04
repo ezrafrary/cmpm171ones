@@ -63,6 +63,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonRigidbodyView
     - Photon.Pun.PhotonTransformView
@@ -974,6 +976,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5326}
     - Class: 114
+      Script: {instanceID: 5604}
+    - Class: 114
       Script: {instanceID: 6080}
     - Class: 114
       Script: {instanceID: 6238}
@@ -987,6 +991,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6470}
     - Class: 114
       Script: {instanceID: 6536}
+    - Class: 114
+      Script: {instanceID: 6636}
+    - Class: 114
+      Script: {instanceID: 6862}
     - Class: 114
       Script: {instanceID: 7072}
     - Class: 114
@@ -1234,7 +1242,7 @@ ScriptsOnlyBuild:
     className: killZone
   - hash:
       serializedVersion: 2
-      Hash: 5474ae6c7b19cd4334186d558a76e63e
+      Hash: 047fac69c724548e706439f5736a16cf
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Weapon
@@ -2746,7 +2754,7 @@ ScriptsOnlyBuild:
     className: UnityOnSubmitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: d99f800db8b21217962f14756073d37f
+      Hash: f54b2ae4408a2ac54c270e4eb05f3ec5
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Hitmarker
@@ -2782,7 +2790,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 90372b1f6151dfe17fd49e29d3c1bf6e
+      Hash: dac0cf51be07a7ac2be4410cdd0001e2
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Bullet

@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4220362432700466217}
   - component: {fileID: 7065598413305454077}
   - component: {fileID: 7633171433039485793}
-  - component: {fileID: 5549754498588836216}
   - component: {fileID: 2103208312179550533}
   - component: {fileID: 8715271385869556481}
   - component: {fileID: 871224389861220025}
   - component: {fileID: 4922491935533908255}
   - component: {fileID: -3705162383943373921}
+  - component: {fileID: -2428385987514031811}
   m_Layer: 0
   m_Name: revolverProjectile
   m_TagString: Untagged
@@ -89,27 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5549754498588836216
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7950140257926317427}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2103208312179550533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +108,9 @@ MonoBehaviour:
   ignoreHitbox: {fileID: 0}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   timeUntilBulletIsVisible: 3
+  hitmarker: {fileID: 0}
+  scalingDirection: z
+  scalingMultiplier: 2
 --- !u!54 &8715271385869556481
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -194,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
   m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 1
+  m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &-3705162383943373921
 MonoBehaviour:
@@ -212,3 +194,25 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!64 &-2428385987514031811
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950140257926317427}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}

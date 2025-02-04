@@ -108,6 +108,8 @@ MonoBehaviour:
   ignoreHitbox: {fileID: 0}
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
   timeUntilBulletIsVisible: 3
+  hitmarker: {fileID: 0}
+  scalingDirection: z
 --- !u!54 &8712635185112596516
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
   m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 1
+  m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &4237960023521722542
 MonoBehaviour:

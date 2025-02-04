@@ -23,7 +23,16 @@ public class Bullet : MonoBehaviour
     [Header("VFX")]
     public GameObject hitVFX;
     public float timeUntilBulletIsVisible = 3; //makes the bullet invisible so u dont see it when its close to you
-    
+    public GameObject hitmarker;
+
+
+    [Header("collisions")]
+    public string scalingDirection = "z";
+    public float scalingMultiplier = 1;
+
+    public void setHitmarker(GameObject _hitmarker){
+        hitmarker = _hitmarker;
+    }
 
     public void setIgnoreHitbox(GameObject _ignoreHitbox){
         ignoreHitbox = _ignoreHitbox;
@@ -86,7 +95,6 @@ public class Bullet : MonoBehaviour
         ExplosionDamage(gameObject.transform.position, explosiveRadius);
 
         if (other.transform.gameObject.GetComponent<Health>()){
-
             //PhotonNetwork.LocalPlayer.AddScore(damage); add score for damage
             if (damage >= other.transform.gameObject.GetComponent<Health>().health){
                 //kill
@@ -97,6 +105,7 @@ public class Bullet : MonoBehaviour
             other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage);
             //Debug.Log("dealt damage");
             //hitmarker
+            hitmarker.GetComponent<Hitmarker>().createHitmarker();
             dealtDamage = true;
         }
             

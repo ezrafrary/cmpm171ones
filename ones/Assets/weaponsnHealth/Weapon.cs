@@ -38,6 +38,7 @@ public class Weapon : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI magText;
     public TextMeshProUGUI ammoText;
+    public GameObject hitmarker;
 
     [Header("Animation")]
     public Animation animation;
@@ -212,9 +213,28 @@ public class Weapon : MonoBehaviour
         var bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, Camera.main.transform.rotation * bulletPrefab.transform.rotation);
         
         bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+        
+       
 
         Bullet bulletSctipt = bullet.GetComponent<Bullet>();
         bulletSctipt.setIgnoreHitbox(playerObjForIgnoreHitbox);
+
+
+        if(bulletSctipt.scalingDirection == "z"){
+            bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3(1, 1, (bulletSpeed / 25 * bulletSctipt.scalingMultiplier)));
+        }
+        if(bulletSctipt.scalingDirection == "y"){
+            bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3(1, (bulletSpeed / 25 * bulletSctipt.scalingMultiplier), 1));
+        }
+        if(bulletSctipt.scalingDirection == "x"){
+            bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3((bulletSpeed / 25 * bulletSctipt.scalingMultiplier), 1, 1));
+        }
+
+        if(hitmarker){
+            bulletSctipt.setHitmarker(hitmarker);
+        }else{
+            Debug.Log("nohitmarker");
+        }
         
     }
 
