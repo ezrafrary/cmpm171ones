@@ -134,6 +134,7 @@ MonoBehaviour:
   timeUntilBulletIsVisible: 1
   hitmarker: {fileID: 0}
   scalingDirection: y
+  scalingMultiplier: 1
 --- !u!54 &3002377585969953968
 Rigidbody:
   m_ObjectHideFlags: 0
