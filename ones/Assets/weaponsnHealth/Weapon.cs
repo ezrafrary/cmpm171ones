@@ -39,6 +39,7 @@ public class Weapon : MonoBehaviour
     public TextMeshProUGUI magText;
     public TextMeshProUGUI ammoText;
     public GameObject hitmarker;
+    public GameObject headshotHitmarker;
 
     [Header("Animation")]
     public Animation animation;
@@ -63,6 +64,7 @@ public class Weapon : MonoBehaviour
     public Transform bulletSpawnPoint;
     public float bulletSpeed = 4f;
     public GameObject playerObjForIgnoreHitbox;
+    public GameObject[] ignoreHitboxes;
 
 
     [HideInInspector]
@@ -218,6 +220,7 @@ public class Weapon : MonoBehaviour
 
         Bullet bulletSctipt = bullet.GetComponent<Bullet>();
         bulletSctipt.setIgnoreHitbox(playerObjForIgnoreHitbox);
+        bulletSctipt.setIgnoreHitboxes(ignoreHitboxes);
 
 
         if(bulletSctipt.scalingDirection == "z"){
@@ -228,6 +231,13 @@ public class Weapon : MonoBehaviour
         }
         if(bulletSctipt.scalingDirection == "x"){
             bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3((bulletSpeed / 25 * bulletSctipt.scalingMultiplier), 1, 1));
+        }
+
+
+        if(headshotHitmarker){
+            bulletSctipt.setHeadshotHitmarker(headshotHitmarker);
+        }else{
+            Debug.Log("noheadshothitmarker");
         }
 
         if(hitmarker){

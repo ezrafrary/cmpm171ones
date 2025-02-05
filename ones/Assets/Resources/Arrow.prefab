@@ -130,6 +130,7 @@ MonoBehaviour:
   explosiveRadius: 0
   scoreGainedForKill: 10
   ignoreHitbox: {fileID: 0}
+  ignoreHitboxes: []
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   timeUntilBulletIsVisible: 1
   hitmarker: {fileID: 0}

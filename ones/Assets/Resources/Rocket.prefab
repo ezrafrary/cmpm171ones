@@ -106,10 +106,12 @@ MonoBehaviour:
   explosiveRadius: 3
   scoreGainedForKill: 5
   ignoreHitbox: {fileID: 0}
+  ignoreHitboxes: []
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
   timeUntilBulletIsVisible: 3
   hitmarker: {fileID: 0}
   scalingDirection: z
+  scalingMultiplier: 1
 --- !u!54 &8712635185112596516
 Rigidbody:
   m_ObjectHideFlags: 0

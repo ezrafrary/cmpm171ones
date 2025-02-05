@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
     public float dashStrength;
     public float maxDashYVelocity = 1.5f;
     public Image dashCooldownImage;
+    public float speedreductionStrength = 2;
+
 
     [Header("in game ticks")]
     public float dashCooldown;
@@ -125,7 +127,6 @@ public class Movement : MonoBehaviour
             currentDashCooldown = dashCooldown;
             currentDashDurationCooldown = dashDuration;
         }
-
         grounded = false; 
     }
 
@@ -160,7 +161,7 @@ public class Movement : MonoBehaviour
             return velocityChange;
         } else {
             if(grounded){ 
-                rb.velocity = new Vector3(0,rb.velocity.y,0);
+                rb.velocity = new Vector3(rb.velocity.x/speedreductionStrength, rb.velocity.y,rb.velocity.z/speedreductionStrength);
             }
             return new Vector3(0,0,0);
         }

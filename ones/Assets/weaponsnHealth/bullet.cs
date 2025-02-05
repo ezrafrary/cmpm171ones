@@ -16,6 +16,8 @@ public class Bullet : MonoBehaviour
 
 
     public GameObject ignoreHitbox;
+    public GameObject[] ignoreHitboxes;
+
     private float projectilelifetime = 500f;
     private bool dealtDamage = false;
 
@@ -24,6 +26,7 @@ public class Bullet : MonoBehaviour
     public GameObject hitVFX;
     public float timeUntilBulletIsVisible = 3; //makes the bullet invisible so u dont see it when its close to you
     public GameObject hitmarker;
+    public GameObject headshotHitmarker;
 
 
     [Header("collisions")]
@@ -33,9 +36,16 @@ public class Bullet : MonoBehaviour
     public void setHitmarker(GameObject _hitmarker){
         hitmarker = _hitmarker;
     }
+    public void setHeadshotHitmarker(GameObject _hitmarker){
+        headshotHitmarker = _hitmarker;
+    }
+
 
     public void setIgnoreHitbox(GameObject _ignoreHitbox){
         ignoreHitbox = _ignoreHitbox;
+    }
+    public void setIgnoreHitboxes(GameObject[] _ignoreHitboxes){
+        ignoreHitboxes = _ignoreHitboxes;
     }
 
 
@@ -70,7 +80,7 @@ public class Bullet : MonoBehaviour
         if(dealtDamage){
             return;
         }
-        //this line is breaking 
+        
         if(!pv){
             return;
         }
@@ -87,6 +97,12 @@ public class Bullet : MonoBehaviour
         if(other.transform.gameObject == ignoreHitbox){
             Debug.Log("hitignrorehitbox");
             return;
+        }
+
+        foreach (GameObject ihb in ignoreHitboxes){
+            if(other.transform.gameObject == ihb){
+                return;
+            }
         }
 
         if(hitVFX){
@@ -106,6 +122,27 @@ public class Bullet : MonoBehaviour
             //Debug.Log("dealt damage");
             //hitmarker
             hitmarker.GetComponent<Hitmarker>().createHitmarker();
+            dealtDamage = true;
+        }
+
+
+        if (other.transform.gameObject.GetComponent<damageModifierHitbox>()){
+
+            int modifiedDamage = (int)other.transform.gameObject.GetComponent<damageModifierHitbox>().damageMultiplier * (int)damage;
+            if(modifiedDamage >= other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().health){
+                Debug.Log("killed player");
+                RoomManager.instance.kills++;
+                RoomManager.instance.SetHashes();
+                PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
+            }
+
+            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(damage);
+            if (other.transform.gameObject.GetComponent<damageModifierHitbox>().hitboxId == "head"){   
+                headshotHitmarker.GetComponent<Hitmarker>().createHitmarker();
+            }else{
+                hitmarker.GetComponent<Hitmarker>().createHitmarker();
+            }
+            
             dealtDamage = true;
         }
             
