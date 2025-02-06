@@ -35,6 +35,9 @@ public class Bullet : MonoBehaviour
     public string scalingDirection = "z";
     public float scalingMultiplier = 1;
 
+    [Header("SFX")]
+    public PlayerPhotonSoundManager playerPhotonSoundManager;
+
 
     public void setStartLocation(Vector3 _startLocation){
         startLocation = _startLocation;
@@ -118,6 +121,7 @@ public class Bullet : MonoBehaviour
         ExplosionDamage(gameObject.transform.position, explosiveRadius);
 
         if (other.transform.gameObject.GetComponent<Health>()){
+            playerPhotonSoundManager.playHitSound();
             //PhotonNetwork.LocalPlayer.AddScore(damage); add score for damage
             if (damage >= other.transform.gameObject.GetComponent<Health>().health){
                 //kill
@@ -147,6 +151,7 @@ public class Bullet : MonoBehaviour
             other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(damage);
             if (other.transform.gameObject.GetComponent<damageModifierHitbox>().hitboxId == "head"){   
                 headshotHitmarker.GetComponent<Hitmarker>().createHitmarker();
+                playerPhotonSoundManager.playHeadshotSOund();
             }else{
                 hitmarker.GetComponent<Hitmarker>().createHitmarker();
             }

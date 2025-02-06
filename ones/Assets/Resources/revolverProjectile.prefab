@@ -114,6 +114,7 @@ MonoBehaviour:
   startLocation: {x: 0, y: 0, z: 0}
   scalingDirection: z
   scalingMultiplier: 2
+  playerPhotonSoundManager: {fileID: 0}
 --- !u!54 &8715271385869556481
 Rigidbody:
   m_ObjectHideFlags: 0

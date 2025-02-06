@@ -222,6 +222,7 @@ public class Weapon : MonoBehaviour
         bulletSctipt.setIgnoreHitbox(playerObjForIgnoreHitbox);
         bulletSctipt.setIgnoreHitboxes(ignoreHitboxes);
         bulletSctipt.setStartLocation(bulletSpawnPoint.transform.position);
+        bulletSctipt.playerPhotonSoundManager = playerPhotonSoundManager;
 
 
         if(bulletSctipt.scalingDirection == "z"){
