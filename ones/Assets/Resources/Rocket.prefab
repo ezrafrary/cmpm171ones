@@ -110,6 +110,8 @@ MonoBehaviour:
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
   timeUntilBulletIsVisible: 3
   hitmarker: {fileID: 0}
+  headshotHitmarker: {fileID: 0}
+  startLocation: {x: 0, y: 0, z: 0}
   scalingDirection: z
   scalingMultiplier: 1
 --- !u!54 &8712635185112596516

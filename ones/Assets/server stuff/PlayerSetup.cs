@@ -21,10 +21,22 @@ public class PlayerSetup : MonoBehaviour
     public Transform TPweaponHolder;
     public WeaponSwitcher weaponSwitcher;
 
+    public DamageIndicator hitIndicatorPrefab;
+    public GameObject playerUI;
+
     int defaultFov = 60;
 
     void Start(){
         SetCameraFov(PlayerPrefs.GetInt("FOV", defaultFov));
+    }
+
+    [PunRPC]
+    public void createHitIndicator(Vector3 _damagePosition){
+        hitIndicatorPrefab.DamageLocation = _damagePosition;
+
+        GameObject go = Instantiate(hitIndicatorPrefab.gameObject, hitIndicatorPrefab.transform.position, hitIndicatorPrefab.transform.rotation); 
+        go.transform.SetParent(playerUI.transform);
+        go.SetActive(true);
     }
 
 

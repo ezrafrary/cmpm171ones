@@ -221,6 +221,7 @@ public class Weapon : MonoBehaviour
         Bullet bulletSctipt = bullet.GetComponent<Bullet>();
         bulletSctipt.setIgnoreHitbox(playerObjForIgnoreHitbox);
         bulletSctipt.setIgnoreHitboxes(ignoreHitboxes);
+        bulletSctipt.setStartLocation(bulletSpawnPoint.transform.position);
 
 
         if(bulletSctipt.scalingDirection == "z"){

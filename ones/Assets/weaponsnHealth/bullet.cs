@@ -28,10 +28,17 @@ public class Bullet : MonoBehaviour
     public GameObject hitmarker;
     public GameObject headshotHitmarker;
 
+    public Vector3 startLocation = new Vector3(0,0,0);
+
 
     [Header("collisions")]
     public string scalingDirection = "z";
     public float scalingMultiplier = 1;
+
+
+    public void setStartLocation(Vector3 _startLocation){
+        startLocation = _startLocation;
+    }
 
     public void setHitmarker(GameObject _hitmarker){
         hitmarker = _hitmarker;
@@ -119,6 +126,7 @@ public class Bullet : MonoBehaviour
                 PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
             }
             other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage);
+            other.transform.gameObject.GetComponent<PhotonView>().RPC("createHitIndicator", RpcTarget.All, startLocation);
             //Debug.Log("dealt damage");
             //hitmarker
             hitmarker.GetComponent<Hitmarker>().createHitmarker();

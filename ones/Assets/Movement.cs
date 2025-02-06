@@ -100,8 +100,9 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate(){
         if(input.magnitude < 0.5f){
-            
-            playerPhotonView.RPC("PlayIdleAnimation",RpcTarget.All);
+            if(playerPhotonView){
+                playerPhotonView.RPC("PlayIdleAnimation",RpcTarget.All);
+            }
         }
 
         
