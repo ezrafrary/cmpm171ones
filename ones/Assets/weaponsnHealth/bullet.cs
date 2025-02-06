@@ -128,6 +128,7 @@ public class Bullet : MonoBehaviour
                 RoomManager.instance.kills++;
                 RoomManager.instance.SetHashes();
                 PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
+                playerPhotonSoundManager.playKillSound();
             }
             other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage);
             other.transform.gameObject.GetComponent<PhotonView>().RPC("createHitIndicator", RpcTarget.All, startLocation);
@@ -139,19 +140,22 @@ public class Bullet : MonoBehaviour
 
 
         if (other.transform.gameObject.GetComponent<damageModifierHitbox>()){
-
+            bool playerDead = false;
             int modifiedDamage = (int)other.transform.gameObject.GetComponent<damageModifierHitbox>().damageMultiplier * (int)damage;
             if(modifiedDamage >= other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().health){
-                Debug.Log("killed player");
+                playerDead = true;
                 RoomManager.instance.kills++;
                 RoomManager.instance.SetHashes();
                 PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
+                playerPhotonSoundManager.playKillSound();
             }
 
             other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(damage);
             if (other.transform.gameObject.GetComponent<damageModifierHitbox>().hitboxId == "head"){   
                 headshotHitmarker.GetComponent<Hitmarker>().createHitmarker();
-                playerPhotonSoundManager.playHeadshotSOund();
+                if(!playerDead){
+                    playerPhotonSoundManager.playHeadshotSOund();
+                }
             }else{
                 hitmarker.GetComponent<Hitmarker>().createHitmarker();
             }

@@ -16,14 +16,21 @@ public class PlayerPhotonSoundManager : MonoBehaviour
 
     public AudioClip hitSound;
     public AudioClip headshotSound;
+    public AudioClip killSound;
     public AudioSource hitFeedbackSource;
     public AudioSource headshotSoundOrigin;
-
+    
 
     public void PlayFootstepsSFX(){
         GetComponent<PhotonView>().RPC("PlayFootstepsSFX_RPC", RpcTarget.All);
     }
 
+
+    public void playKillSound(){
+        hitFeedbackSource.clip = killSound;
+        hitFeedbackSource.volume = 0.5f;
+        hitFeedbackSource.Play();
+    }
 
     public void playHitSound(){
         hitFeedbackSource.clip = hitSound;
