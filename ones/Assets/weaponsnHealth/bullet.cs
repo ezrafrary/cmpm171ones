@@ -184,7 +184,7 @@ public class Bullet : MonoBehaviour
 
                     if (explosiveDamage >= hitCollider.transform.gameObject.GetComponent<Health>().health && hitCollider.transform.gameObject.GetComponent<Health>().health > 0){
                         //kill
-
+                        playerPhotonSoundManager.playKillSound();
                         if(!hitCollider.transform.gameObject.GetComponent<Health>().IsLocalPlayer){
                             RoomManager.instance.kills++;
                             RoomManager.instance.SetHashes();
@@ -193,6 +193,7 @@ public class Bullet : MonoBehaviour
                     }
                     hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage);
                 }
+                playerPhotonSoundManager.playHitSound();
             }
         }
 
