@@ -134,8 +134,11 @@ MonoBehaviour:
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   timeUntilBulletIsVisible: 1
   hitmarker: {fileID: 0}
+  headshotHitmarker: {fileID: 0}
+  startLocation: {x: 0, y: 0, z: 0}
   scalingDirection: y
   scalingMultiplier: 1
+  playerPhotonSoundManager: {fileID: 0}
 --- !u!54 &3002377585969953968
 Rigidbody:
   m_ObjectHideFlags: 0

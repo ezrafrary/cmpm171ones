@@ -16,7 +16,6 @@ public class Weapon : MonoBehaviour
         differenlty from how the video does it. 
     */
 
-    public Image ammoCircle;
     public Image reloadCircle;
 
     public int damage;
@@ -79,16 +78,24 @@ public class Weapon : MonoBehaviour
     private float recoverLength;
     private float reloadMaxTime;
 
-    public void setAmmoCircle(){
-        ammoCircle.fillAmount = (float) ammo / magAmmo;
-    }
     public void SetReloadCircle(){
+        bool currentlyReloading = false;
         if(animation["reload"]){
             reloadCircle.fillAmount = animation["reload"].time/reloadMaxTime;
+            if(animation["reload"].time/reloadMaxTime != 0){
+                currentlyReloading = true;
+            }
         }
         if(animation["reload norotationchange"]){
             reloadCircle.fillAmount = animation["reload norotationchange"].time/reloadMaxTime;
+            if(animation["reload norotationchange"].time/reloadMaxTime != 0){
+                currentlyReloading = true;
+            }
         }
+        if(!currentlyReloading){
+            reloadCircle.fillAmount = (float) ammo / magAmmo;
+        }
+
     }
 
 
@@ -96,10 +103,11 @@ public class Weapon : MonoBehaviour
         reloadMaxTime = reload.length;
         magText.text = mag.ToString();
         ammoText.text = ammo + "/" + magAmmo;
-        setAmmoCircle();
+        SetReloadCircle();
         originalPosition = transform.localPosition;
         recoilLength = 0;
         recoverLength = 1 / fireRate * recoverPercent;
+        
     }
 
     void Update()
@@ -150,7 +158,7 @@ public class Weapon : MonoBehaviour
     public void SetGunText(){
         magText.text = mag.ToString();
         ammoText.text = ammo + "/" + magAmmo;
-        setAmmoCircle();
+        SetReloadCircle();
     }
 
     void Reload(){
@@ -223,6 +231,7 @@ public class Weapon : MonoBehaviour
         bulletSctipt.setIgnoreHitboxes(ignoreHitboxes);
         bulletSctipt.setStartLocation(bulletSpawnPoint.transform.position);
         bulletSctipt.playerPhotonSoundManager = playerPhotonSoundManager;
+        bulletSctipt.damage = damage;
 
 
         if(bulletSctipt.scalingDirection == "z"){

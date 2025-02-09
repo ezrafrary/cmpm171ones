@@ -95,7 +95,7 @@ public class Movement : MonoBehaviour
     }
 
     public void setDashCooldownCircle(){
-        dashCooldownImage.fillAmount = (float) currentDashCooldown / dashCooldown;
+        dashCooldownImage.fillAmount = 1 - ((float) currentDashCooldown / dashCooldown);
     }
 
     void FixedUpdate(){
