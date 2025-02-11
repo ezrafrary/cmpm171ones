@@ -151,9 +151,11 @@ public class Movement : MonoBehaviour
         }
         
         if (grounded){
+            Debug.Log("grounded");
             if (jump){
                 rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
                 float movementBonus = 0;
+                //add momentum to player for jump
                 if(timeGrounded < maintainMomentumWindow){
                     movementBonus = momentumBuilder / timeGrounded;
                 }
@@ -177,7 +179,9 @@ public class Movement : MonoBehaviour
         if(builtMomentum/2 > rb.velocity.magnitude){
             builtMomentum = 0;
         }
-
+        if(builtMomentum < 0){
+            builtMomentum = 0;
+        }
         rb.AddForce(CalculateMovement(sprinting ? sprintSpeed + builtMomentum : walkSpeed + builtMomentum), ForceMode.VelocityChange);
 
         if(dashing && currentDashCooldown < 1 && input.magnitude > 0.5f){ //can only dash if player is pressing a movment key
@@ -193,8 +197,14 @@ public class Movement : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other){ //handling checking if the player is grounded. we will change this later(probably)
-        grounded = true;
-        timeGrounded++;
+        if(other.gameObject.tag == "NotJumpable" || other.gameObject.tag == "projectile"){
+            //Debug.Log("not jumpable");
+        }else{
+            grounded = true;
+            timeGrounded++;
+        }
+        
+        
     }
 
     //basic movment script, we can change anything in here whenever we want. this is not set in stone

@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 35
-  explosiveDamage: 15
+  explosiveDamage: 20
   explosiveRadius: 3
   scoreGainedForKill: 5
   ignoreHitbox: {fileID: 0}

@@ -430,14 +430,14 @@ MonoBehaviour:
   walkSpeed: 3
   sprintSpeed: 6
   maxVelocityChange: 1
-  momentumBuilder: 0.5
+  momentumBuilder: -1
   momentumBuilderCD: 10
   maintainMomentumWindow: 20
   maxBuiltJumpMomentum: 10
   movementText: {fileID: 3350589628331534391}
   jumpHeight: 5
   lookingDirection: {fileID: 7735398053568613310}
-  dashStrength: 5
+  dashStrength: 3
   maxDashYVelocity: 1.5
   dashCooldownImage: {fileID: 445981631965617065}
   dashCooldown: 200
@@ -549,6 +549,7 @@ MonoBehaviour:
   nickname: 
   playerModel: {fileID: 667645415840143944}
   nicknameText: {fileID: 4018755466682300657}
+  nicknameParent: {fileID: 4604289952667755413}
   TPweaponHolder: {fileID: 6176410375326161585}
   weaponSwitcher: {fileID: 5002997979760141731}
   hitIndicatorPrefab: {fileID: 4891976331718133355}
@@ -566,7 +567,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -5168,7 +5169,7 @@ MonoBehaviour:
   recoilBack: 0.07
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 367496515719770240}
-  bulletSpeed: 60
+  bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -5353,7 +5354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadCircle: {fileID: 3589875008465337045}
-  damage: 50
+  damage: 40
   camera: {fileID: 1226191117682152934}
   fireRate: 1
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
@@ -5594,7 +5595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadCircle: {fileID: 3589875008465337045}
-  damage: 30
+  damage: 35
   camera: {fileID: 1226191117682152934}
   fireRate: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -5614,7 +5615,7 @@ MonoBehaviour:
   recoilBack: 0.02
   bulletPrefab: {fileID: 7950140257926317427, guid: 1dfdfc70daf947b46b4b5509f14f0606, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
-  bulletSpeed: 60
+  bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}

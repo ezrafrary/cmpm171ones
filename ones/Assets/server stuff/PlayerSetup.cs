@@ -17,7 +17,8 @@ public class PlayerSetup : MonoBehaviour
 
 
     public TextMeshPro nicknameText;
-    
+    public GameObject nicknameParent;
+
     public Transform TPweaponHolder;
     public WeaponSwitcher weaponSwitcher;
 
@@ -66,6 +67,7 @@ public class PlayerSetup : MonoBehaviour
     //this function is vital, do not change it unless you know what you are doing, and if you change it, note that you did so in the design doc
     public void IsLocalPlayer(){
         TPweaponHolder.gameObject.SetActive(false);
+        nicknameParent.SetActive(false);
 
         movement.enabled = true;
         camera.SetActive(true);

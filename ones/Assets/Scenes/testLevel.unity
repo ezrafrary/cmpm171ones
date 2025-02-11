@@ -10241,6 +10241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 693392900194664258, guid: 5d1e100b8119d144499cd024031a1e15, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5785041611338503727, guid: 5d1e100b8119d144499cd024031a1e15, type: 3}
       propertyPath: m_Name
       value: ScoreZonePrefab
