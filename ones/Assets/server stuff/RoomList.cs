@@ -53,6 +53,7 @@ public class RoomList : MonoBehaviourPunCallbacks
 
         yield return new WaitUntil(() => !PhotonNetwork.IsConnected);
 
+        PhotonNetwork.PhotonServerSettings.AppSettings.FixedRegion = "usw";
         PhotonNetwork.ConnectUsingSettings();
     }
 

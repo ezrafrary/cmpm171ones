@@ -24,6 +24,11 @@ public class TimerDisplay : MonoBehaviourPunCallbacks
         int seconds = totalSeconds % 60;
         
         // Format the string as "minutes:seconds"
+
+
+        if(seconds < 10 && seconds >= 0){
+            return minutes + ":0" + seconds; 
+        }
         return minutes + ":" + seconds;
     }
 
