@@ -82,12 +82,14 @@ public class Movement : MonoBehaviour
         accurate to what you see on your end.
         */
 
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        //input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        
+        input = UserInput.instance.MoveInput;
         input.Normalize();
 
-        sprinting = Input.GetButton("Sprint");
-        jumping = Input.GetButton("Jump");
-        dashing = Input.GetButton("Dash");
+        sprinting = UserInput.instance.SprintBeingHeld;
+        jumping = UserInput.instance.JumpJustPressed;
+        dashing = UserInput.instance.DashBeingHeld;
 
         setDashCooldownCircle();
         if(jumping){
@@ -151,7 +153,6 @@ public class Movement : MonoBehaviour
         }
         
         if (grounded){
-            Debug.Log("grounded");
             if (jump){
                 rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
                 float movementBonus = 0;

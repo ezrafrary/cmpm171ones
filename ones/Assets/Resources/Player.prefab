@@ -365,6 +365,8 @@ GameObject:
   - component: {fileID: 5244040397720563872}
   - component: {fileID: 8998652926012223579}
   - component: {fileID: 9013138833438661297}
+  - component: {fileID: 6590173144728596705}
+  - component: {fileID: 3397318035012800850}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -658,6 +660,64 @@ CapsuleCollider:
   m_Height: 1.43
   m_Direction: 1
   m_Center: {x: 0, y: -0.12, z: -0.03}
+--- !u!114 &6590173144728596705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427471037947456812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: dec14857f7343da408a961ffd4ab93fb, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 53b4443c-2ff6-4b9b-869e-35cb8d0de0a9
+    m_ActionName: InGame/Dash[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0fab9db0-7532-4325-9d92-d446cdbccb06
+    m_ActionName: InGame/escape[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e1b7afe6-bb58-4507-81d2-5b1e6343b47e
+    m_ActionName: InGame/Fire[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9249d89b-0ab9-47a0-bd9d-5450d89d9981
+    m_ActionName: InGame/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: InGame
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &3397318035012800850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427471037947456812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5e2e737f5716f458518f3d826e74b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &508391612889662236
 GameObject:
   m_ObjectHideFlags: 0

@@ -117,7 +117,7 @@ public class Weapon : MonoBehaviour
             nextFire -= Time.deltaTime;
         }
 
-        if (Input.GetButton("Fire1") && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && !bulletPrefab && !preventFire){
+        if (UserInput.instance.AttackHeld && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && !bulletPrefab && !preventFire){
             nextFire = 1 / fireRate;
             ammo--;
             
@@ -126,7 +126,7 @@ public class Weapon : MonoBehaviour
             Fire();
         }
 
-        if (Input.GetButton("Fire1") && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFire){
+        if (UserInput.instance.AttackHeld && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFire){
             nextFire = 1 / fireRate;
             ammo--;
             
@@ -137,7 +137,7 @@ public class Weapon : MonoBehaviour
         
 
 
-        if (Input.GetKeyDown(KeyCode.R) && animation.isPlaying == false && mag > 0 && magAmmo > ammo){
+        if (UserInput.instance.ReloadJustPressed && animation.isPlaying == false && mag > 0 && magAmmo > ammo){
             Reload();
         }
 
