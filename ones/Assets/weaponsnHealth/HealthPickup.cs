@@ -11,9 +11,8 @@ public class HealthPickup : MonoBehaviour
     public bool hasBeenUsed = false;
 
     void OnTriggerEnter(Collider other){
-        
         if(other.transform.gameObject.GetComponent<Health>()){
-            if(!hasBeenUsed){    
+            if(!hasBeenUsed && PhotonNetwork.IsMasterClient){    
                 other.transform.gameObject.GetComponent<PhotonView>().RPC("Heal", RpcTarget.All, healthGained);
                 hasBeenUsed = true;
                 itemHasBeenPickedUp();

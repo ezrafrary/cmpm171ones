@@ -24,6 +24,7 @@ public class ItemSpawnPedestal : MonoBehaviour
         }else if (!isItemSpawned && PhotonNetwork.IsMasterClient){
             if(!spawnedItem){
                 isItemSpawned = true;
+                
                 SpawnItem();
             }
 
