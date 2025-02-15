@@ -8,18 +8,17 @@ using TMPro;
 public class Movement : MonoBehaviour
 {
 
+
+    public Transform cameraTransform;
+
     [Header("Walk/sprint")]
     public float walkSpeed = 4f;
     public float sprintSpeed = 14f;
+    public float movementAdder = 0;
 
     [Header("Momentum Building")]
     public float maxVelocityChange = 10f;
-    public float momentumBuilder = 1f;
-    private float builtMomentum = 0f;
-    public float momentumBuilderCD = 10.0f;
-    private float momentumBuilderCDTimer = 0;
-    public float maintainMomentumWindow = 20.0f;
-    public float maxBuiltJumpMomentum = 15.0f;
+    
     public TextMeshProUGUI movementText;
     [Space]
 
@@ -29,14 +28,11 @@ public class Movement : MonoBehaviour
     [Space]
 
     [Header("dash info")]
-    public Transform lookingDirection;
     public float dashStrength;
-    public float maxDashYVelocity = 1.5f;
-    public Image dashCooldownImage;
+    public float dashVectorReducer = 0.7f;
     public float dashCooldown;
-    public float dashDuration;
-    public float dashMomentumIncrease = 0.25f;
-    public float dahsBoostedMomentumThreshold = 5.0f;
+    public Image dashCooldownImage;
+    
 
 
     private Vector2 input;
@@ -44,12 +40,12 @@ public class Movement : MonoBehaviour
 
     private bool sprinting;
     private bool jumping;
+    private bool dash = false;
     private bool dashing;
     private bool jumpPressedLastFrame;
     private bool jump = false;
 
     private float currentDashCooldown;
-    private float currentDashDurationCooldown;
 
 
     private bool grounded = false;
@@ -64,6 +60,8 @@ public class Movement : MonoBehaviour
     public PhotonView playerPhotonView;
 
 
+
+    private Vector3 DashingVector = new Vector3(0,0,0);
 
 
     void Start()
@@ -88,20 +86,20 @@ public class Movement : MonoBehaviour
         input.Normalize();
 
         sprinting = UserInput.instance.SprintBeingHeld;
-        jumping = UserInput.instance.JumpJustPressed;
-        dashing = UserInput.instance.DashBeingHeld;
+        jump = UserInput.instance.JumpBeingHeld;
+        
+        
+        if(UserInput.instance.DashInput){
+            dash = true;
+        }
 
         setDashCooldownCircle();
-        if(jumping){
-            if(!jumpPressedLastFrame){
-                jump = true;
-            }
-            jumpPressedLastFrame = true;
-        }else{
-            jumpPressedLastFrame = false;
-        }
+        
+
         updateMovementText();
     }
+
+
 
     public void updateMovementText(){
         if(movementText){
@@ -134,6 +132,9 @@ public class Movement : MonoBehaviour
         dashCooldownImage.fillAmount = 1 - ((float) currentDashCooldown / dashCooldown);
     }
 
+    
+
+
     void FixedUpdate(){
         if(input.magnitude < 0.5f){
             if(playerPhotonView){
@@ -145,57 +146,112 @@ public class Movement : MonoBehaviour
         if(currentDashCooldown > 0){
             currentDashCooldown--;
         }
-        if(currentDashDurationCooldown > 0){
-            currentDashDurationCooldown--;
-        }
-        if(momentumBuilderCDTimer > 0){
-            momentumBuilderCDTimer--;
-        }
+        
         
         if (grounded){
             if (jump){
-                rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
-                float movementBonus = 0;
-                //add momentum to player for jump
-                if(timeGrounded < maintainMomentumWindow){
-                    movementBonus = momentumBuilder / timeGrounded;
-                }
-                if(momentumBuilderCDTimer <= 0){
-                    if(builtMomentum < maxBuiltJumpMomentum){
-                        builtMomentum = builtMomentum + (movementBonus);
-                    }
-                    momentumBuilderCDTimer = momentumBuilderCD;
-                }
-
-
+                Jump();
             }else if(input.magnitude > 0.5f){
                 playerPhotonView.RPC("PlayWalkingAnimation",RpcTarget.All);
             }
+        }
 
-            if(timeGrounded > maintainMomentumWindow){
-                builtMomentum = 0;
+
+
+        if(dash){
+            Debug.Log("trying to dash");
+            DashingVector = cameraTransform.forward * dashStrength;
+            rb.velocity = new Vector3(0, rb.velocity.y + 1, 0);
+            rb.AddForce(cameraTransform.forward * dashStrength, ForceMode.Impulse);//give the player a lil push in order to make it so they are no longer stationary
+            movementAdder = movementAdder + 3;
+            
+        }
+
+
+        if(timeGrounded > 1){
+            if(sprinting){
+                rb.velocity += CalculateMovement(sprintSpeed + movementAdder, 1f);
+            }else{
+                rb.velocity += CalculateMovement(walkSpeed + movementAdder/2, 1f);
+            }
+
+            if(movementAdder > 0){
+                movementAdder = movementAdder - 0.1f;
+            }
+        }else{
+            if(sprinting){
+                rb.velocity +=  CalculateMovement(sprintSpeed + movementAdder, 0.2f);
+            }else{
+
+                rb.velocity += CalculateMovement(walkSpeed + movementAdder/2, 0.2f);
             }
         }
 
-        if(builtMomentum/2 > rb.velocity.magnitude){
-            builtMomentum = 0;
+        //cleanup
+        
+        //if we're not moving at all, dont let dashing vector move us at all.
+        if(rb.velocity.magnitude < 0.5){
+            DashingVector = new Vector3(0,0,0);
         }
-        if(builtMomentum < 0){
-            builtMomentum = 0;
-        }
-        rb.AddForce(CalculateMovement(sprinting ? sprintSpeed + builtMomentum : walkSpeed + builtMomentum), ForceMode.VelocityChange);
 
-        if(dashing && currentDashCooldown < 1 && input.magnitude > 0.5f){ //can only dash if player is pressing a movment key
-            currentDashCooldown = dashCooldown;
-            currentDashDurationCooldown = dashDuration;
+        //dont want microscopic dashing vectors to push us wierdly.
+        if(DashingVector.magnitude > 0){
+            if(jump){
+                DashingVector = DashingVector * (dashVectorReducer + 0.01f); //make sure dashVectorReducer + wahtever is < 1
+            }else{
+                DashingVector = DashingVector * dashVectorReducer;
+            }
         }
+        if(DashingVector.magnitude < 0.1){
+            DashingVector = new Vector3(0,0,0);
+        }
+
+
+        rb.velocity = rb.velocity + DashingVector;
+
+        //slow player down
+        if(input.magnitude < 0.5f){
+            noMovementInputs();
+        }
+
+
+        if(new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude < sprintSpeed - 1){
+            movementAdder = movementAdder - 0.5f;
+        }
+        if(movementAdder < 0){
+            movementAdder = 0;
+        }
+        
+
+        
+
+
+
         if(!grounded){
             timeGrounded = 0;
         }
         grounded = false; 
-        
+        dash = false;
         jump = false;
     }
+
+
+    private void noMovementInputs(){
+        if(rb.velocity.magnitude > 0){
+            rb.velocity = new Vector3(rb.velocity.x * 0.99f, rb.velocity.y, rb.velocity.z * 0.99f);
+        }
+
+        if(rb.velocity.magnitude < 0.6){
+            rb.velocity = new Vector3(0,rb.velocity.y,0);
+        }
+    }
+
+
+
+    private void Jump(){
+        rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
+    }
+
 
     private void OnTriggerStay(Collider other){ //handling checking if the player is grounded. we will change this later(probably)
         if(other.gameObject.tag == "NotJumpable" || other.gameObject.tag == "projectile"){
@@ -209,7 +265,7 @@ public class Movement : MonoBehaviour
     }
 
     //basic movment script, we can change anything in here whenever we want. this is not set in stone
-    Vector3 CalculateMovement(float speed){
+    Vector3 CalculateMovement(float speed, float maxSpeedChange){
         Vector3 targetVelocity = new Vector3(input.x, 0, input.y); //input is a vector2, so we are converting it to vector3
         targetVelocity = transform.TransformDirection(targetVelocity);
 
@@ -218,33 +274,21 @@ public class Movement : MonoBehaviour
         targetVelocity *= speed;
 
         Vector3 velocity = rb.velocity;
-
-        Vector3 dashingDirection = lookingDirection.forward;
         
 
         if(input.magnitude > 0.5f){
             Vector3 velocityChange = targetVelocity - velocity;
-            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
-            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+
+            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxSpeedChange, maxSpeedChange);
+            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxSpeedChange, maxSpeedChange);
+
+
 
             velocityChange.y = 0;
 
-            //handle dashing
-            if(dashing && currentDashDurationCooldown > 0){
-                velocityChange = velocityChange + (dashingDirection * dashStrength);
-                if (velocityChange.y > maxDashYVelocity){
-                    velocityChange.y = maxDashYVelocity;
-                }
-                if(builtMomentum < dahsBoostedMomentumThreshold){
-                    builtMomentum = builtMomentum + dahsBoostedMomentumThreshold/dashDuration;
-                }else{
-                    builtMomentum = builtMomentum + dashMomentumIncrease;
-                }
-            }
+            
 
-            if((rb.velocity + velocityChange).magnitude < velocity.magnitude - (walkSpeed + builtMomentum)){
-                return new Vector3(0,0,0);
-            }
+            
             return velocityChange;
         } else {
             return new Vector3(0,0,0);
