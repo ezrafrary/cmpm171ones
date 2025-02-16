@@ -436,7 +436,7 @@ MonoBehaviour:
   maxVelocityChange: 1
   movementText: {fileID: 3350589628331534391}
   jumpHeight: 5
-  dashStrength: 4
+  dashStrength: 16
   dashVectorReducer: 0.86
   dashCooldown: 200
   dashCooldownImage: {fileID: 445981631965617065}

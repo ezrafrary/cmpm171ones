@@ -158,12 +158,10 @@ public class Movement : MonoBehaviour
 
 
 
-        if(dash){
-            Debug.Log("trying to dash");
-            DashingVector = cameraTransform.forward * dashStrength;
-            rb.velocity = new Vector3(0, rb.velocity.y + 1, 0);
-            rb.AddForce(cameraTransform.forward * dashStrength, ForceMode.Impulse);//give the player a lil push in order to make it so they are no longer stationary
-            movementAdder = movementAdder + 3;
+        if(dash && currentDashCooldown <= 0){
+            
+            Dash();
+            currentDashCooldown = dashCooldown;
             
         }
 
@@ -187,27 +185,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        //cleanup
         
-        //if we're not moving at all, dont let dashing vector move us at all.
-        if(rb.velocity.magnitude < 0.5){
-            DashingVector = new Vector3(0,0,0);
-        }
-
-        //dont want microscopic dashing vectors to push us wierdly.
-        if(DashingVector.magnitude > 0){
-            if(jump){
-                DashingVector = DashingVector * (dashVectorReducer + 0.01f); //make sure dashVectorReducer + wahtever is < 1
-            }else{
-                DashingVector = DashingVector * dashVectorReducer;
-            }
-        }
-        if(DashingVector.magnitude < 0.1){
-            DashingVector = new Vector3(0,0,0);
-        }
-
-
-        rb.velocity = rb.velocity + DashingVector;
 
         //slow player down
         if(input.magnitude < 0.5f){
@@ -235,6 +213,10 @@ public class Movement : MonoBehaviour
         jump = false;
     }
 
+    private void Dash(){
+        rb.velocity = cameraTransform.forward * (dashStrength + rb.velocity.magnitude);
+        movementAdder = movementAdder + 3;
+    }
 
     private void noMovementInputs(){
         if(rb.velocity.magnitude > 0){
