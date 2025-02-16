@@ -234,15 +234,15 @@ public class Weapon : MonoBehaviour
         bulletSctipt.damage = damage;
 
 
-        if(bulletSctipt.scalingDirection == "z"){
-            bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3(1, 1, (bulletSpeed / 25 * bulletSctipt.scalingMultiplier)));
-        }
-        if(bulletSctipt.scalingDirection == "y"){
-            bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3(1, (bulletSpeed / 25 * bulletSctipt.scalingMultiplier), 1));
-        }
-        if(bulletSctipt.scalingDirection == "x"){
-            bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3((bulletSpeed / 25 * bulletSctipt.scalingMultiplier), 1, 1));
-        }
+        // if(bulletSctipt.scalingDirection == "z"){
+        //     bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3(1, 1, (bulletSpeed / 25 * bulletSctipt.scalingMultiplier)));
+        // }
+        // if(bulletSctipt.scalingDirection == "y"){
+        //     bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3(1, (bulletSpeed / 25 * bulletSctipt.scalingMultiplier), 1));
+        // }
+        // if(bulletSctipt.scalingDirection == "x"){
+        //     bullet.transform.localScale = Vector3.Scale(bullet.transform.localScale, new Vector3((bulletSpeed / 25 * bulletSctipt.scalingMultiplier), 1, 1));
+        // }
 
 
         if(headshotHitmarker){

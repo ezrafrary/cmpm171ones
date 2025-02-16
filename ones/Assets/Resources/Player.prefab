@@ -858,37 +858,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &601267681449235487
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6919617090636289898}
-  m_Layer: 0
-  m_Name: crossbow projectile spawnpoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6919617090636289898
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601267681449235487}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.575}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7735398053568613310}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676909277838770790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,37 +2444,6 @@ Transform:
   - {fileID: 672638704901883988}
   - {fileID: 5189509750450544623}
   m_Father: {fileID: 8646797251346844838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3536268103767422674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 367496515719770240}
-  m_Layer: 0
-  m_Name: m4 spawnpoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &367496515719770240
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536268103767422674}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7735398053568613310}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3536904064572677918
 GameObject:
@@ -4140,9 +4078,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3913784687324471846}
-  - {fileID: 367496515719770240}
-  - {fileID: 6919617090636289898}
-  - {fileID: 1717915817840164366}
   - {fileID: 8564408050887216276}
   - {fileID: 6216851757095982426}
   - {fileID: 2978943648931021105}
@@ -6663,37 +6598,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &8441827642846400111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1717915817840164366}
-  m_Layer: 0
-  m_Name: rpg projecitle spawnpoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1717915817840164366
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8441827642846400111}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.562}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7735398053568613310}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8809953672948588893
 GameObject:
   m_ObjectHideFlags: 0
@@ -8125,7 +8029,7 @@ MonoBehaviour:
   recoilUp: 0.02
   recoilBack: 0.09
   bulletPrefab: {fileID: 6945840042073291484, guid: 61b7745b67ed77d448d299019b4f5fec, type: 3}
-  bulletSpawnPoint: {fileID: 6919617090636289898}
+  bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletSpeed: 200
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
@@ -8302,7 +8206,7 @@ MonoBehaviour:
   recoilUp: 0.02
   recoilBack: 0.07
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
-  bulletSpawnPoint: {fileID: 367496515719770240}
+  bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
@@ -8507,7 +8411,7 @@ MonoBehaviour:
   recoilUp: 0.2
   recoilBack: 0.5
   bulletPrefab: {fileID: 7866606936160352011, guid: 56e1b3aedf502c543a00de87fc1d8506, type: 3}
-  bulletSpawnPoint: {fileID: 1717915817840164366}
+  bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletSpeed: 50
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:

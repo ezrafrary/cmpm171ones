@@ -61,13 +61,19 @@ public class Bullet : MonoBehaviour
 
     private PhotonView pv;
 
+
+    [Header("hitreg")]
+    public GameObject oldPos;
+
     void Start(){
         pv = GetComponent<PhotonView>();
         if(timeUntilBulletIsVisible > 0){
             
             GetComponent<MeshRenderer>().enabled = false;
         }
-
+        
+        oldPos = new GameObject();
+        oldPos.transform.position = transform.position;
     }
     void FixedUpdate(){
         projectilelifetime--;
@@ -83,10 +89,25 @@ public class Bullet : MonoBehaviour
         }else{
             GetComponent<MeshRenderer>().enabled = true;
         }
+
+        //Debug.Log("Linecasting between: " + transform.position + " and " + oldPos.transform.position);
+        
+        if(Physics.Linecast(transform.position, oldPos.transform.position, out RaycastHit hit)){
+            Debug.Log("hit: " + hit + " hit.collider: " + hit.collider);
+            bulletHitSomething(hit.collider);
+        }
+
+
+        oldPos.transform.position = transform.position;
     }
     
     void OnTriggerEnter(Collider other){
         
+        
+    }
+
+
+    void bulletHitSomething(Collider other){
         if(dealtDamage){
             return;
         }
@@ -170,7 +191,6 @@ public class Bullet : MonoBehaviour
             }
         }
     }
-
 
 
     void ExplosionDamage(Vector3 center, float radius)
