@@ -6,6 +6,7 @@ using Photon.Realtime;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
@@ -31,7 +32,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject nameUI;
     public GameObject connectingUI;
     public GameObject mainMenuUI;
+    [Header("death screen")]
     public GameObject youDiedUi;
+    public TextMeshProUGUI killerNameUi;
+    public TextMeshProUGUI killerWeaponUi;
+    public Image headshotIcon;
+    public Image explosiveIcon;
+    public Image bodyshotIcon;
+    public TextMeshProUGUI killerHealthLeftUi;
+
+    [Space]
     public GameObject gameOverUI;
 
     public PhotonTimer timer;
@@ -121,11 +131,44 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void PlayerDied(){ //gets called by Health.cs when the player dies
+    public void PlayerDied(string _damageDealer, string _weaponName, string _killMethod, int killerHealthLeft){ //gets called by Health.cs when the player dies
         Debug.Log("player died");
         MouseLook.UnlockCursorStatic();
         roomCam.SetActive(true);
         youDiedUi.SetActive(true);
+        SetDeathScreenUi(_damageDealer, _weaponName, _killMethod, killerHealthLeft);
+    }
+
+
+
+    public void SetDeathScreenUi(string _damageDealer, string _weaponName, string _killMethod, int killerHealthLeft){
+        if(_damageDealer == ""){
+            killerNameUi.text = "World";
+        }else{
+            killerNameUi.text = _damageDealer;
+        }
+
+        if(_weaponName == ""){
+            killerWeaponUi.text = "World";
+        }else{
+            killerWeaponUi.text = _weaponName;
+        }
+
+
+        if(_killMethod == "head"){
+            headshotIcon.enabled = true;
+        }else{
+            headshotIcon.enabled = false;
+        }
+
+        if(_killMethod == "explosion"){
+            explosiveIcon.enabled = true;
+        }else{
+            explosiveIcon.enabled = false;
+        }
+
+        killerHealthLeftUi.text = killerHealthLeft.ToString();
+
     }
 
     public void respawnPlayer(){

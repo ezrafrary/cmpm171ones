@@ -7,6 +7,14 @@ using Photon.Pun.UtilityScripts;
 
 public class Bullet : MonoBehaviour
 {
+    [Header("killerinfo")]
+    public string weaponName;
+    public string playerName;
+    public int killerHealthLeft;
+
+    [Space]
+
+
 
     public int damage = 1;
     public int explosiveDamage = 0;
@@ -93,7 +101,7 @@ public class Bullet : MonoBehaviour
         //Debug.Log("Linecasting between: " + transform.position + " and " + oldPos.transform.position);
         
         if(Physics.Linecast(transform.position, oldPos.transform.position, out RaycastHit hit)){
-            Debug.Log("hit: " + hit + " hit.collider: " + hit.collider);
+            //Debug.Log("hit: " + hit + " hit.collider: " + hit.collider);
             bulletHitSomething(hit.collider);
         }
 
@@ -151,7 +159,7 @@ public class Bullet : MonoBehaviour
                 PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
                 playerPhotonSoundManager.playKillSound();
             }
-            other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage);
+            other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage, playerName, weaponName, "body", killerHealthLeft);
             other.transform.gameObject.GetComponent<PhotonView>().RPC("createHitIndicator", RpcTarget.All, startLocation);
             //Debug.Log("dealt damage");
             //hitmarker
@@ -171,7 +179,7 @@ public class Bullet : MonoBehaviour
                 playerPhotonSoundManager.playKillSound();
             }
 
-            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(damage);
+            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(damage, playerName, weaponName, null, killerHealthLeft);
             if (other.transform.gameObject.GetComponent<damageModifierHitbox>().hitboxId == "head"){   
                 headshotHitmarker.GetComponent<Hitmarker>().createHitmarker();
                 if(!playerDead){
@@ -211,7 +219,7 @@ public class Bullet : MonoBehaviour
                             PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
                         }
                     }
-                    hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage);
+                    hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage, playerName, weaponName, "explosion", killerHealthLeft);
                 }
                 playerPhotonSoundManager.playHitSound();
             }

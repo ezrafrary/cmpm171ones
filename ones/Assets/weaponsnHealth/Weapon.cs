@@ -227,6 +227,9 @@ public class Weapon : MonoBehaviour
        
 
         Bullet bulletSctipt = bullet.GetComponent<Bullet>();
+        bulletSctipt.playerName = playerObjForIgnoreHitbox.GetComponent<PlayerSetup>().nickname;
+        bulletSctipt.weaponName = gameObject.name;
+        bulletSctipt.killerHealthLeft = playerObjForIgnoreHitbox.GetComponent<Health>().health;
         bulletSctipt.setIgnoreHitbox(playerObjForIgnoreHitbox);
         bulletSctipt.setIgnoreHitboxes(ignoreHitboxes);
         bulletSctipt.setStartLocation(bulletSpawnPoint.transform.position);

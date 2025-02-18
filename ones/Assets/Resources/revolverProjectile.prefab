@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9a6e0b108ba9244aa850fa9644cf98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: 
+  playerName: 
   damage: 25
   explosiveDamage: 0
   explosiveRadius: 0
@@ -115,6 +117,7 @@ MonoBehaviour:
   scalingDirection: z
   scalingMultiplier: 2
   playerPhotonSoundManager: {fileID: 0}
+  oldPos: {fileID: 0}
 --- !u!54 &8715271385869556481
 Rigidbody:
   m_ObjectHideFlags: 0

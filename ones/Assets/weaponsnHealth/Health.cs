@@ -37,7 +37,11 @@ public class Health : MonoBehaviour
 
 
     [PunRPC]
-    public void TakeDamage(int _damage){
+    public void TakeDamage(int _damage, string damageDealer, string weaponName, string killMethod, int killerHealthLeft){
+
+        if(damageDealer != ""){
+            Debug.Log(damageDealer);
+        }
 
         if (hasDied){ //making sure a player cant die twice in one frame. 
             return;
@@ -49,7 +53,7 @@ public class Health : MonoBehaviour
         if(health <= 0){
             hasDied = true;
             if(IsLocalPlayer){
-                RoomManager.instance.PlayerDied(); //calls spawnplayer() in here
+                RoomManager.instance.PlayerDied(damageDealer, weaponName, killMethod, killerHealthLeft); //calls spawnplayer() in here
                 RoomManager.instance.deaths++;
                 RoomManager.instance.SetHashes();
             }
@@ -72,7 +76,7 @@ public class Health : MonoBehaviour
     [PunRPC]
     public void KillPlayer(){
         if (health > 0){ //This seems pointless, but if you use OnTriggerEnter as a damage field, it gets called twice in one frame, duplicating a client 
-            TakeDamage(health);
+            TakeDamage(health, null, null, null, 0);
         }
     }
 }

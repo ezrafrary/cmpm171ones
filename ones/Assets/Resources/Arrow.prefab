@@ -125,6 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9a6e0b108ba9244aa850fa9644cf98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponName: 
+  playerName: 
+  killerHealthLeft: 0
   damage: 30
   explosiveDamage: 0
   explosiveRadius: 0
