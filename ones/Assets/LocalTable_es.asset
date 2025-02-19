@@ -1,0 +1,287 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LocalTable_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 400bd9afa5cac684db660c4dce4b1946, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 20206811766784
+    m_Localized: 'Nombre de usuario:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19949692542976
+    m_Localized: Introduzca un nombre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21040597458944
+    m_Localized: Equipamiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21347469516800
+    m_Localized: "combinaci\xF3n de teclas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21629041532928
+    m_Localized: Deje de
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18712788099072
+    m_Localized: Jugar personalizado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19210580680704
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24503888797696
+    m_Localized: Teclados
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26751993798656
+    m_Localized: "volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27319822868480
+    m_Localized: Mover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27439855460352
+    m_Localized: Restablecer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27614296563712
+    m_Localized: Sprint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27821444849664
+    m_Localized: 'Restablecer
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27940479197184
+    m_Localized: Fuego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27997039386624
+    m_Localized: Restablecer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28383812935680
+    m_Localized: Recarga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28506102063104
+    m_Localized: 'Restablecer
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28685739909120
+    m_Localized: Dash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28782087266304
+    m_Localized: Restablecer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28836042792960
+    m_Localized: 'Restablecer
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28948798267392
+    m_Localized: Saltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29088044965888
+    m_Localized: restablecer todo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31358501412864
+    m_Localized: "Men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31849750880256
+    m_Localized: pistola
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32002905890816
+    m_Localized: "Rev\xF3lver"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35524527415296
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35622598631424
+    m_Localized: "Guardar y volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36151500365824
+    m_Localized: 'Sensibilidad:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36448004104192
+    m_Localized: Introducir texto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36554145161216
+    m_Localized: Introducir texto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36925722746880
+    m_Localized: "Elija un nombre de habitaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37706748289024
+    m_Localized: Crear o unirse a una sala
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37985082302464
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38189793697792
+    m_Localized: Elige un juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38283498643456
+    m_Localized: Crear sala o conectar por nombre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38358471827456
+    m_Localized: "men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131089592377344
+    m_Localized: Conectando...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134602972094464
+    m_Localized: 'Unirse a la sala
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134804764254208
+    m_Localized: "Bienvenido\r\nprensa \xDAnete"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134968866398208
+    m_Localized: "Volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135908344356864
+    m_Localized: volver al juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136118839697408
+    m_Localized: Ballesta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136562940993536
+    m_Localized: pistola
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136635154325504
+    m_Localized: "Rev\xF3lver"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136866604408832
+    m_Localized: Has muerto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137051032150016
+    m_Localized: Respawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137243311628288
+    m_Localized: Equipamiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137465257418752
+    m_Localized: 'Asesinado por:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137647957106688
+    m_Localized: 'Usando:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137807978192896
+    m_Localized: 'Salud enemiga restante:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139135173419008
+    m_Localized: Conectando...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139226609246208
+    m_Localized: 'Unirse a la sala
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139380305321984
+    m_Localized: "Bienvenido\nprensa \xDAnete"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139531077967872
+    m_Localized: "Volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139722447282176
+    m_Localized: volver al juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140019152347136
+    m_Localized: Has muerto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140133614903296
+    m_Localized: Equipamiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140343204274176
+    m_Localized: 'Asesinado por:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140434090647552
+    m_Localized: 'Usando:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140591381241856
+    m_Localized: 'Salud enemiga restante:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648534593536
+    m_Localized: 'pistola
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141975652556800
+    m_Localized: Mapa2 - hospital
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142116035911680
+    m_Localized: "Mapa4 - almac\xE9n"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: 
   playerName: 
+  killerHealthLeft: 0
   damage: 25
   explosiveDamage: 0
   explosiveRadius: 0
