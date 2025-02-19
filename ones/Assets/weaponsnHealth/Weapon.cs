@@ -136,10 +136,13 @@ public class Weapon : MonoBehaviour
         }
         
 
-
         if (UserInput.instance.ReloadJustPressed && animation.isPlaying == false && mag > 0 && magAmmo > ammo){
             Reload();
+        }else if (UserInput.instance.AttackInput && animation.isPlaying == false && mag > 0 && ammo <= 0){
+            Reload();
         }
+
+
 
         if (recoiling){
             Recoil();

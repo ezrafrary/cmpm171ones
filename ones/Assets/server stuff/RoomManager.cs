@@ -132,7 +132,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
 
     public void PlayerDied(string _damageDealer, string _weaponName, string _killMethod, int killerHealthLeft){ //gets called by Health.cs when the player dies
-        Debug.Log("player died");
+        //Debug.Log("player died");
         MouseLook.UnlockCursorStatic();
         roomCam.SetActive(true);
         youDiedUi.SetActive(true);
@@ -195,7 +195,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public void KillAllPlayers(){
         foreach (GameObject i in players){
-            Debug.Log(i);
+            //Debug.Log(i);
             i.GetComponent<PhotonView>().RPC("KillPlayer",RpcTarget.All);
         }
     }

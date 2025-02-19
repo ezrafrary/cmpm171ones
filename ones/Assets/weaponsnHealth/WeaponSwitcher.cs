@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using TMPro;
 
 public class WeaponSwitcher : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class WeaponSwitcher : MonoBehaviour
     private bool lockWeaponSwitch = false;
 
     public PhotonView playerSetupView;
+
+
+    [Header("playerequipmentui")]
+    public TextMeshProUGUI equipmentSlot1Text;
+    public RectTransform equipmentSlot1RectTransform;
+    public TextMeshProUGUI equipmentSlot2Text;
+    public RectTransform equipmentSlot2RectTransform;
+    public TextMeshProUGUI equipmentSlot3Text;
+    public RectTransform equipmentSlot3RectTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -65,8 +75,60 @@ public class WeaponSwitcher : MonoBehaviour
         }
     }
 
+    public void setWeaponUiText(){
 
+        int i = 0;
+        foreach(Transform _weapon in transform){
+            if(i == PlayerPrefs.GetInt("Slot1_weapon")){
+                equipmentSlot1Text.text = _weapon.gameObject.name;
+            }
+            if(i == PlayerPrefs.GetInt("Slot2_weapon")){
+                equipmentSlot2Text.text = _weapon.gameObject.name;
+            }
+            if(i == PlayerPrefs.GetInt("Slot3_weapon")){
+                equipmentSlot3Text.text = _weapon.gameObject.name;
+            }
+            i++;
+        }
 
+    }
+
+    public void setWeaponUiTextSize(){
+        float unequippedFontSize = 20f;
+        float equippedFontSize = 36f;
+
+        float unequippedRectSize = 20f;
+        float equippedRectSize = 40f;
+
+        if(selectedWeapon == 0){
+            
+            equipmentSlot1Text.fontSize = equippedFontSize;
+            equipmentSlot2Text.fontSize = unequippedFontSize;
+            equipmentSlot3Text.fontSize = unequippedFontSize;
+
+            equipmentSlot1RectTransform.sizeDelta = new Vector2(equipmentSlot1RectTransform.sizeDelta.x, equippedRectSize);
+            equipmentSlot2RectTransform.sizeDelta = new Vector2(equipmentSlot2RectTransform.sizeDelta.x, unequippedRectSize);
+            equipmentSlot3RectTransform.sizeDelta = new Vector2(equipmentSlot3RectTransform.sizeDelta.x, unequippedRectSize);
+        }
+        if(selectedWeapon == 1){
+            equipmentSlot1Text.fontSize = unequippedFontSize;
+            equipmentSlot2Text.fontSize = equippedFontSize;
+            equipmentSlot3Text.fontSize = unequippedFontSize;
+            
+            equipmentSlot1RectTransform.sizeDelta = new Vector2(equipmentSlot1RectTransform.sizeDelta.x, unequippedRectSize);
+            equipmentSlot2RectTransform.sizeDelta = new Vector2(equipmentSlot2RectTransform.sizeDelta.x, equippedRectSize);
+            equipmentSlot3RectTransform.sizeDelta = new Vector2(equipmentSlot3RectTransform.sizeDelta.x, unequippedRectSize);
+        }
+        if(selectedWeapon == 2){
+            equipmentSlot1Text.fontSize = unequippedFontSize;
+            equipmentSlot2Text.fontSize = unequippedFontSize;
+            equipmentSlot3Text.fontSize = equippedFontSize;
+
+            equipmentSlot1RectTransform.sizeDelta = new Vector2(equipmentSlot1RectTransform.sizeDelta.x, unequippedRectSize);
+            equipmentSlot2RectTransform.sizeDelta = new Vector2(equipmentSlot2RectTransform.sizeDelta.x, unequippedRectSize);
+            equipmentSlot3RectTransform.sizeDelta = new Vector2(equipmentSlot3RectTransform.sizeDelta.x, equippedRectSize);
+        }
+    }
 
     public void refillSelectedWeapon(int _numMags){ 
         int i = 0;
@@ -114,7 +176,8 @@ public class WeaponSwitcher : MonoBehaviour
     }
 
     void SelectWeapon(){
-        
+        setWeaponUiTextSize();
+        setWeaponUiText();
         if(selectedWeapon == 0){
             if(PlayerPrefs.GetInt("Slot1_weapon") != 0){
                 selectedWeapon = PlayerPrefs.GetInt("Slot1_weapon");

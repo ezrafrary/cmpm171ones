@@ -134,7 +134,7 @@ public class Bullet : MonoBehaviour
             }
         }
         if(other.transform.gameObject == ignoreHitbox){
-            Debug.Log("hitignrorehitbox");
+            //Debug.Log("hitignrorehitbox");
             return;
         }
 
