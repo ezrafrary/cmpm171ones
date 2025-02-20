@@ -95,7 +95,7 @@ public class WeaponSwitcher : MonoBehaviour
 
     public void setWeaponUiTextSize(){
         float unequippedFontSize = 20f;
-        float equippedFontSize = 36f;
+        float equippedFontSize = 46f;
 
         float unequippedRectSize = 20f;
         float equippedRectSize = 40f;
