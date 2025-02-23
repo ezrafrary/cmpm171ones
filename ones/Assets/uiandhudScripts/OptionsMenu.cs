@@ -10,6 +10,10 @@ public class OptionsMenu : MonoBehaviour
     public TMP_InputField sensInputField;
     public TMP_InputField fovInputField;
     public Slider fovSlider;
+    public Slider colorSlider;
+    public TMP_InputField colorInputField;
+    public Image crosshair;
+    public Image testcrosshair;
 
     private float defaultSens = 2f;
     private float defaultFov = 60;
@@ -37,7 +41,22 @@ public class OptionsMenu : MonoBehaviour
     public void fovSliderChanged(){
         fovInputField.text = fovSlider.value.ToString();
     }
-
+    public void colorSliderChanged(){
+        colorInputField.text = colorSlider.value.ToString();
+        colorInputFieldChanged();
+    }
+    public void colorInputFieldChanged(){
+        //int colornumber = (int)(float.Parse(colorInputField.text)*16777215);
+        float colornumber = float.Parse(colorInputField.text)/360;
+        Color newcolor = Color.HSVToRGB(colornumber, 1, 1);
+        /*float red = colornumber>>16;
+        float green = (colornumber>>8)&0b000000000000000011111111;
+        float blue =(colornumber)&0b000000000000000011111111;*/
+        //Debug.Log("red: " + red + " green: " + green + " blue: " + blue);
+        crosshair.color = newcolor;
+        testcrosshair.color = newcolor;
+        //crosshair.color = new Color(int.Parse(colorInputField.text)>>16, (int.Parse(colorInputField.text)>>8)&000000000000000011111111, int.Parse(colorInputField.text)&000000000000000011111111);
+    }
     public void fovinputFieldChanged(){
         try{
             fovSlider.value = float.Parse(fovInputField.text);
@@ -46,7 +65,15 @@ public class OptionsMenu : MonoBehaviour
             fovSlider.value = defaultFov;
         }
     }
+    public void updateFovSlider(){
 
+    }
+    public void updateSensSlider(){
+
+    }
+    public void updateColorSlider(){
+
+    }
 
     public void saveSettings(){
         PlayerPrefs.SetFloat("SensXY", sensSlider.value);
