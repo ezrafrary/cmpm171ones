@@ -1,0 +1,301 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LocalTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 400bd9afa5cac684db660c4dce4b1946, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 20206811766784
+    m_Localized: 'Username:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19949692542976
+    m_Localized: enter a name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21040597458944
+    m_Localized: Loadout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21347469516800
+    m_Localized: Keybinds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21629041532928
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18712788099072
+    m_Localized: Play Custom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19210580680704
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24503888797696
+    m_Localized: 'Keybinds
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26751993798656
+    m_Localized: back to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27319822868480
+    m_Localized: Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27439855460352
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27614296563712
+    m_Localized: Sprint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27821444849664
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27940479197184
+    m_Localized: Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27997039386624
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28383812935680
+    m_Localized: Reload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28506102063104
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28685739909120
+    m_Localized: Dash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28782087266304
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28836042792960
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28948798267392
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29088044965888
+    m_Localized: reset all
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31358501412864
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31849750880256
+    m_Localized: Pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32002905890816
+    m_Localized: Revolver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35524527415296
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35622598631424
+    m_Localized: Save And Back To Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36151500365824
+    m_Localized: 'Sensitivity:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36448004104192
+    m_Localized: Enter text...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36554145161216
+    m_Localized: Enter text...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36925722746880
+    m_Localized: Pick A Room Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37706748289024
+    m_Localized: Create Or Join Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37985082302464
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38189793697792
+    m_Localized: Choose a game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38283498643456
+    m_Localized: Create Room or Connect By Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38358471827456
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131089592377344
+    m_Localized: Connecting...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134602972094464
+    m_Localized: 'Join Room
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134804764254208
+    m_Localized: 'Welcome
+
+      press Join'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134968866398208
+    m_Localized: Back To Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135908344356864
+    m_Localized: back to game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136118839697408
+    m_Localized: Crossbow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136562940993536
+    m_Localized: Pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136635154325504
+    m_Localized: Revolver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136866604408832
+    m_Localized: You Died
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137051032150016
+    m_Localized: 'Respawn
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137243311628288
+    m_Localized: Loadout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137465257418752
+    m_Localized: 'Killed By:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137647957106688
+    m_Localized: 'Using:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137807978192896
+    m_Localized: 'Enemy Health Left:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139135173419008
+    m_Localized: Connecting...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139226609246208
+    m_Localized: 'Join Room
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139380305321984
+    m_Localized: 'Welcome
+
+      press Join'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139531077967872
+    m_Localized: Back To Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139722447282176
+    m_Localized: back to game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140019152347136
+    m_Localized: You Died
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140133614903296
+    m_Localized: Loadout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140343204274176
+    m_Localized: 'Killed By:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140434090647552
+    m_Localized: 'Using:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140591381241856
+    m_Localized: 'Enemy Health Left:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648534593536
+    m_Localized: 'Pistol
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141975652556800
+    m_Localized: map2 - hospital
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142116035911680
+    m_Localized: map4 - warehouse
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

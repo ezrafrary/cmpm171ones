@@ -1,0 +1,321 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: LocalTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: LocalTable
+  m_TableCollectionNameGuidString: 400bd9afa5cac684db660c4dce4b1946
+  m_Entries:
+  - m_Id: 18712788099072
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/CustomJoinButton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19210580680704
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/OptionsButton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19949692542976
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/nameInput/Text Area/Placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20206811766784
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/nameInput/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21040597458944
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/loadoutScreenButton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21347469516800
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/keybindsbutton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21629041532928
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/quit/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24503888797696
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/bindstext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26751993798656
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/backtomenubutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27319822868480
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/wasdmovmenet/ActionNameText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27439855460352
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/wasdmovmenet/resettodefalultbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27614296563712
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/sprint/ActionNameText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27821444849664
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/sprint/resettodefalultbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27940479197184
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/fire/ActionNameText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27997039386624
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/fire/resettodefalultbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28383812935680
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/reload/ActionNameText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28506102063104
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/reload/resettodefalultbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28685739909120
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/dash/ActionNameText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28782087266304
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/dash/resettodefalultbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28836042792960
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/jump/resettodefalultbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28948798267392
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/jump/ActionNameText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29088044965888
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/resetallbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31358501412864
+    m_Key: mainMenu(start here)/MainMenu/loadoutmenu -- set inactive/Panel/backButton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31849750880256
+    m_Key: mainMenu(start here)/MainMenu/loadoutmenu -- set inactive/Panel/Slot3selectionPannel
+      -- set inactive (1)/scrollable objects/SelectPistol/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32002905890816
+    m_Key: mainMenu(start here)/MainMenu/loadoutmenu -- set inactive/Panel/Slot3selectionPannel
+      -- set inactive (1)/scrollable objects/SelectRevolver/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35524527415296
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/OptionsMenuText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35622598631424
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/saveSettings
+      button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36151500365824
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/AllOptions/SensText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36448004104192
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/AllOptions/SensText/sensInputField/Text
+      Area/Placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36554145161216
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/AllOptions/fovText/fovInputField/Text
+      Area/Placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36925722746880
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37706748289024
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/Text (TMP)/InputField (TMP)/Create Or Join buton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37985082302464
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/Button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38189793697792
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Join Game Screen/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38283498643456
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Join Game Screen/CreateRoomButton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38358471827456
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Join Game Screen/backbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131089592377344
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/ConnectingScreen -- set inactive/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134602972094464
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/Name Screen/Panel/Button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134804764254208
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/Name Screen/Panel/text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134968866398208
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/gameOverScreen -- set inactive/Panel/BackToMenuButton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 135908344356864
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/loadoutmenu
+      -- set inactive/Panel/backButton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136118839697408
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/loadoutmenu
+      -- set inactive/Panel/Slot1selectionPannel -- set inactive/scrollable objects/SelectCrossbow/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136562940993536
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/loadoutmenu
+      -- set inactive/Panel/Slot3selectionPannel -- set inactive (1)/scrollable objects/SelectPistol/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136635154325504
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/loadoutmenu
+      -- set inactive/Panel/Slot3selectionPannel -- set inactive (1)/scrollable objects/SelectRevolver/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 136866604408832
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137051032150016
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/respawnbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137243311628288
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/Loadoutbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137465257418752
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/killedByPannel/killedbytext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137647957106688
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/killedByPannel/usingtext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 137807978192896
+    m_Key: SciFi_Warehouse/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/killerinfopannel/helalthleft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139135173419008
+    m_Key: testLevel2/RoomManager /RoomCam/ConnectingScreen -- set inactive/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139226609246208
+    m_Key: testLevel2/RoomManager /RoomCam/Name Screen/Panel/Button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139380305321984
+    m_Key: testLevel2/RoomManager /RoomCam/Name Screen/Panel/text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139531077967872
+    m_Key: testLevel2/RoomManager /RoomCam/gameOverScreen -- set inactive/Panel/BackToMenuButton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139722447282176
+    m_Key: testLevel2/RoomManager /RoomCam/deathUi -- setinactive/loadoutmenu --
+      set inactive/Panel/backButton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140019152347136
+    m_Key: testLevel2/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140133614903296
+    m_Key: testLevel2/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/Loadoutbutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140343204274176
+    m_Key: testLevel2/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/killedByPannel/killedbytext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140434090647552
+    m_Key: testLevel2/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/killedByPannel/usingtext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 140591381241856
+    m_Key: testLevel2/RoomManager /RoomCam/deathUi -- setinactive/killoedbyscreen/killerinfopannel/helalthleft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141648534593536
+    m_Key: testLevel2/RoomManager /RoomCam/deathUi -- setinactive/loadoutmenu --
+      set inactive/Panel/slot3button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 141975652556800
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/Text (TMP)/InputField (TMP)/map2/map2button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 142116035911680
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/Text (TMP)/InputField (TMP)/map4/map4button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8145355199857819672
+  references:
+    version: 2
+    RefIds:
+    - rid: 8145355199857819672
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1739953173456
