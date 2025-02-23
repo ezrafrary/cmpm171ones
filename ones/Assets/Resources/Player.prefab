@@ -6125,7 +6125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadCircle: {fileID: 3589875008465337045}
-  damage: 30
+  damage: 55
   camera: {fileID: 1226191117682152934}
   fireRate: 10
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -6145,7 +6145,7 @@ MonoBehaviour:
   recoilBack: 0.09
   bulletPrefab: {fileID: 6945840042073291484, guid: 61b7745b67ed77d448d299019b4f5fec, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
-  bulletSpeed: 200
+  bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -6302,7 +6302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadCircle: {fileID: 3589875008465337045}
-  damage: 10
+  damage: 15
   camera: {fileID: 1226191117682152934}
   fireRate: 10
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -6322,7 +6322,7 @@ MonoBehaviour:
   recoilBack: 0.07
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
-  bulletSpeed: 80
+  bulletSpeed: 100
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -6748,7 +6748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadCircle: {fileID: 3589875008465337045}
-  damage: 35
+  damage: 40
   camera: {fileID: 1226191117682152934}
   fireRate: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -6766,7 +6766,7 @@ MonoBehaviour:
   recoverPercent: 0.7
   recoilUp: 0.06
   recoilBack: 0.02
-  bulletPrefab: {fileID: 7950140257926317427, guid: 1dfdfc70daf947b46b4b5509f14f0606, type: 3}
+  bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
@@ -6981,7 +6981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadCircle: {fileID: 3589875008465337045}
-  damage: 10
+  damage: 15
   camera: {fileID: 1226191117682152934}
   fireRate: 5
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}

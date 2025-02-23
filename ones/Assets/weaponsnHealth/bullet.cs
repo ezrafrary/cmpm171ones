@@ -145,7 +145,7 @@ public class Bullet : MonoBehaviour
         }
 
         if(hitVFX){
-            PhotonNetwork.Instantiate(hitVFX.name, transform.position, Quaternion.identity);
+            PhotonNetwork.Instantiate(hitVFX.name, oldPos.transform.position, Quaternion.identity);
         }
         ExplosionDamage(gameObject.transform.position, explosiveRadius);
 
