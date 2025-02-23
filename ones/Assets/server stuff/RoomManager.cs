@@ -56,8 +56,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public float playerSensX = 2;
     [HideInInspector]
     public float playerSensY = 2;
-    [HideInInspector]
-    public float playerFov = 60;
 
     public string roomNameToJoin = "test";
 
@@ -77,9 +75,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         playerSensY = _sensY;
     }
 
-    public void changeFov(int newFov){
-        playerFov = newFov;
-    }
+ 
 
     public void ChangeNicname(string _name){
         PlayerPrefs.SetString("playerName", _name);
@@ -212,7 +208,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         //set local settings using PlayerSetup
         _player.GetComponent<PlayerSetup>().SetPlayerSens(playerSensX, playerSensY);
-        _player.GetComponent<PlayerSetup>().SetCameraFov(playerFov);
+        _player.GetComponent<PlayerSetup>().SetCameraFov();
 
         PhotonNetwork.LocalPlayer.NickName = PlayerPrefs.GetString("playerName", defaultname);
         

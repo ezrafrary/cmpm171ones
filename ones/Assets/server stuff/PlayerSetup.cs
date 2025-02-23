@@ -25,11 +25,17 @@ public class PlayerSetup : MonoBehaviour
     public DamageIndicator hitIndicatorPrefab;
     public GameObject playerUI;
 
+
+    public OptionsMenu playerOptions;
+
     int defaultFov = 60;
 
     void Start(){
-        SetCameraFov(PlayerPrefs.GetInt("FOV", defaultFov));
+        playerOptions.loadSettings();
+        SetCameraFov();
+
     }
+    
 
     [PunRPC]
     public void createHitIndicator(Vector3 _damagePosition){
@@ -54,8 +60,8 @@ public class PlayerSetup : MonoBehaviour
         TPweaponHolder.GetChild(_weaponIndex).gameObject.SetActive(true);
     }
 
-    public void SetCameraFov(float _cameraFov){
-        cameraObj.fieldOfView = _cameraFov;
+    public void SetCameraFov(){
+        cameraObj.fieldOfView = PlayerPrefs.GetInt("FOV", defaultFov);
     }
 
 
