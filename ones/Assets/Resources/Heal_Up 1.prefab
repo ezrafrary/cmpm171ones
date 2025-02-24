@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8431385665722100429}
   m_Layer: 0
   m_Name: Heal_Up 1
-  m_TagString: Untagged
+  m_TagString: ignoreBullets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,6 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f964c2b3fff2c8f419b3bcd3c13b912e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthGained: 10
+  healthGained: 20
   itemAttachedTo: {fileID: 0}
   hasBeenUsed: 0

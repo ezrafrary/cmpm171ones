@@ -7,6 +7,8 @@ TagManager:
   - Projectile
   - NotJumpable
   - projectile
+  - ignoreBullets
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour
     public float dashVectorReducer = 0.7f;
     public float dashCooldown;
     public Image dashCooldownImage;
+    public PlayerPhotonSoundManager playerPhotonSoundManager;
     
 
 
@@ -85,7 +86,8 @@ public class Movement : MonoBehaviour
         input = UserInput.instance.MoveInput;
         input.Normalize();
 
-        sprinting = UserInput.instance.SprintBeingHeld;
+        sprinting = !UserInput.instance.SprintBeingHeld;
+        Debug.Log(sprinting);
         jump = UserInput.instance.JumpBeingHeld;
         
         
@@ -216,6 +218,8 @@ public class Movement : MonoBehaviour
     private void Dash(){
         rb.velocity = cameraTransform.forward * (dashStrength + rb.velocity.magnitude);
         movementAdder = movementAdder + 3;
+        playerPhotonSoundManager.playDashSound();
+        
     }
 
     private void noMovementInputs(){

@@ -19,7 +19,12 @@ public class PlayerPhotonSoundManager : MonoBehaviour
     public AudioClip killSound;
     public AudioSource hitFeedbackSource;
     public AudioSource headshotSoundOrigin;
-    
+
+
+    public AudioClip dashSound;
+    public AudioSource dashSoundSource;
+
+    public Health _health;
 
     public void PlayFootstepsSFX(){
         GetComponent<PhotonView>().RPC("PlayFootstepsSFX_RPC", RpcTarget.All);
@@ -43,6 +48,22 @@ public class PlayerPhotonSoundManager : MonoBehaviour
         hitFeedbackSource.volume = 0.5f;
         hitFeedbackSource.Play();
     }
+
+    public void playDashSound(){
+        GetComponent<PhotonView>().RPC("playDashSound_RPC", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void playDashSound_RPC(){
+        
+        dashSoundSource.clip = dashSound;
+
+        dashSoundSource.pitch = 0.05f;
+        dashSoundSource.volume = 0.05f;
+        dashSoundSource.Play();
+        
+    }
+
 
 
     [PunRPC]
