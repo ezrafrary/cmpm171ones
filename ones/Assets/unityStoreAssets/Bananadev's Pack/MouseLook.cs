@@ -51,7 +51,7 @@ public class MouseLook : MonoBehaviour
     }
 
     public void loadSettings(){
-        Debug.Log("loaded settings - mouselook");
+        //Debug.Log("loaded settings - mouselook");
         float testSens = PlayerPrefs.GetFloat("SensXY", defaultSens);
         sensitivity = new Vector2(testSens, testSens);
     }

@@ -24,6 +24,10 @@ public class WeaponSwitcher : MonoBehaviour
     public TextMeshProUGUI equipmentSlot3Text;
     public RectTransform equipmentSlot3RectTransform;
 
+
+
+    private Dictionary<int, Quaternion> weaponInitialRotations = new Dictionary<int, Quaternion>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +39,11 @@ public class WeaponSwitcher : MonoBehaviour
     {
 
 
-        if(isCurrentWeaponReloading()){
+        /*if(isCurrentWeaponReloading()){
             lockWeaponSwitch = true;
         }else{
             lockWeaponSwitch = false;
-        }
+        }*/
 
         if(!lockWeaponSwitch){
             int previousSelectedWeapon = selectedWeapon;
@@ -208,6 +212,16 @@ public class WeaponSwitcher : MonoBehaviour
             if(i == selectedWeapon){
                 _weapon.gameObject.SetActive(true);
                 _weapon.gameObject.GetComponent<Weapon>().SetGunText();
+                
+
+                if (!weaponInitialRotations.ContainsKey(i))
+            {
+                weaponInitialRotations[i] = _weapon.localRotation;  // Store the initial rotation
+            }
+
+            // Apply the stored initial rotation to prevent resetting to Quaternion.identity
+            _weapon.localRotation = weaponInitialRotations[i];
+
             }else{
                 _weapon.gameObject.SetActive(false);
             }

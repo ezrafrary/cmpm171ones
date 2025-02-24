@@ -24,7 +24,13 @@ public class Weapon : MonoBehaviour
 
     public float fireRate;
 
+    public bool isAutomatic = true;
+
     private float nextFire;
+
+
+    public float reloadTime = 100f;
+    private float reloadTimer = 0;
 
     [Header("VFX")]
     public GameObject hitVFX;
@@ -78,25 +84,37 @@ public class Weapon : MonoBehaviour
     private float recoverLength;
     private float reloadMaxTime;
 
+    private bool wasReloadingLastFrame = false;
+
+
+
     public void SetReloadCircle(){
         bool currentlyReloading = false;
-        if(animation["reload"]){
-            reloadCircle.fillAmount = animation["reload"].time/reloadMaxTime;
-            if(animation["reload"].time/reloadMaxTime != 0){
-                currentlyReloading = true;
-            }
+        // if(animation["reload"]){
+        //     reloadCircle.fillAmount = animation["reload"].time/reloadMaxTime;
+        //     if(animation["reload"].time/reloadMaxTime != 0){
+        //         currentlyReloading = true;
+        //     }
+        // }
+        // if(animation["reload norotationchange"]){
+        //     reloadCircle.fillAmount = animation["reload norotationchange"].time/reloadMaxTime;
+        //     if(animation["reload norotationchange"].time/reloadMaxTime != 0){
+        //         currentlyReloading = true;
+        //     }
+        // }
+
+        if(reloadTimer > 0){
+            currentlyReloading = true;
+            reloadCircle.fillAmount = 1 - (reloadTimer / reloadTime);
         }
-        if(animation["reload norotationchange"]){
-            reloadCircle.fillAmount = animation["reload norotationchange"].time/reloadMaxTime;
-            if(animation["reload norotationchange"].time/reloadMaxTime != 0){
-                currentlyReloading = true;
-            }
-        }
+
+
         if(!currentlyReloading){
             reloadCircle.fillAmount = (float) ammo / magAmmo;
         }
 
     }
+
 
 
     void Start(){
@@ -107,12 +125,22 @@ public class Weapon : MonoBehaviour
         originalPosition = transform.localPosition;
         recoilLength = 0;
         recoverLength = 1 / fireRate * recoverPercent;
-        
     }
 
     void Update()
     {
         SetReloadCircle();
+        
+
+        if(reloadTimer > 0){
+            reloadTimer = reloadTimer - Time.deltaTime;
+            preventFire = true;
+        }else{
+            preventFire = false;
+        }
+        //Debug.Log(reloadTimer);
+
+
         if (nextFire > 0){
             nextFire -= Time.deltaTime;
         }
@@ -126,7 +154,19 @@ public class Weapon : MonoBehaviour
             Fire();
         }
 
-        if (UserInput.instance.AttackHeld && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFire){
+        if (UserInput.instance.AttackHeld && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFire && isAutomatic){
+            nextFire = 1 / fireRate;
+            ammo--;
+            
+            SetGunText();
+
+            FireProjectile();
+        }
+
+
+        bool justShot = false;
+        if (UserInput.instance.AttackInput && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFire && !isAutomatic){
+            justShot = true;
             nextFire = 1 / fireRate;
             ammo--;
             
@@ -136,10 +176,24 @@ public class Weapon : MonoBehaviour
         }
         
 
-        if (UserInput.instance.ReloadJustPressed && animation.isPlaying == false && mag > 0 && magAmmo > ammo){
+        if (UserInput.instance.ReloadJustPressed && reloadTimer <= 0 && mag > 0 && magAmmo > ammo){
             Reload();
-        }else if (UserInput.instance.AttackInput && animation.isPlaying == false && mag > 0 && ammo <= 0){
+        }else if (UserInput.instance.AttackInput && reloadTimer <= 0 && mag > 0 && ammo <= 0 && !justShot){
             Reload();
+        } 
+
+
+
+        if(!IsReloading() && wasReloadingLastFrame){
+            doneReloading();
+        }
+
+
+
+        if(IsReloading()){
+            wasReloadingLastFrame = true;
+        }else{
+            wasReloadingLastFrame = false;
         }
 
 
@@ -166,7 +220,11 @@ public class Weapon : MonoBehaviour
 
     void Reload(){
         animation.Play(reload.name);
+        reloadTimer = reloadTime;
+    }
 
+
+    void doneReloading(){
         if (mag > 0){
             mag--;
             ammo = magAmmo;
@@ -174,9 +232,16 @@ public class Weapon : MonoBehaviour
         SetGunText();
     }
 
+    // public bool IsReloading(){
+    //     //Debug.Log("isreloading called");
+    //     if (animation.isPlaying){
+    //         return true;
+    //     }
+    //     return false;
+    // }
+
     public bool IsReloading(){
-        //Debug.Log("isreloading called");
-        if (animation.isPlaying){
+        if (reloadTimer > 0){
             return true;
         }
         return false;

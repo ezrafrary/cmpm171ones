@@ -86,8 +86,8 @@ public class Movement : MonoBehaviour
         input = UserInput.instance.MoveInput;
         input.Normalize();
 
-        sprinting = !UserInput.instance.SprintBeingHeld;
-        Debug.Log(sprinting);
+        //sprinting = !UserInput.instance.SprintBeingHeld;
+        sprinting = true;
         jump = UserInput.instance.JumpBeingHeld;
         
         

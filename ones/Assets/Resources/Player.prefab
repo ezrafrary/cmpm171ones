@@ -6346,6 +6346,8 @@ MonoBehaviour:
   damage: 55
   camera: {fileID: 1226191117682152934}
   fireRate: 10
+  isAutomatic: 0
+  reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 40
   ammo: 1
@@ -6523,6 +6525,8 @@ MonoBehaviour:
   damage: 15
   camera: {fileID: 1226191117682152934}
   fireRate: 10
+  isAutomatic: 1
+  reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 4
   ammo: 20
@@ -6728,6 +6732,8 @@ MonoBehaviour:
   damage: 40
   camera: {fileID: 1226191117682152934}
   fireRate: 1
+  isAutomatic: 0
+  reloadTime: 1
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
   mag: 7
   ammo: 1
@@ -6969,6 +6975,8 @@ MonoBehaviour:
   damage: 40
   camera: {fileID: 1226191117682152934}
   fireRate: 1
+  isAutomatic: 0
+  reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 4
   ammo: 7
@@ -7202,6 +7210,8 @@ MonoBehaviour:
   damage: 15
   camera: {fileID: 1226191117682152934}
   fireRate: 5
+  isAutomatic: 0
+  reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 5
   ammo: 30
