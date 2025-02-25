@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SciFi_Warehouse.unity
     guid: 04ba57353b4f0284686265d3d150c23c
+  - enabled: 1
+    path: Assets/Scenes/TUTORIAL.unity
+    guid: 3e25f080d13b64d41bd907b48023211e
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 8fe596ffed7760b408b03e7d5e7f50ba, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: fdb36885e3b392b46b4acfc620450a6a, type: 2}
