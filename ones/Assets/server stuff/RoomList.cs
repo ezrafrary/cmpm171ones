@@ -20,7 +20,7 @@ public class RoomList : MonoBehaviourPunCallbacks
 
     private List<RoomInfo> cachedRoomList = new List<RoomInfo>();
 
-    private int roomJoinSceneIndex = 1;
+    private int roomJoinSceneIndex = 4; //default room to join
 
 
     private string cachedRoomNameToCreate = "Unnamed Room";
