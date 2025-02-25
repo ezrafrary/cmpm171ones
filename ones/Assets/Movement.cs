@@ -24,7 +24,6 @@ public class Movement : MonoBehaviour
 
     public float jumpHeight = 5f;
 
-
     [Space]
 
     [Header("dash info")]
@@ -231,7 +230,6 @@ public class Movement : MonoBehaviour
             rb.velocity = new Vector3(0,rb.velocity.y,0);
         }
     }
-
 
 
     private void Jump(){

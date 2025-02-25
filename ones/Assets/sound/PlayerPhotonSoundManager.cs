@@ -58,8 +58,7 @@ public class PlayerPhotonSoundManager : MonoBehaviour
         
         dashSoundSource.clip = dashSound;
 
-        dashSoundSource.pitch = 0.05f;
-        dashSoundSource.volume = 0.05f;
+        dashSoundSource.volume = 0.2f;
         dashSoundSource.Play();
         
     }
