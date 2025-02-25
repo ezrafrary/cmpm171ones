@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SciFi_Warehouse.unity
     guid: 04ba57353b4f0284686265d3d150c23c
+  - enabled: 1
+    path: Assets/Scenes/TUTORIAL.unity
+    guid: 3e25f080d13b64d41bd907b48023211e
   m_configObjects: {}
