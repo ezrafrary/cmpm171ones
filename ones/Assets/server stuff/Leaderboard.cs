@@ -23,6 +23,8 @@ public class Leaderboard : MonoBehaviour
     public TextMeshProUGUI[] nameTexts;
     public TextMeshProUGUI[] kdTexts;
 
+    public TextMeshProUGUI winnerGUI;
+
     private int maxScore;
     
 
@@ -35,12 +37,19 @@ public class Leaderboard : MonoBehaviour
         Refresh();
     }
 
+    public void SetWinner(string PlayerName){
+        if(winnerGUI){
+            winnerGUI.text = PlayerName + " Wins!";
+        }
+    }
+
     public void Refresh(){
         foreach (var slot in slots){
             slot.SetActive(false);
         }
 
         var sortedPlayerList = (from player in PhotonNetwork.PlayerList orderby player.GetScore() descending select player).ToList();
+
 
         int i = 0;
         foreach (var player in sortedPlayerList){
@@ -61,6 +70,7 @@ public class Leaderboard : MonoBehaviour
 
             i++;
         }
+        SetWinner(sortedPlayerList[0].NickName);
     }
 
     private void Update(){
