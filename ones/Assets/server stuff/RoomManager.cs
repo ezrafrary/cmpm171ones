@@ -173,7 +173,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         SpawnPlayer();
     }
 
-    public void EndGame(){
+    public void EndGame(){ //this may be buggy, needs testing
         try{
             KillAllPlayers(); //calls playerDied(), errors if player is already dead
             roomCam.SetActive(true);

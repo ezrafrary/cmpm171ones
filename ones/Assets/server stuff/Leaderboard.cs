@@ -70,7 +70,7 @@ public class Leaderboard : MonoBehaviour
 
             i++;
         }
-        SetWinner(sortedPlayerList[0].NickName);
+        //SetWinner(sortedPlayerList[0].NickName);
     }
 
     private void Update(){
