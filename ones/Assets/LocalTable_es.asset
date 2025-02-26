@@ -282,6 +282,170 @@ MonoBehaviour:
     m_Localized: "Mapa4 - almac\xE9n"
     m_Metadata:
       m_Items: []
+  - m_Id: 2524834501648384
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2540450168070144
+    m_Localized: "atr\xE1sTomenu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547078560899072
+    m_Localized: Jugar a la carta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547260123930624
+    m_Localized: introduzca un nombre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547860739874816
+    m_Localized: 'Nombre de usuario:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547967656878080
+    m_Localized: Equipamiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548270695342080
+    m_Localized: Teclados
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548952538177536
+    m_Localized: Deje de
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552223407431680
+    m_Localized: Teclados
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552300997861376
+    m_Localized: "Volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552983222378496
+    m_Localized: Mover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553062830268416
+    m_Localized: 'Restablecer
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553682790342656
+    m_Localized: Restablecer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553740474605568
+    m_Localized: Fuego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553831205789696
+    m_Localized: Recarga
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553899002519552
+    m_Localized: 'Restablecer
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553966438539264
+    m_Localized: 'Restablecer
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554030384898048
+    m_Localized: Saltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554123997569024
+    m_Localized: 'Restablecer
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554189030252544
+    m_Localized: restablecer todo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554595038879744
+    m_Localized: "men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554846290272256
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554956562718720
+    m_Localized: "Guardar y volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555105108189184
+    m_Localized: 'Sensibilidad:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555241280462848
+    m_Localized: Introducir texto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555337103532032
+    m_Localized: Introducir texto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555450551066624
+    m_Localized: Introducir texto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555529429147648
+    m_Localized: "Color del ret\xEDculo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555704595865600
+    m_Localized: "ajustes del ret\xEDculo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555871717908480
+    m_Localized: "atr\xE1sTomenu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556172311093248
+    m_Localized: "Elija un nombre de habitaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556234382598144
+    m_Localized: Crear o unirse a una sala
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556423726063616
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556572657410048
+    m_Localized: nombre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556948488019968
+    m_Localized: "almac\xE9n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557069871177728
+    m_Localized: Cueva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557224859099136
+    m_Localized: Elige un juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557277766049792
+    m_Localized: Crear sala o conectar por nombre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557389531668480
+    m_Localized: "Volver al men\xFA"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
