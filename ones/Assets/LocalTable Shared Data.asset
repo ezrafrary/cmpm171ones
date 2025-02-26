@@ -308,6 +308,197 @@ MonoBehaviour:
       set inactive/Text (TMP)/InputField (TMP)/map4/map4button/Text (TMP)
     m_Metadata:
       m_Items: []
+  - m_Id: 2524834501648384
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/OptionsButton/Text (TMP)
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2540450168070144
+    m_Key: mainMenu(start here)/MainMenu/languageMenuCanvas/Panel/backtoMenubutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547078560899072
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/CustomJoinButton/Text (TMP)
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547260123930624
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/nameInput/Text Area/Placeholder
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547860739874816
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/nameInput/Text (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547967656878080
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/loadoutScreenButton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548270695342080
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/keybindsbutton/Text (TMP)
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548952538177536
+    m_Key: mainMenu(start here)/MainMenu/menuCanvas/Panel/quit/Text (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552223407431680
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/bindstext
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552300997861376
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/backtomenubutton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552983222378496
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/wasdmovmenet/ActionNameText
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553062830268416
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/wasdmovmenet/resettodefalultbutton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553682790342656
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/fire/resettodefalultbutton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553740474605568
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/fire/ActionNameText
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553831205789696
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/reload/ActionNameText
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553899002519552
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/reload/resettodefalultbutton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553966438539264
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/dash/resettodefalultbutton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554030384898048
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/jump/ActionNameText
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554123997569024
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/rebindings/jump/resettodefalultbutton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554189030252544
+    m_Key: mainMenu(start here)/MainMenu/keybinds -- setinactive/Panel/resetallbutton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554595038879744
+    m_Key: mainMenu(start here)/MainMenu/loadoutmenu -- set inactive/Panel/backButton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554846290272256
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/OptionsMenuText
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554956562718720
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/saveSettings
+      button/Text (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555105108189184
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/AllOptions/SensText
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555241280462848
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/AllOptions/SensText/sensInputField/Text
+      Area/Placeholder 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555337103532032
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/AllOptions/fovText/fovInputField/Text
+      Area/Placeholder 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555450551066624
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/AllOptions/rgbText/colorInput/Text
+      Area/Placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555529429147648
+    m_Key: mainMenu(start here)/MainMenu/OptionsMenuCanvas -- set inactive/Panel/AllOptions/rgbText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555704595865600
+    m_Key: mainMenu(start here)/MainMenu/CrosshairMenuCanvas/Panel/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555871717908480
+    m_Key: mainMenu(start here)/MainMenu/CrosshairMenuCanvas/Panel/backtoMenubutton/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556172311093248
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/Text (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556234382598144
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/Create Or Join buton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556423726063616
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/backbutton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556572657410048
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/roomnameinput/Text Area/Placeholder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556948488019968
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/mapselectionpannel/map4/map4button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557069871177728
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Create room screen --
+      set inactive/mapselectionpannel/map3/map3button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557224859099136
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Join Game Screen/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557277766049792
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Join Game Screen/CreateRoomButton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557389531668480
+    m_Key: mainMenu(start here)/Lobby -- set inactive/Camera/Join Game Screen/backbutton/Text
+      (TMP) 1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -296,6 +296,172 @@ MonoBehaviour:
     m_Localized: map4 - warehouse
     m_Metadata:
       m_Items: []
+  - m_Id: 2524834501648384
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2540450168070144
+    m_Localized: backTomenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547078560899072
+    m_Localized: Play Custom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547260123930624
+    m_Localized: enter a name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547860739874816
+    m_Localized: 'Username:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2547967656878080
+    m_Localized: Loadout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548270695342080
+    m_Localized: Keybinds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2548952538177536
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552223407431680
+    m_Localized: Keybinds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552300997861376
+    m_Localized: back to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2552983222378496
+    m_Localized: Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553062830268416
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553682790342656
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553740474605568
+    m_Localized: Fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553831205789696
+    m_Localized: Reload
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553899002519552
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2553966438539264
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554030384898048
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554123997569024
+    m_Localized: 'Reset
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554189030252544
+    m_Localized: reset all
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554595038879744
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554846290272256
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554956562718720
+    m_Localized: Save And Back To Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555105108189184
+    m_Localized: 'Sensitivity:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555241280462848
+    m_Localized: Enter text...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555337103532032
+    m_Localized: Enter text...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555450551066624
+    m_Localized: Enter text...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555529429147648
+    m_Localized: Crosshair color
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555704595865600
+    m_Localized: crosshair settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2555871717908480
+    m_Localized: backTomenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556172311093248
+    m_Localized: Pick A Room Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556234382598144
+    m_Localized: Create Or Join Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556423726063616
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556572657410048
+    m_Localized: name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2556948488019968
+    m_Localized: Warehouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557069871177728
+    m_Localized: Cave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557224859099136
+    m_Localized: Choose a game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557277766049792
+    m_Localized: Create Room or Connect By Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557389531668480
+    m_Localized: Back To Menu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
