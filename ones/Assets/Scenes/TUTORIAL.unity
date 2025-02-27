@@ -6781,7 +6781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   isTimerRunning: 1
-  timerDuration: 20
+  timerDuration: 9999
   roomManager: {fileID: 554650241}
 --- !u!114 &1135521622
 MonoBehaviour:

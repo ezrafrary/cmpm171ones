@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
 
     [Header("dash info")]
     public float dashStrength;
-    public float dashVectorReducer = 0.7f;
+    public float dashMovementAdder = 3;
     public float dashCooldown;
     public Image dashCooldownImage;
     public PlayerPhotonSoundManager playerPhotonSoundManager;
@@ -216,17 +216,17 @@ public class Movement : MonoBehaviour
 
     private void Dash(){
         rb.velocity = cameraTransform.forward * (dashStrength + rb.velocity.magnitude);
-        movementAdder = movementAdder + 3;
+        movementAdder = movementAdder + dashMovementAdder;
         playerPhotonSoundManager.playDashSound();
         
     }
 
     private void noMovementInputs(){
         if(rb.velocity.magnitude > 0){
-            rb.velocity = new Vector3(rb.velocity.x * 0.99f, rb.velocity.y, rb.velocity.z * 0.99f);
+            rb.velocity = new Vector3(rb.velocity.x * 0.995f, rb.velocity.y, rb.velocity.z * 0.995f);
         }
 
-        if(rb.velocity.magnitude < 0.6){
+        if(rb.velocity.magnitude < 0.3){
             rb.velocity = new Vector3(0,rb.velocity.y,0);
         }
     }

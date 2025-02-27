@@ -9,7 +9,7 @@ public class PlayerSetup : MonoBehaviour
     public Movement movement;
 
     [Header("next 2 should be the same object")]
-    public GameObject camera;
+    public new GameObject camera;
     public Camera cameraObj; //this is so we can set camerafov without having to jank it
 
     public string nickname;

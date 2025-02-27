@@ -99,7 +99,7 @@ public class OptionsMenu : MonoBehaviour
         if(mouseLook){
             mouseLook.loadSettings();
         }else{
-            Debug.Log("nomouselook");
+            //Debug.Log("nomouselook");
         }
         if(playerSetup){
             playerSetup.SetCameraFov();

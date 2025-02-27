@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
 
     public int damage;
 
-    public Camera camera;
+    public new Camera camera;
 
     public float fireRate;
 
@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour
     public GameObject headshotHitmarker;
 
     [Header("Animation")]
-    public Animation animation;
+    public new Animation animation;
     public AnimationClip reload;
 
     [Header("SFX")]

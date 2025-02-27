@@ -437,7 +437,7 @@ MonoBehaviour:
   movementText: {fileID: 3350589628331534391}
   jumpHeight: 5
   dashStrength: 16
-  dashVectorReducer: 0.86
+  dashMovementAdder: 4
   dashCooldown: 200
   dashCooldownImage: {fileID: 445981631965617065}
   playerPhotonSoundManager: {fileID: 8998652926012223579}
@@ -6526,7 +6526,7 @@ MonoBehaviour:
   camera: {fileID: 1226191117682152934}
   fireRate: 10
   isAutomatic: 1
-  reloadTime: 1
+  reloadTime: 1.2
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 4
   ammo: 20
@@ -6733,7 +6733,7 @@ MonoBehaviour:
   camera: {fileID: 1226191117682152934}
   fireRate: 1
   isAutomatic: 0
-  reloadTime: 1
+  reloadTime: 2
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
   mag: 7
   ammo: 1
@@ -6974,7 +6974,7 @@ MonoBehaviour:
   reloadCircle: {fileID: 3589875008465337045}
   damage: 40
   camera: {fileID: 1226191117682152934}
-  fireRate: 1
+  fireRate: 1.1
   isAutomatic: 0
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -6994,7 +6994,7 @@ MonoBehaviour:
   recoilBack: 0.02
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
-  bulletSpeed: 80
+  bulletSpeed: 120
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}

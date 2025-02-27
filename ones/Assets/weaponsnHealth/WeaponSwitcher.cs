@@ -6,7 +6,7 @@ using TMPro;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    public Animation animation;
+    public new Animation animation;
     public AnimationClip draw;
 
     private int selectedWeapon = 0;
