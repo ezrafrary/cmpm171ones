@@ -48,7 +48,7 @@ public class Leaderboard : MonoBehaviour
             slot.SetActive(false);
         }
 
-        var sortedPlayerList = (from player in PhotonNetwork.PlayerList orderby player.GetScore() descending select player).ToList();
+        var sortedPlayerList = (from player in PhotonNetwork.PlayerList orderby player.CustomProperties["score"] descending select player).ToList();
 
 
         int i = 0;
@@ -60,7 +60,12 @@ public class Leaderboard : MonoBehaviour
             }
 
             nameTexts[i].text = player.NickName;
-            scoreTexts[i].text = player.GetScore().ToString();
+
+            if(player.CustomProperties["score"] != null){
+                scoreTexts[i].text = player.CustomProperties["score"].ToString();
+            }else{
+                scoreTexts[i].text = "0";
+            }
 
             if (player.CustomProperties["kills"] != null){
                 kdTexts[i].text = player.CustomProperties["kills"] + "/" + player.CustomProperties["deaths"];

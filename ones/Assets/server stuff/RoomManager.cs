@@ -55,6 +55,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [HideInInspector]
     public int deaths = 0;
     [HideInInspector]
+    public int score = 0;
+
+
+    [HideInInspector]
     public float playerSensX = 2;
     [HideInInspector]
     public float playerSensY = 2;
@@ -226,6 +230,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             Hashtable hash = PhotonNetwork.LocalPlayer.CustomProperties;
             hash["kills"] = kills;
             hash["deaths"] = deaths;
+            hash["score"] = score;
 
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
         }

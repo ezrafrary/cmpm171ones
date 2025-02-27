@@ -159,8 +159,8 @@ public class Bullet : MonoBehaviour
             if (damage >= other.transform.gameObject.GetComponent<Health>().health){
                 //kill
                 RoomManager.instance.kills++;
+                RoomManager.instance.score += scoreGainedForKill;
                 RoomManager.instance.SetHashes();
-                PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
                 playerPhotonSoundManager.playKillSound();
             }
             other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage, playerName, weaponName, "body", killerHealthLeft);
@@ -178,8 +178,8 @@ public class Bullet : MonoBehaviour
             if(modifiedDamage >= other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().health){
                 playerDead = true;
                 RoomManager.instance.kills++;
+                RoomManager.instance.score += scoreGainedForKill;
                 RoomManager.instance.SetHashes();
-                PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
                 playerPhotonSoundManager.playKillSound();
             }
 
@@ -219,8 +219,8 @@ public class Bullet : MonoBehaviour
                         playerPhotonSoundManager.playKillSound();
                         if(!hitCollider.transform.gameObject.GetComponent<Health>().IsLocalPlayer){
                             RoomManager.instance.kills++;
+                            RoomManager.instance.score += scoreGainedForKill;
                             RoomManager.instance.SetHashes();
-                            PhotonNetwork.LocalPlayer.AddScore(scoreGainedForKill);
                         }
                     }
                     hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage, playerName, weaponName, "explosion", killerHealthLeft);
