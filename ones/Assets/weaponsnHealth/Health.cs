@@ -39,10 +39,6 @@ public class Health : MonoBehaviour
     [PunRPC]
     public void TakeDamage(int _damage, string damageDealer, string weaponName, string killMethod, int killerHealthLeft){
 
-        if(damageDealer != ""){
-            Debug.Log(damageDealer);
-        }
-
         if (hasDied){ //making sure a player cant die twice in one frame. 
             return;
         }

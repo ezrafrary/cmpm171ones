@@ -63,6 +63,20 @@ public class RoomList : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
     }
 
+    //if a player disconnects, or gets booted out of a room, we need to call this
+    public void refreshRoomList(){
+        // Make sure the player is not in a room before refreshing the list
+        if (PhotonNetwork.InRoom) {
+            PhotonNetwork.LeaveRoom();
+        }
+
+        // Make sure we're connected to the master server
+        if (PhotonNetwork.IsConnected) {
+            // Leave the current room (if any) and join the lobby to get an updated list of rooms
+            PhotonNetwork.JoinLobby();
+        }
+    }
+
 
     //called by photon, but only shows stuff that changed so we gotta deal with that
     public override void OnRoomListUpdate(List<RoomInfo> roomList){

@@ -27,7 +27,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public Transform[] spawnPoints;
     [Space]
     public GameObject roomCam;
-
+    [Space]
+    public Transform allPlayers;
     [Space]
     public GameObject nameUI;
     public GameObject connectingUI;
@@ -40,6 +41,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public Image explosiveIcon;
     public Image bodyshotIcon;
     public TextMeshProUGUI killerHealthLeftUi;
+    public bool GameOver = false;
 
     [Space]
     public GameObject gameOverUI;
@@ -190,10 +192,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
     public void KillAllPlayers(){
-        foreach (GameObject i in players){
-            //Debug.Log(i);
-            i.GetComponent<PhotonView>().RPC("KillPlayer",RpcTarget.All);
+        foreach(Transform player_transform in allPlayers){
+            player_transform.GetComponent<PhotonView>().RPC("KillPlayer",RpcTarget.All);
         }
+        
     }
 
     public void SpawnPlayer(){
@@ -210,8 +212,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
         _player.GetComponent<PlayerSetup>().SetPlayerSens(playerSensX, playerSensY);
         _player.GetComponent<PlayerSetup>().SetCameraFov();
 
+        _player.transform.SetParent(allPlayers);
         PhotonNetwork.LocalPlayer.NickName = PlayerPrefs.GetString("playerName", defaultname);
         
+
 
         players.Add(_player);
     }

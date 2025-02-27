@@ -27818,6 +27818,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8250113047921840432, guid: b76f846b3379607468a593969b575654, type: 3}
   m_PrefabInstance: {fileID: 1282715429}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1289323748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1289323749}
+  m_Layer: 0
+  m_Name: playersHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1289323749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289323748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1961877809}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1293134883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39665,6 +39696,7 @@ MonoBehaviour:
   - {fileID: 514724907}
   - {fileID: 1527884448}
   roomCam: {fileID: 642503954}
+  allPlayers: {fileID: 1289323749}
   nameUI: {fileID: 1788012260}
   connectingUI: {fileID: 1670103230}
   mainMenuUI: {fileID: 0}
@@ -39675,6 +39707,7 @@ MonoBehaviour:
   explosiveIcon: {fileID: 1623336047}
   bodyshotIcon: {fileID: 0}
   killerHealthLeftUi: {fileID: 544196672}
+  GameOver: 0
   gameOverUI: {fileID: 1629241863}
   timer: {fileID: 2064097518}
   kills: 0
@@ -39697,6 +39730,7 @@ Transform:
   m_Children:
   - {fileID: 642503955}
   - {fileID: 2064097520}
+  - {fileID: 1289323749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1965819039
@@ -41540,7 +41574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   isTimerRunning: 1
-  timerDuration: 20
+  timerDuration: 300
   roomManager: {fileID: 1961877808}
 --- !u!114 &2064097519
 MonoBehaviour:

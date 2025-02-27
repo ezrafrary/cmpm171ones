@@ -37,6 +37,11 @@ public class PlayerSetup : MonoBehaviour
     }
     
 
+    public void CheckGameRunning(){
+        Debug.Log(RoomManager.instance.GameOver);
+    }
+
+
     [PunRPC]
     public void createHitIndicator(Vector3 _damagePosition){
         hitIndicatorPrefab.DamageLocation = _damagePosition;
