@@ -100,10 +100,12 @@ public class Bullet : MonoBehaviour
 
         //Debug.Log("Linecasting between: " + transform.position + " and " + oldPos.transform.position);
         
-        if(Physics.Linecast(transform.position, oldPos.transform.position, out RaycastHit hit)){
+        if(Physics.Linecast(oldPos.transform.position, transform.position, out RaycastHit hit)){
             //Debug.Log("hit: " + hit + " hit.collider: " + hit.collider);
             if(hit.collider.CompareTag("ignoreBullets")){
-                Debug.Log("hit something that ignores bullets");
+                //Debug.Log("hit something that ignores bullets");
+            }else if(hit.collider.CompareTag("projectile")){
+                //Debug.Log("hit projecitle");
             }else{
                 bulletHitSomething(hit.collider);
             }
