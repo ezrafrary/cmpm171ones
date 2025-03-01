@@ -37,9 +37,6 @@ public class PlayerSetup : MonoBehaviour
     }
     
 
-    public void CheckGameRunning(){
-        Debug.Log(RoomManager.instance.GameOver);
-    }
 
 
     [PunRPC]

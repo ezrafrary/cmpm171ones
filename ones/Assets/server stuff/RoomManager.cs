@@ -33,6 +33,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject nameUI;
     public GameObject connectingUI;
     public GameObject mainMenuUI;
+
+
+    [Header("PregameUi")]
+    public Image readyCheckmark;
+    private bool localPlayerReady = false;
+
     [Header("death screen")]
 
     public Image RespawnButtonBackground;
@@ -53,11 +59,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public Image explosiveIcon;
     public Image bodyshotIcon;
     public TextMeshProUGUI killerHealthLeftUi;
-    public bool GameOver = false;
+
+    
 
     [Space]
+    [Header("GameEndLogic")]
     public GameObject gameOverUI;
-
     public PhotonTimer timer;
 
     private string defaultname = "unnamed";
@@ -75,6 +82,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [HideInInspector]
     public float playerSensY = 2;
 
+    [Header("Roomname")]
     public string roomNameToJoin = "test";
 
 
@@ -93,6 +101,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     void Start(){
         RespawnButtonBackground.color = new Color32(0,0,0,100);
         CanRespawn = false;
+        if(readyCheckmark){
+            readyCheckmark.enabled = false;
+        }
     }
 
 
@@ -115,9 +126,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
                 respawnPlayer();
             }
         }
-
-        setTimerText();
         
+        setTimerText();
     }
 
 
@@ -132,6 +142,20 @@ public class RoomManager : MonoBehaviourPunCallbacks
         PlayerPrefs.SetString("playerName", _name);
     }
     
+
+
+    public void ReadyButtonPressed(){
+        if(localPlayerReady){
+            localPlayerReady = false;
+        }else{
+            localPlayerReady = true;    
+        }
+        if(readyCheckmark){
+            readyCheckmark.enabled = localPlayerReady;
+        }
+    }
+
+
     public void JoinRoomButtonPressed(){
         Debug.Log("Connecting");
 
@@ -262,9 +286,48 @@ public class RoomManager : MonoBehaviourPunCallbacks
         
     }
 
+
+    
+
+    public Transform[] findAllSpawnableSpoints(){
+        // Create a list to dynamically store spawnable points
+        List<Transform> spawnableTransforms = new List<Transform>();
+
+        // Loop through each spawn point
+        foreach (Transform sp in spawnPoints)
+        {
+            // Check if the spawn point is spawnable
+            
+            if (sp.GetComponent<spawnpoint>()){
+                if (sp.GetComponent<spawnpoint>().spawnable){
+                    // Add the spawn point to the list
+                    spawnableTransforms.Add(sp);
+                }
+            }else{
+                spawnableTransforms.Add(sp);
+            }
+            
+        }
+
+        // Convert the list to an array and return it
+
+        return spawnableTransforms.ToArray();
+    }
+
+    public void printAllAvalibleSpawnpoints(){
+        Debug.Log("all avalible spawnpoints:");
+        foreach (Transform sp in findAllSpawnableSpoints()){
+            Debug.Log(sp);
+        }
+    }
+
     public void SpawnPlayer(){
 
-        Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+        Transform spawnPoint = spawnPoints[0];
+
+        if(findAllSpawnableSpoints().Length > 0){
+            spawnPoint = findAllSpawnableSpoints()[UnityEngine.Random.Range(0, findAllSpawnableSpoints().Length)];
+        }
 
         GameObject _player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);
         _player.GetComponent<PlayerSetup>().IsLocalPlayer(); 
