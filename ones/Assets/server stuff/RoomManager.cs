@@ -34,6 +34,18 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject connectingUI;
     public GameObject mainMenuUI;
     [Header("death screen")]
+
+    public Image RespawnButtonBackground;
+    public float AutoRespawnTimer;
+    public float TimeUntilRespawnAvalible;
+    public TextMeshProUGUI respawnTimer;
+
+    private float _AutoRespawnTimer;
+    private float _TimeUntilRespawnAvalible;
+    private bool CanRespawn = false;
+
+
+
     public GameObject youDiedUi;
     public TextMeshProUGUI killerNameUi;
     public TextMeshProUGUI killerWeaponUi;
@@ -66,6 +78,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public string roomNameToJoin = "test";
 
 
+
+
+
     
     private List<GameObject> players = new List<GameObject>();
     
@@ -73,6 +88,36 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     void Awake(){
         instance = this;
+    }
+
+    void Start(){
+        RespawnButtonBackground.color = new Color32(0,0,0,100);
+        CanRespawn = false;
+    }
+
+
+
+    void Update(){
+        if(_TimeUntilRespawnAvalible > 0){
+            _TimeUntilRespawnAvalible = _TimeUntilRespawnAvalible - Time.deltaTime;
+            CanRespawn = false;
+        }else{
+            CanRespawn = true;
+            RespawnButtonBackground.color = new Color32(255,255,255,100);
+        }
+
+
+        if(_AutoRespawnTimer > 0){
+            _AutoRespawnTimer = _AutoRespawnTimer - Time.deltaTime;
+        }else{
+            if(youDiedUi.activeSelf){
+                Debug.Log("trying to respawnplayer");
+                respawnPlayer();
+            }
+        }
+
+        setTimerText();
+        
     }
 
 
@@ -171,12 +216,27 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         killerHealthLeftUi.text = killerHealthLeft.ToString();
 
+
+        _AutoRespawnTimer = AutoRespawnTimer;
+        _TimeUntilRespawnAvalible = TimeUntilRespawnAvalible;
+        RespawnButtonBackground.color = new Color32(0,0,0,100);
     }
 
+    public void setTimerText(){
+
+        int AutoRespawnTimerToInt = (int)(_AutoRespawnTimer * 100);
+        float dispalyRespawnTimer = (float)(AutoRespawnTimerToInt) / 100f;
+
+        respawnTimer.text = dispalyRespawnTimer.ToString();
+    }
+
+
     public void respawnPlayer(){
-        roomCam.SetActive(false);
-        youDiedUi.SetActive(false);
-        SpawnPlayer();
+        if(CanRespawn){
+            roomCam.SetActive(false);
+            youDiedUi.SetActive(false);
+            SpawnPlayer();
+        }
     }
 
     public void EndGame(){ //this may be buggy, needs testing
