@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/testLevel.unity
     guid: 7dfda189f8230bb43ab7828248280618
   - enabled: 1
-    path: Assets/Scenes/testLevel2.unity
+    path: Assets/Scenes/Hospital.unity
     guid: 93a490e845729194d84af5be40f731a4
   - enabled: 1
-    path: Assets/Scenes/testLevel3.unity
+    path: Assets/Scenes/Cave.unity
     guid: 78a694a292dc8124bbcfdad57978c005
   - enabled: 1
-    path: Assets/Scenes/SciFi_Warehouse.unity
+    path: Assets/Scenes/Warehouse.unity
     guid: 04ba57353b4f0284686265d3d150c23c
   - enabled: 1
     path: Assets/Scenes/TUTORIAL.unity

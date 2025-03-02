@@ -35,9 +35,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject mainMenuUI;
 
 
-    [Header("PregameUi")]
-    public Image readyCheckmark;
-    private bool localPlayerReady = false;
+    [Header("game start screen")]
+    public TextMeshProUGUI mapnameText;
 
     [Header("death screen")]
 
@@ -101,8 +100,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     void Start(){
         RespawnButtonBackground.color = new Color32(0,0,0,100);
         CanRespawn = false;
-        if(readyCheckmark){
-            readyCheckmark.enabled = false;
+        if(mapnameText){
+            mapnameText.text = SceneManager.GetActiveScene().name;
         }
     }
 
@@ -144,16 +143,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
     
 
 
-    public void ReadyButtonPressed(){
-        if(localPlayerReady){
-            localPlayerReady = false;
-        }else{
-            localPlayerReady = true;    
-        }
-        if(readyCheckmark){
-            readyCheckmark.enabled = localPlayerReady;
-        }
-    }
 
 
     public void JoinRoomButtonPressed(){
@@ -185,11 +174,17 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         Debug.Log("We're connected and in a room!");
         connectingUI.SetActive(false);
+        
+        startGame();
+    }
+
+
+    public void startGame(){
         roomCam.SetActive(false);
         SpawnPlayer();
         timer.StartTimer();
-
     }
+
 
     public override void OnLeftRoom(){
         base.OnLeftRoom();
