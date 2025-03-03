@@ -7454,7 +7454,7 @@ MonoBehaviour:
   recoilBack: 0.07
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
-  bulletSpeed: 120
+  bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
