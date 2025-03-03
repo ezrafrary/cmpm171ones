@@ -18,18 +18,21 @@ public class TimerDisplay : MonoBehaviourPunCallbacks
     }
 
 
-    public static string ConvertSecondsToMinutes(int totalSeconds)
+    public static string ConvertSecondsToMinutes(float totalSeconds)
     {
-        int minutes = totalSeconds / 60;
-        int seconds = totalSeconds % 60;
-        
+        int minutes = (int) (totalSeconds / 60);
+        float seconds = ((float)((int)((totalSeconds%60)*10)))/10;
+        string stringseconds = seconds.ToString();
+        if(seconds%1 == 0){
+            stringseconds = stringseconds + ".0";
+        }
         // Format the string as "minutes:seconds"
 
 
         if(seconds < 10 && seconds >= 0){
-            return minutes + ":0" + seconds; 
+            return minutes + ":0" + stringseconds; 
         }
-        return minutes + ":" + seconds;
+        return minutes + ":" + stringseconds;
     }
 
     void Update()
@@ -38,7 +41,7 @@ public class TimerDisplay : MonoBehaviourPunCallbacks
         if (photonTimer != null)
         {
             // Show the timer value with a 1 decimal place precision
-            timerText.text = ConvertSecondsToMinutes(Mathf.CeilToInt(photonTimer.timer));
+            timerText.text = ConvertSecondsToMinutes(/*Mathf.CeilToInt*/(photonTimer.timer));
         }
     }
 }
