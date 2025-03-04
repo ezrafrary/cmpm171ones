@@ -32,6 +32,7 @@ public class Bullet : MonoBehaviour
 
     [Header("VFX")]
     public GameObject hitVFX;
+    public GameObject missVFX;
     public float timeUntilBulletIsVisible = 3; //makes the bullet invisible so u dont see it when its close to you
     public GameObject hitmarker;
     public GameObject headshotHitmarker;
@@ -150,13 +151,17 @@ public class Bullet : MonoBehaviour
             }
         }
 
-        if(hitVFX){
-            PhotonNetwork.Instantiate(hitVFX.name, oldPos.transform.position, Quaternion.identity);
-        }
+        
         ExplosionDamage(gameObject.transform.position, explosiveRadius);
+
+        bool bulletHitPlayer = false;//used to decide which hitvfx to dispaly
 
         if (other.transform.gameObject.GetComponent<Health>()){
             playerPhotonSoundManager.playHitSound();
+            if(hitVFX){
+                PhotonNetwork.Instantiate(hitVFX.name, oldPos.transform.position, Quaternion.identity);
+                bulletHitPlayer = true;
+            }
             //PhotonNetwork.LocalPlayer.AddScore(damage); add score for damage
             if (damage >= other.transform.gameObject.GetComponent<Health>().health){
                 //kill
@@ -175,6 +180,10 @@ public class Bullet : MonoBehaviour
 
 
         if (other.transform.gameObject.GetComponent<damageModifierHitbox>()){
+            if(hitVFX){
+                PhotonNetwork.Instantiate(hitVFX.name, oldPos.transform.position, Quaternion.identity);
+                bulletHitPlayer = true;
+            }
             bool playerDead = false;
             int modifiedDamage = (int)other.transform.gameObject.GetComponent<damageModifierHitbox>().damageMultiplier * (int)damage;
             if(modifiedDamage >= other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().health){
@@ -197,7 +206,10 @@ public class Bullet : MonoBehaviour
             
             dealtDamage = true;
         }
-            
+        
+        if(!bulletHitPlayer && missVFX){
+            PhotonNetwork.Instantiate(missVFX.name, oldPos.transform.position, Quaternion.identity);
+        }
             
         if(pv){
             if (pv.IsMine){
