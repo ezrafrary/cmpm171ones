@@ -552,6 +552,9 @@ MonoBehaviour:
   hitIndicatorPrefab: {fileID: 4891976331718133355}
   playerUI: {fileID: 5592158645617666608}
   playerOptions: {fileID: 199702621353379846}
+  playerHitbox: {fileID: 427471037947456812}
+  playerHitboxes:
+  - {fileID: 6644083619080426125}
 --- !u!135 &3724272249194503129
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -729,6 +732,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e2e737f5716f458518f3d826e74b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &500108026731095552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7947005584318160002}
+  m_Layer: 0
+  m_Name: projectileStartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7947005584318160002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500108026731095552}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7735398053568613310}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508391612889662236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,7 +3335,7 @@ Transform:
   m_GameObject: {fileID: 4791635807964533424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3474,6 +3508,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3913784687324471846}
+  - {fileID: 7947005584318160002}
   - {fileID: 8564408050887216276}
   - {fileID: 6216851757095982426}
   - {fileID: 7005057216617881557}
@@ -6367,6 +6402,7 @@ MonoBehaviour:
   recoilBack: 0.09
   bulletPrefab: {fileID: 6945840042073291484, guid: 61b7745b67ed77d448d299019b4f5fec, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
+  bulletStartPoint: {fileID: 7947005584318160002}
   bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
@@ -6546,6 +6582,7 @@ MonoBehaviour:
   recoilBack: 0.07
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
+  bulletStartPoint: {fileID: 7947005584318160002}
   bulletSpeed: 100
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
@@ -6819,6 +6856,7 @@ MonoBehaviour:
   recoilBack: 0.5
   bulletPrefab: {fileID: 7866606936160352011, guid: 56e1b3aedf502c543a00de87fc1d8506, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
+  bulletStartPoint: {fileID: 7947005584318160002}
   bulletSpeed: 50
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
@@ -7062,6 +7100,7 @@ MonoBehaviour:
   recoilBack: 0.02
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
+  bulletStartPoint: {fileID: 7947005584318160002}
   bulletSpeed: 120
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
@@ -7297,6 +7336,7 @@ MonoBehaviour:
   recoilBack: 0.02
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
+  bulletStartPoint: {fileID: 7947005584318160002}
   bulletSpeed: 30
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
@@ -7454,6 +7494,7 @@ MonoBehaviour:
   recoilBack: 0.07
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
+  bulletStartPoint: {fileID: 7947005584318160002}
   bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:

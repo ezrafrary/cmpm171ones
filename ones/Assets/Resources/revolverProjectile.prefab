@@ -111,14 +111,13 @@ MonoBehaviour:
   ignoreHitbox: {fileID: 0}
   ignoreHitboxes: []
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  timeUntilBulletIsVisible: 3
+  timeUntilBulletIsVisible: 0
   hitmarker: {fileID: 0}
   headshotHitmarker: {fileID: 0}
   startLocation: {x: 0, y: 0, z: 0}
-  scalingDirection: z
-  scalingMultiplier: 2
   playerPhotonSoundManager: {fileID: 0}
   oldPos: {fileID: 0}
+  startPos: {fileID: 0}
 --- !u!54 &8715271385869556481
 Rigidbody:
   m_ObjectHideFlags: 0

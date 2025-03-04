@@ -28,15 +28,25 @@ public class PlayerSetup : MonoBehaviour
 
     public OptionsMenu playerOptions;
 
+
+    [Header("ignorelayer")]
+    public GameObject playerHitbox;
+    public GameObject[] playerHitboxes;
+
     int defaultFov = 60;
 
     void Start(){
         playerOptions.loadSettings();
         SetCameraFov();
-
     }
     
 
+    public void Setup_SetIgnoreHitboxes(){
+        playerHitbox.layer = LayerMask.NameToLayer("clientSidePlayerHitbox");
+        foreach(GameObject obj in playerHitboxes){
+            obj.layer = LayerMask.NameToLayer("clientSidePlayerHitbox");
+        }
+    }
 
 
     [PunRPC]
@@ -80,6 +90,7 @@ public class PlayerSetup : MonoBehaviour
         movement.enabled = true;
         camera.SetActive(true);
         playerModel.GetComponent<SkinnedMeshRenderer>().enabled = false;
+        Setup_SetIgnoreHitboxes();
     }
 
     [PunRPC]

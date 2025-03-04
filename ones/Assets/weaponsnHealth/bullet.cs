@@ -39,9 +39,7 @@ public class Bullet : MonoBehaviour
     public Vector3 startLocation = new Vector3(0,0,0);
 
 
-    [Header("collisions")]
-    public string scalingDirection = "z";
-    public float scalingMultiplier = 1;
+
 
     [Header("SFX")]
     public PlayerPhotonSoundManager playerPhotonSoundManager;
@@ -72,16 +70,20 @@ public class Bullet : MonoBehaviour
 
     [Header("hitreg")]
     public GameObject oldPos;
+    public Transform startPos;
 
     void Start(){
         pv = GetComponent<PhotonView>();
         if(timeUntilBulletIsVisible > 0){
-            
+            Debug.Log("bulletmadeinvisible");
             GetComponent<MeshRenderer>().enabled = false;
         }
         
         oldPos = new GameObject();
-        oldPos.transform.position = transform.position;
+        //there is no startPos if it is someone else shooting
+        if(startPos){
+            oldPos.transform.position = startPos.position;
+        }
     }
     void FixedUpdate(){
         projectilelifetime--;
@@ -89,6 +91,8 @@ public class Bullet : MonoBehaviour
             if(pv){
                 if (pv.IsMine){
                     PhotonNetwork.Destroy(gameObject);
+
+                    Destroy(oldPos);
                 }
             }
         }
@@ -100,10 +104,10 @@ public class Bullet : MonoBehaviour
 
         //Debug.Log("Linecasting between: " + transform.position + " and " + oldPos.transform.position);
         
-        if(Physics.Linecast(oldPos.transform.position, transform.position, out RaycastHit hit)){
+        if(Physics.Linecast(oldPos.transform.position, transform.position, out RaycastHit hit, LayerMask.NameToLayer("clientSidePlayerHitbox"))){
             //Debug.Log("hit: " + hit + " hit.collider: " + hit.collider);
             if(hit.collider.CompareTag("ignoreBullets")){
-                //Debug.Log("hit something that ignores bullets");
+                Debug.Log("hit something that ignores bullets");
             }else if(hit.collider.CompareTag("projectile")){
                 //Debug.Log("hit projecitle");
             }else{
@@ -115,10 +119,6 @@ public class Bullet : MonoBehaviour
         oldPos.transform.position = transform.position;
     }
     
-    void OnTriggerEnter(Collider other){
-        
-        
-    }
 
 
     void bulletHitSomething(Collider other){
@@ -202,6 +202,7 @@ public class Bullet : MonoBehaviour
         if(pv){
             if (pv.IsMine){
                 PhotonNetwork.Destroy(gameObject);
+                Destroy(oldPos);
             }
         }
     }

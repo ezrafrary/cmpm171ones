@@ -19,7 +19,7 @@ TagManager:
   - hand
   - scoreZones
   - NotJumpable
-  - 
+  - clientSidePlayerHitbox
   - 
   - 
   - 

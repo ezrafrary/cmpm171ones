@@ -67,6 +67,7 @@ public class Weapon : MonoBehaviour
     [Header("projectile settings")]
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
+    public Transform bulletStartPoint;
     public float bulletSpeed = 4f;
     public GameObject playerObjForIgnoreHitbox;
     public GameObject[] ignoreHitboxes;
@@ -303,6 +304,7 @@ public class Weapon : MonoBehaviour
         bulletSctipt.setStartLocation(bulletSpawnPoint.transform.position);
         bulletSctipt.playerPhotonSoundManager = playerPhotonSoundManager;
         bulletSctipt.damage = damage;
+        bulletSctipt.startPos = bulletStartPoint;
 
 
         // if(bulletSctipt.scalingDirection == "z"){
