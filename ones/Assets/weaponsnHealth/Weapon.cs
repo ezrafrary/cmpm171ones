@@ -37,6 +37,7 @@ public class Weapon : MonoBehaviour
 
     [Header("Ammo")]
     public int mag = 5;
+    public int maxMags = 10;
     public int ammo = 30;
     public int magAmmo = 30;
 
@@ -120,9 +121,7 @@ public class Weapon : MonoBehaviour
 
     void Start(){
         reloadMaxTime = reload.length;
-        magText.text = mag.ToString();
-        ammoText.text = ammo + "/" + magAmmo;
-        SetReloadCircle();
+        SetGunText();
         originalPosition = transform.localPosition;
         recoilLength = 0;
         recoverLength = 1 / fireRate * recoverPercent;
@@ -209,12 +208,16 @@ public class Weapon : MonoBehaviour
 
     
     public void refillMags(int numMags){
-        mag = mag + numMags;
+        if(mag + numMags <= maxMags){
+            mag = mag + numMags;
+        }else{
+            mag = maxMags;
+        }
         SetGunText();
     }
 
     public void SetGunText(){
-        magText.text = mag.ToString();
+        magText.text = mag.ToString() + "/" + maxMags;
         ammoText.text = ammo + "/" + magAmmo;
         SetReloadCircle();
     }

@@ -6387,6 +6387,7 @@ MonoBehaviour:
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 40
+  maxMags: 60
   ammo: 1
   magAmmo: 1
   magText: {fileID: 468428386907781018}
@@ -6567,6 +6568,7 @@ MonoBehaviour:
   reloadTime: 1.2
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 4
+  maxMags: 8
   ammo: 20
   magAmmo: 20
   magText: {fileID: 468428386907781018}
@@ -6841,6 +6843,7 @@ MonoBehaviour:
   reloadTime: 2
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
   mag: 7
+  maxMags: 10
   ammo: 1
   magAmmo: 1
   magText: {fileID: 468428386907781018}
@@ -7085,6 +7088,7 @@ MonoBehaviour:
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 4
+  maxMags: 10
   ammo: 7
   magAmmo: 7
   magText: {fileID: 468428386907781018}
@@ -7321,6 +7325,7 @@ MonoBehaviour:
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 5
+  maxMags: 10
   ammo: 30
   magAmmo: 30
   magText: {fileID: 468428386907781018}
@@ -7479,6 +7484,7 @@ MonoBehaviour:
   reloadTime: 2
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 2
+  maxMags: 4
   ammo: 20
   magAmmo: 20
   magText: {fileID: 468428386907781018}
