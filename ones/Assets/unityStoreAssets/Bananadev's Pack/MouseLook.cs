@@ -29,12 +29,13 @@ public class MouseLook : MonoBehaviour
     private float defaultSens = 2;
 
     private bool rotatePlayerAllowed = true;
-
+    Movement movescript;
     [HideInInspector]
     public bool scoped;
 
     void Start()
     {
+        movescript = GetComponentInParent<Movement>();
         loadSettings();
         instance = this;
 
@@ -85,17 +86,18 @@ public class MouseLook : MonoBehaviour
         rotatePlayerAllowed = true;
     }
 
-
     void Update(){
         // Get raw mouse input for a cleaner reading on more sensitive mice.
         mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-
+        //mouseDelta.y += movescript.recoildegrees/25;
         // Scale input against the sensitivity setting and multiply that against the smoothing value.
-        mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity.x * smoothing.x, sensitivity.y * smoothing.y));
+        //mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity.x * smoothing.x, sensitivity.y * smoothing.y));
     }
 
     void FixedUpdate()
     {
+        mouseDelta.y += movescript.recoildegrees/25;
+        mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity.x * smoothing.x, sensitivity.y * smoothing.y));
         if(rotatePlayerAllowed){
             // Allow the script to clamp based on a desired target value.
             var targetOrientation = Quaternion.Euler(targetDirection);
@@ -117,9 +119,8 @@ public class MouseLook : MonoBehaviour
             // Then clamp and apply the global y value.
             if (clampInDegrees.y < 360)
                 _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, -clampInDegrees.y * 0.5f, clampInDegrees.y * 0.5f);
-
-            
                 transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
+
                 
                 
             // If there's a character body that acts as a parent to the camera
@@ -128,11 +129,12 @@ public class MouseLook : MonoBehaviour
                 var yRotation = Quaternion.AngleAxis(_mouseAbsolute.x, Vector3.up);
                 characterBody.transform.localRotation = yRotation * targetCharacterOrientation;
             }
-            else
+            else //NOT AN ISSUE
             {
                 var yRotation = Quaternion.AngleAxis(_mouseAbsolute.x, transform.InverseTransformDirection(Vector3.up));
                 transform.localRotation *= yRotation;
             }
         }
+        movescript.recoildegrees = 0;
     }
 }

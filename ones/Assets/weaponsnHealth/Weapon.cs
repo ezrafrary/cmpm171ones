@@ -24,6 +24,8 @@ public class Weapon : MonoBehaviour
 
     public float fireRate;
 
+    public float cameraRecoil;
+
     public bool isAutomatic = true;
 
     private float nextFire;
@@ -254,6 +256,7 @@ public class Weapon : MonoBehaviour
 
     void Fire(){
 
+        //camera.gameObject.transform.position = new Vector3(camera.gameObject.transform.position.x,camera.gameObject.transform.position.y + 1, camera.gameObject.transform.position.z );//Camera recoil
         playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex);
 
         recoiling = true;
@@ -279,6 +282,9 @@ public class Weapon : MonoBehaviour
     }
 
     void FireProjectile(){
+        //camera.gameObject.transform.rotation = Quaternion.Euler(0,camera.gameObject.transform.rotation.y + 1, 0);//Camera recoil
+        Movement movescript = GetComponentInParent<Movement>();
+        movescript.recoildegrees += cameraRecoil;
         recoiling = true;
         recovering = false;
         playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex);
