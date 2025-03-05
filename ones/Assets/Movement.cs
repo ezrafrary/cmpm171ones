@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
 
     public Transform cameraTransform;
 
+    public float recoildegrees;
     [Header("Walk/sprint")]
     public float walkSpeed = 4f;
     public float sprintSpeed = 14f;
