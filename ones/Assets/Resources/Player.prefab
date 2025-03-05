@@ -6404,7 +6404,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6945840042073291484, guid: 61b7745b67ed77d448d299019b4f5fec, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 80
+  bulletSpeed: 100
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -6585,7 +6585,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 100
+  bulletSpeed: 150
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -6860,7 +6860,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7866606936160352011, guid: 56e1b3aedf502c543a00de87fc1d8506, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 50
+  bulletSpeed: 70
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -7105,7 +7105,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 120
+  bulletSpeed: 170
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -7342,7 +7342,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 30
+  bulletSpeed: 100
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -7501,7 +7501,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 80
+  bulletSpeed: 130
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
