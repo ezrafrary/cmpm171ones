@@ -135,7 +135,7 @@ MonoBehaviour:
   ignoreHitbox: {fileID: 0}
   ignoreHitboxes: []
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  missVFX: {fileID: 0}
+  missVFX: {fileID: 8890763803698331194, guid: d27aaf2be90203e4fa0f4cfab511b7e9, type: 3}
   timeUntilBulletIsVisible: 1
   hitmarker: {fileID: 0}
   headshotHitmarker: {fileID: 0}

@@ -3897,7 +3897,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 30
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -6387,7 +6387,7 @@ MonoBehaviour:
   damage: 55
   camera: {fileID: 1226191117682152934}
   fireRate: 10
-  cameraRecoil: 0
+  cameraRecoil: 10
   isAutomatic: 0
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -6569,7 +6569,7 @@ MonoBehaviour:
   damage: 15
   camera: {fileID: 1226191117682152934}
   fireRate: 10
-  cameraRecoil: 0
+  cameraRecoil: 5
   isAutomatic: 1
   reloadTime: 1.2
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -6845,7 +6845,7 @@ MonoBehaviour:
   damage: 40
   camera: {fileID: 1226191117682152934}
   fireRate: 1
-  cameraRecoil: 0
+  cameraRecoil: 10
   isAutomatic: 0
   reloadTime: 2
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
@@ -7091,7 +7091,7 @@ MonoBehaviour:
   damage: 40
   camera: {fileID: 1226191117682152934}
   fireRate: 1.1
-  cameraRecoil: 0
+  cameraRecoil: 20
   isAutomatic: 0
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -7555,7 +7555,7 @@ MonoBehaviour:
   damage: 20
   camera: {fileID: 1226191117682152934}
   fireRate: 7
-  cameraRecoil: 0
+  cameraRecoil: 10
   isAutomatic: 1
   reloadTime: 2
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}

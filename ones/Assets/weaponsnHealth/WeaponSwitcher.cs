@@ -11,6 +11,7 @@ public class WeaponSwitcher : MonoBehaviour
 
     public int selectedWeapon = 0;
 
+
     private bool lockWeaponSwitch = false;
 
     public PhotonView playerSetupView;
@@ -37,7 +38,7 @@ public class WeaponSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(getSelectedWeaponID());
 
         /*if(isCurrentWeaponReloading()){
             lockWeaponSwitch = true;
@@ -77,6 +78,33 @@ public class WeaponSwitcher : MonoBehaviour
                 SelectWeapon();
             }
         }
+    }
+
+
+    public int getSelectedWeaponID(){
+        int i = 0;
+        foreach(Transform _weapon in transform){
+
+            if(selectedWeapon == 0){
+                if(i == PlayerPrefs.GetInt("Slot1_weapon")){
+                    return i;              
+                }
+            }
+            if(selectedWeapon == 1){
+                if(i == PlayerPrefs.GetInt("Slot2_weapon")){
+                    return i;              
+                }
+            }
+            if(selectedWeapon == 2){
+                if(i == PlayerPrefs.GetInt("Slot3_weapon")){
+                    return i;              
+                }
+            }
+            i++;
+
+        }
+
+        return -1;
     }
 
     public void setWeaponUiText(){
@@ -137,7 +165,7 @@ public class WeaponSwitcher : MonoBehaviour
     public void refillSelectedWeapon(int _numMags){ 
         int i = 0;
         foreach(Transform _weapon in transform){
-            if(i == selectedWeapon){
+            if(i == getSelectedWeaponID()){
                 _weapon.gameObject.GetComponent<Weapon>().refillMags(_numMags);
             }
             i++;
