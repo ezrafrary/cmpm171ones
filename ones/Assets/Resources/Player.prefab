@@ -952,6 +952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animation: {fileID: 2552386840766083698}
   draw: {fileID: 7400000, guid: 16cbffe4963ddfe43a51c89987a3c0a2, type: 2}
+  selectedWeapon: 0
   playerSetupView: {fileID: 5314338546499913095}
   equipmentSlot1Text: {fileID: 4101393780256107979}
   equipmentSlot1RectTransform: {fileID: 7697962361537052416}
@@ -7617,6 +7618,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6f966b9a7c817ed49973b4a8762cbbdf, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6f966b9a7c817ed49973b4a8762cbbdf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6f966b9a7c817ed49973b4a8762cbbdf, type: 3}
       propertyPath: m_Layer

@@ -9,7 +9,7 @@ public class WeaponSwitcher : MonoBehaviour
     public new Animation animation;
     public AnimationClip draw;
 
-    private int selectedWeapon = 0;
+    public int selectedWeapon = 0;
 
     private bool lockWeaponSwitch = false;
 
@@ -182,26 +182,27 @@ public class WeaponSwitcher : MonoBehaviour
     void SelectWeapon(){
         setWeaponUiTextSize();
         setWeaponUiText();
-        if(selectedWeapon == 0){
+        int _selectedWeapon = selectedWeapon;
+        if(_selectedWeapon == 0){
             if(PlayerPrefs.GetInt("Slot1_weapon") != 0){
-                selectedWeapon = PlayerPrefs.GetInt("Slot1_weapon");
+                _selectedWeapon = PlayerPrefs.GetInt("Slot1_weapon");
             }
         }
-        if(selectedWeapon == 1){
+        if(_selectedWeapon == 1){
             if(PlayerPrefs.GetInt("Slot2_weapon") != 0){
-                selectedWeapon = PlayerPrefs.GetInt("Slot2_weapon");
+                _selectedWeapon = PlayerPrefs.GetInt("Slot2_weapon");
             }
         }
-        if(selectedWeapon == 2){
+        if(_selectedWeapon == 2){
             if(PlayerPrefs.GetInt("Slot3_weapon") != 0){
-                selectedWeapon = PlayerPrefs.GetInt("Slot3_weapon");
+                _selectedWeapon = PlayerPrefs.GetInt("Slot3_weapon");
             }
         }
 
-        playerSetupView.RPC("SetTPWeapon", RpcTarget.All, selectedWeapon);
+        playerSetupView.RPC("SetTPWeapon", RpcTarget.All, _selectedWeapon);
 
-        if (selectedWeapon >= transform.childCount){
-            selectedWeapon = transform.childCount - 1;
+        if (_selectedWeapon >= transform.childCount){
+            _selectedWeapon = transform.childCount - 1;
         }
 
         animation.Stop();
@@ -209,7 +210,7 @@ public class WeaponSwitcher : MonoBehaviour
 
         int i = 0;
         foreach(Transform _weapon in transform){
-            if(i == selectedWeapon){
+            if(i == _selectedWeapon){
                 _weapon.gameObject.SetActive(true);
                 _weapon.gameObject.GetComponent<Weapon>().SetGunText();
                 
