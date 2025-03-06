@@ -35,7 +35,11 @@ public class RoomList : MonoBehaviourPunCallbacks
     }
 
     public void CreateRoomByIndex(){
-        JoinRoomByName(cachedRoomNameToCreate, roomJoinSceneIndex);
+        if(isRoomNameTaken(cachedRoomNameToCreate)){
+            Debug.Log("Room name taken!");
+        }else{
+            JoinRoomByName(cachedRoomNameToCreate, roomJoinSceneIndex);
+        }
     }
 
 
@@ -104,6 +108,21 @@ public class RoomList : MonoBehaviourPunCallbacks
         UpdateUI();
     }
 
+
+    public bool isRoomNameTaken(string _newRoomName){
+        foreach (var room in cachedRoomList){
+            if(_newRoomName == room.Name){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void printAllRoomNames(){
+        foreach (var room in cachedRoomList){
+            Debug.Log(room.Name);
+        }
+    }
 
     void UpdateUI(){
         foreach (Transform roomItem in roomListParent){
