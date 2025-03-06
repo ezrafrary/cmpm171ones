@@ -20,7 +20,7 @@ TagManager:
   - scoreZones
   - NotJumpable
   - clientSidePlayerHitbox
-  - 
+  - CanGainScore
   - 
   - 
   - 

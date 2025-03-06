@@ -28,10 +28,12 @@ public class scoreZone : MonoBehaviour
     }
    
     void OnTriggerStay(Collider other){
-        if(other.gameObject.GetComponent<Health>()){//dont let projectiles trip this off
-            if(other.gameObject.GetComponent<Health>().IsLocalPlayer){
-                playerInField = true;
+        if(other.gameObject.GetComponent<PlayerHitboxScore>()){
+            if(other.gameObject.GetComponent<PlayerHitboxScore>().ParentPlayer.GetComponent<Health>()){
+                if(other.gameObject.GetComponent<PlayerHitboxScore>().ParentPlayer.GetComponent<Health>().IsLocalPlayer){
+                    playerInField = true;
+                }
             }
-        } 
+        }
     }
 }

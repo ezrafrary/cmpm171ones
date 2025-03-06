@@ -38,7 +38,7 @@ public class WeaponSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(getSelectedWeaponID());
+        
 
         /*if(isCurrentWeaponReloading()){
             lockWeaponSwitch = true;
