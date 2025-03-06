@@ -16,6 +16,8 @@ public class escapeMenu : MonoBehaviour
     private bool buttonWasPressedLastFrame = false;
 
 
+    private bool disableEscapeButton = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +32,14 @@ public class escapeMenu : MonoBehaviour
     {
         if(Input.GetButton("Esc")){
             if (!buttonWasPressedLastFrame){
-                if(menuOpen){
-                    closeMenu();
-                }else{
-                    openMenu();
+                if(!disableEscapeButton){
+                    if(menuOpen){
+                        closeMenu();
+                    }else{
+                        openMenu();
+                    }
                 }
+                
             }
 
             buttonWasPressedLastFrame = true;
@@ -42,6 +47,11 @@ public class escapeMenu : MonoBehaviour
             buttonWasPressedLastFrame = false;
         }
         
+    }
+
+
+    public void SetDisableEscapeMenu(bool _input){
+        disableEscapeButton = _input;
     }
 
 
