@@ -25,6 +25,14 @@ public class TextManagerScript : MonoBehaviour
         dashtext.text = "Press " + actionMap.FindAction("Dash").controls[0] .displayName + " to dash in the direction you're looking. Holding " + jumpcontrolaction + " after this preserves the increased dash speed";
     }
 
+
+
+    public string GetAction(string rootActionMap, string actionName){
+        InputActionMap _actionMap;
+        _actionMap = inputActions.FindActionMap(rootActionMap);
+        return _actionMap.FindAction(actionName).controls[0].displayName;
+    }
+
     // Update is called once per frame
     void Update()
     {
