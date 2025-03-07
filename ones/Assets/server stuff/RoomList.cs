@@ -18,6 +18,9 @@ public class RoomList : MonoBehaviourPunCallbacks
     public Transform roomListParent;
     public GameObject roomListItemPrefab;
 
+    [Header("popup")]
+    public TextMeshProUGUI roomTakenPopup;
+
     private List<RoomInfo> cachedRoomList = new List<RoomInfo>();
 
     private int roomJoinSceneIndex = 4; //default room to join
@@ -36,6 +39,8 @@ public class RoomList : MonoBehaviourPunCallbacks
 
     public void CreateRoomByIndex(){
         if(isRoomNameTaken(cachedRoomNameToCreate)){
+            roomTakenPopup.gameObject.SetActive(true);
+            roomTakenPopup.text = "Room Name " + cachedRoomNameToCreate + " is taken right now!";
             Debug.Log("Room name taken!");
         }else{
             JoinRoomByName(cachedRoomNameToCreate, roomJoinSceneIndex);
