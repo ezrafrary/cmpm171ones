@@ -1705,6 +1705,14 @@ MonoBehaviour:
   sensInputField: {fileID: 8666024342562394684}
   fovInputField: {fileID: 1984331408124692795}
   fovSlider: {fileID: 1988070900866719195}
+  colorSlider: {fileID: 0}
+  colorInputField: {fileID: 0}
+  crosshair: {fileID: 0}
+  testcrosshair: {fileID: 0}
+  enemyOutlineColorPicker: {fileID: 0}
+  crosshairColorPicker: {fileID: 0}
+  mouseLook: {fileID: 0}
+  playerSetup: {fileID: 0}
 --- !u!1 &4380522299676652084
 GameObject:
   m_ObjectHideFlags: 0
