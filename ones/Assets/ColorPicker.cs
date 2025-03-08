@@ -81,6 +81,9 @@ public class ColorPicker : MonoBehaviour
         redSlider.value = R;
         greenSlider.value = G;
         blueSlider.value = B;
+        redText.text = R.ToString();
+        greenText.text = G.ToString();
+        blueText.text = B.ToString();
     }
 
 }

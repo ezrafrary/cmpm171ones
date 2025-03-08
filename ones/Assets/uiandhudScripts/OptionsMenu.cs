@@ -15,6 +15,7 @@ public class OptionsMenu : MonoBehaviour
     public Image crosshair;
     public Image testcrosshair;
     public ColorPicker enemyOutlineColorPicker;
+    public ColorPicker crosshairColorPicker;
 
 
 
@@ -24,7 +25,7 @@ public class OptionsMenu : MonoBehaviour
 
     private float defaultSens = 2f;
     private float defaultFov = 60;
-    private float defaultColor = 200f;
+    private float defaultColor = 255f;
 
 
 
@@ -54,26 +55,34 @@ public class OptionsMenu : MonoBehaviour
     }
 
 
-    public void colorSliderChanged(){
-        colorInputField.text = colorSlider.value.ToString();
-        colorInputFieldChanged();
-    }
+    // public void colorSliderChanged(){
+    //     colorInputField.text = colorSlider.value.ToString();
+    //     colorInputFieldChanged();
+    // }
+
+
 
 
 
     private Color getSavedColor(){
-        float colornumber = PlayerPrefs.GetFloat("CrosshairColor", defaultColor)/360;
-        Color returnColor = Color.HSVToRGB(colornumber, 1, 1);
+        Color returnColor = new Color(PlayerPrefs.GetFloat("CrosshairColor_Red", defaultColor)/255f, PlayerPrefs.GetFloat("CrosshairColor_Green", defaultColor)/255f, PlayerPrefs.GetFloat("CrosshairColor_Blue", defaultColor)/255f);
         return returnColor;
     }
 
-    public void colorInputFieldChanged(){
-        float colornumber = float.Parse(colorInputField.text)/360;
-        Color newcolor = Color.HSVToRGB(colornumber, 1, 1);
-        
-        crosshair.color = newcolor;
-        testcrosshair.color = newcolor;
+
+    public void updateCrosshair(){
+        if(crosshair){
+            crosshair.color = getSavedColor();
+        }
     }
+
+    // public void colorInputFieldChanged(){
+    //     float colornumber = float.Parse(colorInputField.text)/360;
+    //     Color newcolor = Color.HSVToRGB(colornumber, 1, 1);
+        
+    //     crosshair.color = newcolor;
+    //     testcrosshair.color = newcolor;
+    // }
 
 
     public void fovinputFieldChanged(){
@@ -92,13 +101,16 @@ public class OptionsMenu : MonoBehaviour
     public void saveSettings(){
         PlayerPrefs.SetFloat("SensXY", sensSlider.value);
         PlayerPrefs.SetInt("FOV", (int)fovSlider.value);
-        PlayerPrefs.SetFloat("CrosshairColor", colorSlider.value);
 
 
         PlayerPrefs.SetFloat("EnemyOutline_Red", enemyOutlineColorPicker.getRed());
         PlayerPrefs.SetFloat("EnemyOutline_Green", enemyOutlineColorPicker.getGreen());
         PlayerPrefs.SetFloat("EnemyOutline_Blue", enemyOutlineColorPicker.getBlue());
         
+        PlayerPrefs.SetFloat("CrosshairColor_Red", crosshairColorPicker.getRed());
+        PlayerPrefs.SetFloat("CrosshairColor_Green", crosshairColorPicker.getGreen());
+        PlayerPrefs.SetFloat("CrosshairColor_Blue", crosshairColorPicker.getBlue());
+
 
         loadSettings();
     }
@@ -106,8 +118,10 @@ public class OptionsMenu : MonoBehaviour
     public void loadSettings(){
         sensSlider.value = PlayerPrefs.GetFloat("SensXY", defaultSens);
         fovSlider.value = PlayerPrefs.GetInt("FOV", (int)defaultFov);
-        colorSlider.value = PlayerPrefs.GetFloat("CrosshairColor", defaultColor);
-        crosshair.color = getSavedColor();
+        
+        if(crosshair){
+            crosshair.color = getSavedColor();
+        }
         if(mouseLook){
             mouseLook.loadSettings();
         }else{
@@ -118,7 +132,7 @@ public class OptionsMenu : MonoBehaviour
         }
 
         enemyOutlineColorPicker.setColor(PlayerPrefs.GetFloat("EnemyOutline_Red", defaultColor), PlayerPrefs.GetFloat("EnemyOutline_Green", defaultColor), PlayerPrefs.GetFloat("EnemyOutline_Blue", defaultColor));
-
+        crosshairColorPicker.setColor(PlayerPrefs.GetFloat("CrosshairColor_Red", defaultColor), PlayerPrefs.GetFloat("CrosshairColor_Green", defaultColor), PlayerPrefs.GetFloat("CrosshairColor_Blue", defaultColor));
     }
 
 
