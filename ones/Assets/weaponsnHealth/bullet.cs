@@ -223,6 +223,7 @@ public class Bullet : MonoBehaviour
     void ExplosionDamage(Vector3 center, float radius)
     {
         Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+        bool _playerDead = false;
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.transform.gameObject.GetComponent<Health>()){
@@ -237,10 +238,13 @@ public class Bullet : MonoBehaviour
                             RoomManager.instance.score += scoreGainedForKill;
                             RoomManager.instance.SetHashes();
                         }
+                        _playerDead = true;
                     }
                     hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage, playerName, weaponName, "explosion", killerHealthLeft);
                 }
-                playerPhotonSoundManager.playHitSound();
+                if(!_playerDead){//playhitsound will overwrite playekillsound
+                    playerPhotonSoundManager.playHitSound();
+                }
             }
         }
 
