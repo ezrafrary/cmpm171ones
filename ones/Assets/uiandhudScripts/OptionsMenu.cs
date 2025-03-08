@@ -14,6 +14,8 @@ public class OptionsMenu : MonoBehaviour
     public TMP_InputField colorInputField;
     public Image crosshair;
     public Image testcrosshair;
+    public ColorPicker enemyOutlineColorPicker;
+
 
 
     [Header("places to load the settings")]
@@ -23,6 +25,9 @@ public class OptionsMenu : MonoBehaviour
     private float defaultSens = 2f;
     private float defaultFov = 60;
     private float defaultColor = 200f;
+
+
+
 
 
     //it is awkward to change settings on player, use player prefs 
@@ -88,6 +93,13 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("SensXY", sensSlider.value);
         PlayerPrefs.SetInt("FOV", (int)fovSlider.value);
         PlayerPrefs.SetFloat("CrosshairColor", colorSlider.value);
+
+
+        PlayerPrefs.SetFloat("EnemyOutline_Red", enemyOutlineColorPicker.getRed());
+        PlayerPrefs.SetFloat("EnemyOutline_Green", enemyOutlineColorPicker.getGreen());
+        PlayerPrefs.SetFloat("EnemyOutline_Blue", enemyOutlineColorPicker.getBlue());
+        
+
         loadSettings();
     }
     
@@ -104,6 +116,9 @@ public class OptionsMenu : MonoBehaviour
         if(playerSetup){
             playerSetup.SetCameraFov();
         }
+
+        enemyOutlineColorPicker.setColor(PlayerPrefs.GetFloat("EnemyOutline_Red", defaultColor), PlayerPrefs.GetFloat("EnemyOutline_Green", defaultColor), PlayerPrefs.GetFloat("EnemyOutline_Blue", defaultColor));
+
     }
 
 

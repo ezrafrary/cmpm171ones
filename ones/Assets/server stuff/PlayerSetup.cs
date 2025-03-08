@@ -28,6 +28,9 @@ public class PlayerSetup : MonoBehaviour
 
     public OptionsMenu playerOptions;
 
+    [Header("outline")]
+    public Outline playerOutline;
+    public ColorPicker playerOutlineColorPicker;
 
     [Header("ignorelayer")]
     public GameObject playerHitbox;
@@ -38,6 +41,7 @@ public class PlayerSetup : MonoBehaviour
     void Start(){
         playerOptions.loadSettings();
         SetCameraFov();
+        setupOutlineColor();
     }
     
 
@@ -48,6 +52,11 @@ public class PlayerSetup : MonoBehaviour
         }
     }
 
+
+    public void setupOutlineColor(){
+        Color _outlineColor = new Color(playerOutlineColorPicker.getRed()/255f, playerOutlineColorPicker.getGreen()/255f, playerOutlineColorPicker.getBlue()/255f, 1.0f);
+        playerOutline.OutlineColor = _outlineColor;
+    }
 
     [PunRPC]
     public void createHitIndicator(Vector3 _damagePosition){

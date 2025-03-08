@@ -554,6 +554,8 @@ MonoBehaviour:
   hitIndicatorPrefab: {fileID: 4891976331718133355}
   playerUI: {fileID: 5592158645617666608}
   playerOptions: {fileID: 199702621353379846}
+  playerOutline: {fileID: 7423064733015834583}
+  playerOutlineColorPicker: {fileID: 6461131978383528662}
   playerHitbox: {fileID: 427471037947456812}
   playerHitboxes:
   - {fileID: 6644083619080426125}
@@ -6424,6 +6426,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 338476dd2c75ee84d9c9d16fb066698e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6461131978383528662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5958995812065204653, guid: 6294f0bf946b04745bd382cc3525f281, type: 3}
+  m_PrefabInstance: {fileID: 799413480508115835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4873808051e86746bbf3b0ae3fe3ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &7005057216617881557 stripped
