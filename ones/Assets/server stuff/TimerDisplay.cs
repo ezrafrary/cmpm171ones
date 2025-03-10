@@ -30,8 +30,6 @@ public class TimerDisplay : MonoBehaviourPunCallbacks
         string stringseconds = seconds.ToString();
         if(seconds%1 == 0){
             stringseconds = stringseconds + ".0";
-        }else{
-            Debug.Log("test2");
         }
         // Format the string as "minutes:seconds"
 

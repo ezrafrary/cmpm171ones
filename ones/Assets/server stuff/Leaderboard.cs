@@ -28,6 +28,7 @@ public class Leaderboard : MonoBehaviour
     private int maxScore;
     
 
+    public bool updateLeaderboard = true;
 
     private void Start(){
         InvokeRepeating(nameof(Refresh), 1f, refreshRate); //this line is straignt from bananadev, idk how it works but it does
@@ -43,41 +44,53 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
-    public void Refresh(){
-        foreach (var slot in slots){
-            slot.SetActive(false);
-        }
 
+    public List<Photon.Realtime.Player> printLeaderboard(){
         var sortedPlayerList = (from player in PhotonNetwork.PlayerList orderby player.CustomProperties["score"] descending select player).ToList();
-
-
-        int i = 0;
         foreach (var player in sortedPlayerList){
-            slots[i].SetActive(true);
-
-            if (player.NickName == ""){
-                player.NickName = "unnamed";
-            }
-
-            nameTexts[i].text = player.NickName;
-
-            if(player.CustomProperties["score"] != null){
-                scoreTexts[i].text = player.CustomProperties["score"].ToString();
-            }else{
-                scoreTexts[i].text = "0";
-            }
-
-            if (player.CustomProperties["kills"] != null){
-                kdTexts[i].text = player.CustomProperties["kills"] + "/" + player.CustomProperties["deaths"];
-            }else{
-                kdTexts[i].text = "0/0";
-            }
-
-            i++;
+            Debug.Log(player.NickName);
         }
-        if(sortedPlayerList.Count > 0){
-            SetWinner(sortedPlayerList[0].NickName);
-        }
+        return sortedPlayerList;
+    }
+
+
+    public void Refresh(){
+        if(updateLeaderboard){
+            foreach (var slot in slots){
+                slot.SetActive(false);
+            }
+
+            var sortedPlayerList = (from player in PhotonNetwork.PlayerList orderby player.CustomProperties["score"] descending select player).ToList();
+
+
+            int i = 0;
+            foreach (var player in sortedPlayerList){
+                slots[i].SetActive(true);
+
+                if (player.NickName == ""){
+                    player.NickName = "unnamed";
+                }
+
+                nameTexts[i].text = player.NickName;
+
+                if(player.CustomProperties["score"] != null){
+                    scoreTexts[i].text = player.CustomProperties["score"].ToString();
+                }else{
+                    scoreTexts[i].text = "0";
+                }
+
+                if (player.CustomProperties["kills"] != null){
+                    kdTexts[i].text = player.CustomProperties["kills"] + "/" + player.CustomProperties["deaths"];
+                }else{
+                    kdTexts[i].text = "0/0";
+                }
+
+                i++;
+            }
+            if(sortedPlayerList.Count > 0){
+                SetWinner(sortedPlayerList[0].NickName);
+            }
+        }       
     }
 
     private void Update(){

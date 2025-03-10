@@ -36765,6 +36765,7 @@ MonoBehaviour:
   - {fileID: 598058431}
   - {fileID: 10459171}
   winnerGUI: {fileID: 0}
+  updateLeaderboard: 1
 --- !u!114 &1794395776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38215,6 +38216,7 @@ MonoBehaviour:
   - {fileID: 85408574}
   - {fileID: 509862136}
   winnerGUI: {fileID: 134226435}
+  updateLeaderboard: 1
 --- !u!114 &1859947520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40088,6 +40090,7 @@ MonoBehaviour:
   killerHealthLeftUi: {fileID: 544196672}
   gameOverUI: {fileID: 1629241863}
   timer: {fileID: 2064097518}
+  endgameLeaderboard: {fileID: 1859947519}
   kills: 0
   deaths: 0
   score: 0

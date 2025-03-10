@@ -65,6 +65,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [Header("GameEndLogic")]
     public GameObject gameOverUI;
     public PhotonTimer timer;
+    public Leaderboard endgameLeaderboard;
 
     private string defaultname = "unnamed";
 
@@ -259,6 +260,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
 
     public void EndGame(){ //this may be buggy, needs testing
+        endgameLeaderboard.Refresh();
+        endgameLeaderboard.updateLeaderboard = false;
+        
+        
         try{
             KillAllPlayers(); //calls playerDied(), errors if player is already dead
             roomCam.SetActive(true);
@@ -276,7 +281,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public void KillAllPlayers(){
         foreach(Transform player_transform in allPlayers){
+            
             player_transform.GetComponent<PhotonView>().RPC("KillPlayer",RpcTarget.All);
+            
+
         }
         
     }
