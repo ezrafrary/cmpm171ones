@@ -263,6 +263,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
         endgameLeaderboard.Refresh();
         endgameLeaderboard.updateLeaderboard = false;
         
+
+        
         
         try{
             KillAllPlayers(); //calls playerDied(), errors if player is already dead
@@ -275,6 +277,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
             youDiedUi.SetActive(false);
             gameOverUI.SetActive(true);
             Debug.Log("game ended while player was dead");
+        }
+        
+        if(PhotonNetwork.InRoom){
+            Debug.Log("leaving room");
+            PhotonNetwork.LeaveRoom();
+        }else{
+            Debug.Log("not in room");
         }
     }
 

@@ -13,8 +13,9 @@ public class backToMenuScript : MonoBehaviour
         RoomManager.instance.score = 0;
         RoomManager.instance.SetHashes();
         
-        
-        PhotonNetwork.LeaveRoom();
+        if(PhotonNetwork.InRoom){
+            PhotonNetwork.LeaveRoom();
+        }
         SceneManager.LoadScene(0);
     }
 }

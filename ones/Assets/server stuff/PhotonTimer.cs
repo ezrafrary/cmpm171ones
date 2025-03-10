@@ -34,7 +34,9 @@ public class PhotonTimer : MonoBehaviourPunCallbacks
                     }
                     
                     // Synchronize the timer value across the network
-                    photonView.RPC("SyncTimer", RpcTarget.Others, timer);
+                    if(photonView){
+                        photonView.RPC("SyncTimer", RpcTarget.Others, timer);
+                    }
                 }else{
                     //for players who are not hosting server
                     if (timer <= 0f)
