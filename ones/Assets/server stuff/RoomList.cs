@@ -29,6 +29,21 @@ public class RoomList : MonoBehaviourPunCallbacks
     private string cachedRoomNameToCreate = "Unnamed Room";
 
 
+
+    private float autoPressRefresh = 1;
+
+    void Update(){
+        if(autoPressRefresh > 0){
+            autoPressRefresh = autoPressRefresh - Time.deltaTime;
+        }else{
+            autoPressRefresh = 5;
+            refreshRoomList();
+            //Debug.Log("refreshing");
+        }
+    }
+
+
+
     public void changeRoomJoinIndex(int newIndex){
         roomJoinSceneIndex = newIndex;
     }
