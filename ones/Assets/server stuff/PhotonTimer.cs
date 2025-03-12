@@ -9,6 +9,7 @@ public class PhotonTimer : MonoBehaviourPunCallbacks
     public float timerDuration = 60f; // The total duration for the timer (in seconds)
     public RoomManager roomManager;
     private bool hasTimerRanBefore = false;
+    public Leaderboard endgameLeaderboard;
 
 
     void Start()
@@ -46,10 +47,19 @@ public class PhotonTimer : MonoBehaviourPunCallbacks
                         OnTimerEnd(); // Call timer end action (e.g., end game, etc.)
                     }
                 }
-                
+                if(timer <= 2f && timer >= 0f){
+                    SyncEndgameLeaderboard();
+                }
             }
         }
     }
+
+    public void SyncEndgameLeaderboard(){
+        endgameLeaderboard.Refresh();
+        endgameLeaderboard.updateLeaderboard = false;
+    }
+
+
 
     // This RPC is called on all clients to sync the timer
     [PunRPC]

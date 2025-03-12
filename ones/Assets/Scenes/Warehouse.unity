@@ -42090,8 +42090,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   isTimerRunning: 1
-  timerDuration: 300
+  timerDuration: 30
   roomManager: {fileID: 1961877808}
+  endgameLeaderboard: {fileID: 1859947519}
 --- !u!114 &2064097519
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -259,9 +259,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void EndGame(){ //this may be buggy, needs testing
-        endgameLeaderboard.Refresh();
-        endgameLeaderboard.updateLeaderboard = false;
+    public void EndGame(){ //this may be buggy, needs testing, called by PhotonTimer.cs
         
 
         
