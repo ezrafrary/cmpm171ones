@@ -446,6 +446,107 @@ MonoBehaviour:
     m_Localized: "Volver al men\xFA"
     m_Metadata:
       m_Items: []
+  - m_Id: 8655033991585792
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8655115046510592
+    m_Localized: "Guardar y volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8655205278572544
+    m_Localized: 'Sensibilidad:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8655314133344256
+    m_Localized: Introducir texto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8655413479628800
+    m_Localized: Introducir texto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8655533038264320
+    m_Localized: "Color del ret\xEDculo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8655761330036736
+    m_Localized: Esquema del enemigo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8656382040891392
+    m_Localized: actualizar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8657206188072960
+    m_Localized: "El nombre de la sala \xABnombre predeterminado\xBB est\xE1 ocupado
+      ahora mismo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8657725371604992
+    m_Localized: Listo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8657913473556480
+    m_Localized: Equipamiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8658046890172416
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8658333872840704
+    m_Localized: Muertes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8658415510773760
+    m_Localized: nombre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8658491981324288
+    m_Localized: "Puntuaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8658641797668864
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8659042953486336
+    m_Localized: "Volver al men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8659088222609408
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8659133714030592
+    m_Localized: Deje de
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8659861161533440
+    m_Localized: Listo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8659986705440768
+    m_Localized: Equipamiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8660109212672000
+    m_Localized: Equipamiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8660161272373248
+    m_Localized: Listo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8660247125581824
+    m_Localized: Listo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8660321272487936
+    m_Localized: Equipamiento
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
