@@ -95,7 +95,7 @@ public class RoomList : MonoBehaviourPunCallbacks
         }
 
         // Make sure we're connected to the master server
-        if (PhotonNetwork.IsConnected) {
+        if (PhotonNetwork.IsConnected && PhotonNetwork.NetworkClientState != ClientState.JoiningLobby) {
             // Leave the current room (if any) and join the lobby to get an updated list of rooms
             PhotonNetwork.JoinLobby();
         }

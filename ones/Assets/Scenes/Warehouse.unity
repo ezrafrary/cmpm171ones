@@ -42166,7 +42166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0c17b0e477aae48b5c1cd3623d3531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  timer: 5
   isTimerRunning: 1
   timerDuration: 300
   roomManager: {fileID: 1961877808}

@@ -158,17 +158,30 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   roomCam: {fileID: 1911407110}
+  allPlayers: {fileID: 0}
   nameUI: {fileID: 933077039}
   connectingUI: {fileID: 1189424241}
   mainMenuUI: {fileID: 0}
+  mapnameText: {fileID: 0}
+  RespawnButtonBackground: {fileID: 0}
+  AutoRespawnTimer: 0
+  TimeUntilRespawnAvalible: 0
+  respawnTimer: {fileID: 0}
   youDiedUi: {fileID: 1520266746}
+  killerNameUi: {fileID: 0}
+  killerWeaponUi: {fileID: 0}
+  headshotIcon: {fileID: 0}
+  explosiveIcon: {fileID: 0}
+  bodyshotIcon: {fileID: 0}
+  killerHealthLeftUi: {fileID: 0}
   gameOverUI: {fileID: 1984469323}
   timer: {fileID: 1822017571}
+  endgameLeaderboard: {fileID: 0}
   kills: 0
   deaths: 0
+  score: 0
   playerSensX: 2
   playerSensY: 2
-  playerFov: 60
   roomNameToJoin: test
 --- !u!4 &61627479
 Transform:
@@ -2884,6 +2897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playersHolder: {fileID: 85391399}
   refreshRate: 1
+  isToggleableWithTab: 0
   slots:
   - {fileID: 907973376}
   - {fileID: 1018694863}
@@ -2912,6 +2926,8 @@ MonoBehaviour:
   - {fileID: 1291512352}
   - {fileID: 1971447974}
   - {fileID: 801614253}
+  winnerGUI: {fileID: 0}
+  updateLeaderboard: 1
 --- !u!114 &1076790142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4832,10 +4848,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0c17b0e477aae48b5c1cd3623d3531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  timer: 5
   isTimerRunning: 1
   timerDuration: 20
   roomManager: {fileID: 61627478}
+  endgameLeaderboard: {fileID: 0}
+  prevousSyncedTime: 300
 --- !u!114 &1822017572
 MonoBehaviour:
   m_ObjectHideFlags: 0

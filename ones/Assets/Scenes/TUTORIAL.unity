@@ -9494,11 +9494,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0c17b0e477aae48b5c1cd3623d3531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  timer: 5
   isTimerRunning: 1
   timerDuration: 9999
   roomManager: {fileID: 1762356014}
   endgameLeaderboard: {fileID: 965354090}
+  prevousSyncedTime: 300
 --- !u!114 &1410599579
 MonoBehaviour:
   m_ObjectHideFlags: 0

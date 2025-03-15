@@ -616,6 +616,7 @@ MonoBehaviour:
   - {fileID: 1325741714}
   - {fileID: 2037420133}
   winnerGUI: {fileID: 0}
+  updateLeaderboard: 1
 --- !u!114 &19784169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +784,7 @@ MonoBehaviour:
   - {fileID: 2102290724}
   - {fileID: 431649889}
   winnerGUI: {fileID: 1022960133}
+  updateLeaderboard: 1
 --- !u!114 &22898845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3665,10 +3667,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0c17b0e477aae48b5c1cd3623d3531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  timer: 5
   isTimerRunning: 1
   timerDuration: 300
   roomManager: {fileID: 1320271902}
+  endgameLeaderboard: {fileID: 0}
+  prevousSyncedTime: 300
 --- !u!114 &546247203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7858,6 +7862,7 @@ MonoBehaviour:
   nameUI: {fileID: 1250313330}
   connectingUI: {fileID: 1855653864}
   mainMenuUI: {fileID: 0}
+  mapnameText: {fileID: 0}
   RespawnButtonBackground: {fileID: 391338388}
   AutoRespawnTimer: 10
   TimeUntilRespawnAvalible: 2
@@ -7869,9 +7874,9 @@ MonoBehaviour:
   explosiveIcon: {fileID: 220020201}
   bodyshotIcon: {fileID: 0}
   killerHealthLeftUi: {fileID: 1885935072}
-  GameOver: 0
   gameOverUI: {fileID: 1486333494}
   timer: {fileID: 546247202}
+  endgameLeaderboard: {fileID: 0}
   kills: 0
   deaths: 0
   score: 0
