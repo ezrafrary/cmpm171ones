@@ -4,7 +4,7 @@ using Photon.Pun;
 public class PhotonTimer : MonoBehaviourPunCallbacks
 {
     private float startTime; // The time when the timer starts
-    public float timer = 0; // The timer value (in seconds)
+    public float timer = -5; // The timer value (in seconds)
     public bool isTimerRunning = true; // Whether the timer is running or not
     public float timerDuration = 60f; // The total duration for the timer (in seconds)
     public RoomManager roomManager;
