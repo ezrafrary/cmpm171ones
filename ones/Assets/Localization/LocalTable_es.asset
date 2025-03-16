@@ -547,6 +547,30 @@ MonoBehaviour:
     m_Localized: Equipamiento
     m_Metadata:
       m_Items: []
+  - m_Id: 8998421257412608
+    m_Localized: "Pulsa WASD para moverte y Espacio para saltar. Si mantienes pulsada
+      la barra espaciadora, conservar\xE1s el impulso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9004472581120000
+    m_Localized: "La munici\xF3n aparece en la parte inferior derecha, junto a tus
+      armas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017603319554048
+    m_Localized: Pulsa LMB para disparar y R para recargar. Cambia de arma con 1,
+      2 y 3.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017760320741376
+    m_Localized: "Pulsa q para correr en la direcci\xF3n que est\xE1s mirando. Si
+      mantienes pulsado el salto, conservar\xE1s la velocidad aumentada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017926733946880
+    m_Localized: Ahora pulsa [Esc] y vete a jugar de verdad.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

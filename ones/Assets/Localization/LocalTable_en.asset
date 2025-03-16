@@ -564,6 +564,29 @@ MonoBehaviour:
     m_Localized: Loadout
     m_Metadata:
       m_Items: []
+  - m_Id: 8998421257412608
+    m_Localized: Press WASD to move and Space to jump. Holding space preserves your
+      momentum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9004472581120000
+    m_Localized: Ammo is displayed on the bottom right, alongside your weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017603319554048
+    m_Localized: Press LMB to shoot and R to reload. Swap between weapons with 1,
+      2, and 3.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017760320741376
+    m_Localized: Press q to dash in the direction you're looking. Holding jump after
+      this preserves the increased dash speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017926733946880
+    m_Localized: You man now press [Esc] and go play a real game!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

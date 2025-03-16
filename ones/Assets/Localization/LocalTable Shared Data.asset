@@ -609,6 +609,26 @@ MonoBehaviour:
     m_Key: Warehouse/RoomManager /RoomCam/readyScreen/Panel/loadout/Text (TMP)
     m_Metadata:
       m_Items: []
+  - m_Id: 8998421257412608
+    m_Key: TUTORIAL/EntireMap (1)/bluewall (6)/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9004472581120000
+    m_Key: TUTORIAL/EntireMap (1)/Text (TMP) (1)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017603319554048
+    m_Key: TUTORIAL/EntireMap (1)/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017760320741376
+    m_Key: TUTORIAL/EntireMap (1)/bluewall (7)/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9017926733946880
+    m_Key: TUTORIAL/EntireMap (1)/bluewall (7)/Text (TMP) (1)
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
