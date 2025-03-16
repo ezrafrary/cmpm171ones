@@ -25,6 +25,7 @@ public class Weapon : MonoBehaviour
     public float fireRate;
 
     public float cameraRecoil;
+    public float horizontalCameraRecoil = 0;
 
     public bool isAutomatic = true;
 
@@ -285,6 +286,10 @@ public class Weapon : MonoBehaviour
         //camera.gameObject.transform.rotation = Quaternion.Euler(0,camera.gameObject.transform.rotation.y + 1, 0);//Camera recoil
         Movement movescript = GetComponentInParent<Movement>();
         movescript.recoildegrees += cameraRecoil;
+        movescript.horizontalRecoilDegrees += horizontalCameraRecoil;
+
+
+
         recoiling = true;
         recovering = false;
         playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex);

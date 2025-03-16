@@ -432,6 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 7735398053568613310}
   recoildegrees: 0
+  horizontalRecoilDegrees: 0
   walkSpeed: 4
   sprintSpeed: 8
   movementAdder: 0
@@ -6409,6 +6410,7 @@ MonoBehaviour:
   camera: {fileID: 1226191117682152934}
   fireRate: 10
   cameraRecoil: 10
+  horizontalCameraRecoil: 0
   isAutomatic: 0
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -6587,17 +6589,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadCircle: {fileID: 3589875008465337045}
-  damage: 15
+  damage: 10
   camera: {fileID: 1226191117682152934}
-  fireRate: 10
+  fireRate: 12
   cameraRecoil: 5
+  horizontalCameraRecoil: 4
   isAutomatic: 1
   reloadTime: 1.2
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   mag: 4
   maxMags: 8
-  ammo: 20
-  magAmmo: 20
+  ammo: 30
+  magAmmo: 30
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -7140,6 +7143,7 @@ MonoBehaviour:
   camera: {fileID: 1226191117682152934}
   fireRate: 1
   cameraRecoil: 10
+  horizontalCameraRecoil: 0
   isAutomatic: 0
   reloadTime: 2
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
@@ -7286,6 +7290,7 @@ MonoBehaviour:
   camera: {fileID: 1226191117682152934}
   fireRate: 30
   cameraRecoil: 20
+  horizontalCameraRecoil: 0
   isAutomatic: 1
   reloadTime: 4
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -7532,6 +7537,7 @@ MonoBehaviour:
   camera: {fileID: 1226191117682152934}
   fireRate: 1.1
   cameraRecoil: 20
+  horizontalCameraRecoil: 0
   isAutomatic: 0
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -7770,6 +7776,7 @@ MonoBehaviour:
   camera: {fileID: 1226191117682152934}
   fireRate: 5
   cameraRecoil: 10
+  horizontalCameraRecoil: 0
   isAutomatic: 0
   reloadTime: 1
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
@@ -7930,6 +7937,7 @@ MonoBehaviour:
   camera: {fileID: 1226191117682152934}
   fireRate: 7
   cameraRecoil: 10
+  horizontalCameraRecoil: 2
   isAutomatic: 1
   reloadTime: 2
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}

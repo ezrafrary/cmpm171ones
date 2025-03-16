@@ -97,6 +97,17 @@ public class MouseLook : MonoBehaviour
     void FixedUpdate()
     {
         mouseDelta.y += movescript.recoildegrees/25;
+
+        float randomRecoil = UnityEngine.Random.Range(-movescript.horizontalRecoilDegrees, movescript.horizontalRecoilDegrees)/25f;
+
+        if(randomRecoil != 0f){
+            Debug.Log(randomRecoil);
+        }
+
+
+        mouseDelta.x += randomRecoil;
+
+
         mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity.x * smoothing.x, sensitivity.y * smoothing.y));
         if(rotatePlayerAllowed){
             // Allow the script to clamp based on a desired target value.
@@ -136,5 +147,6 @@ public class MouseLook : MonoBehaviour
             }
         }
         movescript.recoildegrees = 0;
+        movescript.horizontalRecoilDegrees = 0;
     }
 }
