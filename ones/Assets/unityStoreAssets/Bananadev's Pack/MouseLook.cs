@@ -100,9 +100,7 @@ public class MouseLook : MonoBehaviour
 
         float randomRecoil = UnityEngine.Random.Range(-movescript.horizontalRecoilDegrees, movescript.horizontalRecoilDegrees)/25f;
 
-        if(randomRecoil != 0f){
-            Debug.Log(randomRecoil);
-        }
+        
 
 
         mouseDelta.x += randomRecoil;

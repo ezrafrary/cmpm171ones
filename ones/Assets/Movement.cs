@@ -106,7 +106,7 @@ public class Movement : MonoBehaviour
 
     public void updateMovementText(){
         if(movementText){
-            int intVelocity = (int)new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude;
+            int intVelocity = (int)new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).magnitude;
             movementText.text = intVelocity.ToString();
         }else{
             Debug.Log("no movementText");
@@ -171,9 +171,9 @@ public class Movement : MonoBehaviour
 
         if(timeGrounded > 1){
             if(sprinting){
-                rb.velocity += CalculateMovement(sprintSpeed + movementAdder, 1f);
+                rb.linearVelocity += CalculateMovement(sprintSpeed + movementAdder, 1f);
             }else{
-                rb.velocity += CalculateMovement(walkSpeed + movementAdder/2, 1f);
+                rb.linearVelocity += CalculateMovement(walkSpeed + movementAdder/2, 1f);
             }
 
             if(movementAdder > 0){
@@ -181,10 +181,10 @@ public class Movement : MonoBehaviour
             }
         }else{
             if(sprinting){
-                rb.velocity +=  CalculateMovement(sprintSpeed + movementAdder, 0.2f);
+                rb.linearVelocity +=  CalculateMovement(sprintSpeed + movementAdder, 0.2f);
             }else{
 
-                rb.velocity += CalculateMovement(walkSpeed + movementAdder/2, 0.2f);
+                rb.linearVelocity += CalculateMovement(walkSpeed + movementAdder/2, 0.2f);
             }
         }
 
@@ -196,7 +196,7 @@ public class Movement : MonoBehaviour
         }
 
 
-        if(new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude < sprintSpeed - 1){
+        if(new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).magnitude < sprintSpeed - 1){
             movementAdder = movementAdder - 0.5f;
         }
         if(movementAdder < 0){
@@ -217,25 +217,25 @@ public class Movement : MonoBehaviour
     }
 
     private void Dash(){
-        rb.velocity = cameraTransform.forward * (dashStrength + rb.velocity.magnitude);
+        rb.linearVelocity = cameraTransform.forward * (dashStrength + rb.linearVelocity.magnitude);
         movementAdder = movementAdder + dashMovementAdder;
         playerPhotonSoundManager.playDashSound();
         
     }
 
     private void noMovementInputs(){
-        if(rb.velocity.magnitude > 0){
-            rb.velocity = new Vector3(rb.velocity.x * 0.995f, rb.velocity.y, rb.velocity.z * 0.995f);
+        if(rb.linearVelocity.magnitude > 0){
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x * 0.995f, rb.linearVelocity.y, rb.linearVelocity.z * 0.995f);
         }
 
-        if(rb.velocity.magnitude < 0.3){
-            rb.velocity = new Vector3(0,rb.velocity.y,0);
+        if(rb.linearVelocity.magnitude < 0.3){
+            rb.linearVelocity = new Vector3(0,rb.linearVelocity.y,0);
         }
     }
 
 
     private void Jump(){
-        rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpHeight, rb.linearVelocity.z);
     }
 
 
@@ -259,7 +259,7 @@ public class Movement : MonoBehaviour
 
         targetVelocity *= speed;
 
-        Vector3 velocity = rb.velocity;
+        Vector3 velocity = rb.linearVelocity;
         
 
         if(input.magnitude > 0.5f){
