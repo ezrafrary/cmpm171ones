@@ -1,10 +1,11 @@
 {
   "dependencies": {
     "app.rive.rive-unity": {
-      "version": "file:C:/Users/ezra/Downloads/rive-unity-main (1)/rive-unity-main/package",
+      "version": "https://github.com/rive-app/rive-unity.git?path=package#v0.3.3",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "4e8dca6983f4b2f4e50b146df855f86503b122dd"
     },
     "com.unity.addressables": {
       "version": "2.2.2",

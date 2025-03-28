@@ -76,7 +76,7 @@ public class Bullet : MonoBehaviour
     void Start(){
         pv = GetComponent<PhotonView>();
         if(timeUntilBulletIsVisible > 0){
-            Debug.Log("bulletmadeinvisible");
+            //Debug.Log("bulletmadeinvisible");
             GetComponent<MeshRenderer>().enabled = false;
         }
         
