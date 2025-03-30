@@ -56,6 +56,9 @@ public class escapeMenu : MonoBehaviour
 
 
     private void openMenu(){
+        if(!escapemenu){
+            return;
+        }
         escapemenu.SetActive(true);
         weaponSwitcher.preventFire();
         menuOpen = true;
@@ -63,6 +66,9 @@ public class escapeMenu : MonoBehaviour
         mouseLook.LockPlayerMouseMovementRotation();
     }
     private void closeMenu(){
+        if(!escapemenu){
+            return;
+        }
         escapemenu.SetActive(false);
         weaponSwitcher.allowFire();
         mouseLook.LockCursor();

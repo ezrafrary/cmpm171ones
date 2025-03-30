@@ -17,6 +17,9 @@ public class Rive_mainMenu : MonoBehaviour
     public GameObject MenuCanvas;
     public GameObject LoadoutMenuGameObject;
 
+    [Header("SettingsIcon")]
+    public GameObject SettingsMenuGameobject;
+
 
 
 
@@ -42,24 +45,11 @@ public class Rive_mainMenu : MonoBehaviour
         }
 
 
-        // Access specific event properties
-        if (evt.Name.StartsWith("rating"))
-        {
-
-            // Access properties directly and cast them
-            if (evt.Properties.TryGetValue("rating", out object rating))
-            {
-                float ratingValue = (float)rating;
-                Debug.Log($"Rating: {ratingValue}");
-            }
-
-            if (evt.Properties.TryGetValue("message", out object message))
-            {
-                string messageValue = message as string;
-                Debug.Log($"Message: {messageValue}");
-            }
-
+        if(evt.Name.StartsWith("SettingsButtonClicked")){
+            MenuCanvas.SetActive(false);
+            SettingsMenuGameobject.SetActive(true);
         }
+
     }
 
     private void OnDisable()

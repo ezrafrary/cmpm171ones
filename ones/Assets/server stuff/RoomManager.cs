@@ -104,6 +104,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         if(mapnameText){
             mapnameText.text = SceneManager.GetActiveScene().name;
         }
+        SceneManager.LoadScene(6, LoadSceneMode.Additive); //escapemenu index
     }
 
 

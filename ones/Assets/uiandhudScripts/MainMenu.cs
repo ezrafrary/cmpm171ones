@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class MainMenu : MonoBehaviour
         optionsMenuObj.loadSettings();
         loadName();
         SetDefaultWeapons();
+        SceneManager.LoadScene(6, LoadSceneMode.Additive); //escapemenu index
     }
 
 
