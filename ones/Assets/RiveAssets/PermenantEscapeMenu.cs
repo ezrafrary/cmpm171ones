@@ -50,6 +50,10 @@ public class PermenantEscapeMenu : MonoBehaviour
 
 
 
+    public void testButton(){
+        Debug.Log("ButtonPressed");
+    }
+
 
     public void setMouselook(){
         MouseLook tempmouseLook = FindFirstObjectByType<MouseLook>();

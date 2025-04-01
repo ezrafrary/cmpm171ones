@@ -303,7 +303,7 @@ public class Weapon : MonoBehaviour
 
 
     void spawnBullet(){
-        var bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, Camera.main.transform.rotation * bulletPrefab.transform.rotation);
+        var bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, camera.transform.rotation * bulletPrefab.transform.rotation);
         bullet.gameObject.tag = "projectile";
         bullet.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.forward * bulletSpeed;
         
