@@ -27,12 +27,22 @@ public class WeaponSwitcher : MonoBehaviour
 
 
 
+    [Header("currentWeaponIds")]
+    public int slot1;
+    public int slot2;
+    public int slot3;
+
     private Dictionary<int, Quaternion> weaponInitialRotations = new Dictionary<int, Quaternion>();
 
     // Start is called before the first frame update
     void Start()
     {
+        slot1 = PlayerPrefs.GetInt("Slot1_weapon");
+        slot2 = PlayerPrefs.GetInt("Slot2_weapon");
+        slot3 = PlayerPrefs.GetInt("Slot3_weapon");
         SelectWeapon();
+
+
     }
 
     // Update is called once per frame
@@ -86,17 +96,17 @@ public class WeaponSwitcher : MonoBehaviour
         foreach(Transform _weapon in transform){
 
             if(selectedWeapon == 0){
-                if(i == PlayerPrefs.GetInt("Slot1_weapon")){
+                if(i == slot1){
                     return i;              
                 }
             }
             if(selectedWeapon == 1){
-                if(i == PlayerPrefs.GetInt("Slot2_weapon")){
+                if(i == slot2){
                     return i;              
                 }
             }
             if(selectedWeapon == 2){
-                if(i == PlayerPrefs.GetInt("Slot3_weapon")){
+                if(i == slot3){
                     return i;              
                 }
             }
@@ -111,13 +121,13 @@ public class WeaponSwitcher : MonoBehaviour
 
         int i = 0;
         foreach(Transform _weapon in transform){
-            if(i == PlayerPrefs.GetInt("Slot1_weapon")){
+            if(i == slot1){
                 equipmentSlot1Text.text = _weapon.gameObject.name;
             }
-            if(i == PlayerPrefs.GetInt("Slot2_weapon")){
+            if(i == slot2){
                 equipmentSlot2Text.text = _weapon.gameObject.name;
             }
-            if(i == PlayerPrefs.GetInt("Slot3_weapon")){
+            if(i == slot3){
                 equipmentSlot3Text.text = _weapon.gameObject.name;
             }
             i++;
@@ -212,18 +222,18 @@ public class WeaponSwitcher : MonoBehaviour
         setWeaponUiText();
         int _selectedWeapon = selectedWeapon;
         if(_selectedWeapon == 0){
-            if(PlayerPrefs.GetInt("Slot1_weapon") != 0){
-                _selectedWeapon = PlayerPrefs.GetInt("Slot1_weapon");
+            if(slot1 != 0){
+                _selectedWeapon = slot1;
             }
         }
         if(_selectedWeapon == 1){
-            if(PlayerPrefs.GetInt("Slot2_weapon") != 0){
-                _selectedWeapon = PlayerPrefs.GetInt("Slot2_weapon");
+            if(slot2 != 0){
+                _selectedWeapon = slot2;
             }
         }
         if(_selectedWeapon == 2){
-            if(PlayerPrefs.GetInt("Slot3_weapon") != 0){
-                _selectedWeapon = PlayerPrefs.GetInt("Slot3_weapon");
+            if(slot3 != 0){
+                _selectedWeapon = slot3;
             }
         }
 

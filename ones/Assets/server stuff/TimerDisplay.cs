@@ -10,7 +10,7 @@ public class TimerDisplay : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        photonTimer = FindObjectOfType<PhotonTimer>(); // Find the PhotonTimer script in the scene
+        photonTimer = FindFirstObjectByType<PhotonTimer>(); // Find the PhotonTimer script in the scene
         if (timerText == null) 
         {
             Debug.LogError("TimerText UI element not assigned!");

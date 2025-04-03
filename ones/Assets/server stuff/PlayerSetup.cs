@@ -37,6 +37,11 @@ public class PlayerSetup : MonoBehaviour
     public GameObject[] playerHitboxes;
 
     int defaultFov = 60;
+    private float refreshSettingsTimer = 3;
+
+
+
+
 
     void Start(){
         playerOptions.loadSettings();
@@ -44,6 +49,19 @@ public class PlayerSetup : MonoBehaviour
         setupOutlineColor();
     }
     
+    void Update(){
+        if(refreshSettingsTimer > 0){
+            refreshSettingsTimer -= Time.deltaTime;
+        }else{
+            refreshSettingsTimer = 3;
+            playerOptions.loadSettings();
+            SetCameraFov();
+            setupOutlineColor();
+        }
+    }
+
+
+
 
     public void Setup_SetIgnoreHitboxes(){
         playerHitbox.layer = LayerMask.NameToLayer("clientSidePlayerHitbox");
