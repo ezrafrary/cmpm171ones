@@ -107,6 +107,8 @@ MonoBehaviour:
   weaponName: 
   playerName: 
   killerHealthLeft: 0
+  replaySystem: {fileID: 0}
+  parentPhotonViewID: 0
   damage: 35
   explosiveDamage: 20
   explosiveRadius: 3

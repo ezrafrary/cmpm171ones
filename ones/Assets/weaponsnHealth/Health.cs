@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     public int maxHealth;
 
 
+
     [Header("UI")]
     public TextMeshProUGUI healthText;
     public GameObject respawnUI;
@@ -37,7 +38,7 @@ public class Health : MonoBehaviour
 
 
     [PunRPC]
-    public void TakeDamage(int _damage, string damageDealer, string weaponName, string killMethod, int killerHealthLeft){
+    public void TakeDamage(int _damage, string damageDealer, string weaponName, string killMethod, int killerHealthLeft, int replayID){
 
         if (hasDied){ //making sure a player cant die twice in one frame. 
             return;
@@ -49,7 +50,7 @@ public class Health : MonoBehaviour
         if(health <= 0){
             hasDied = true;
             if(IsLocalPlayer){
-                RoomManager.instance.PlayerDied(damageDealer, weaponName, killMethod, killerHealthLeft); //calls spawnplayer() in here
+                RoomManager.instance.PlayerDied(damageDealer, weaponName, killMethod, killerHealthLeft, replayID); //calls spawnplayer() in here
                 RoomManager.instance.deaths++;
                 RoomManager.instance.SetHashes();
             }
@@ -72,7 +73,7 @@ public class Health : MonoBehaviour
     [PunRPC]
     public void KillPlayer(){
         if (health > 0){ //This seems pointless, but if you use OnTriggerEnter as a damage field, it gets called twice in one frame, duplicating a client 
-            TakeDamage(health, null, null, null, 0);
+            TakeDamage(health, null, null, null, 0, -1);
         }
     }
 }

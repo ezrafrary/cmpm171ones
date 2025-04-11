@@ -71,6 +71,7 @@
     <Compile Include="Assets\server stuff\PlayerSetup.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\ClipHolder.cs" />
     <Compile Include="Assets\weaponsnHealth\Weapon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\gameplay prefabs\spawnpoint.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\uiandhudScripts\MainMenu.cs" />
     <Compile Include="Assets\uiandhudScripts\TextManagerScript.cs" />
     <Compile Include="Assets\weaponsnHealth\PlayerHitboxScore.cs" />
+    <Compile Include="Assets\ReplayClip.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PushPhysics.cs" />
     <Compile Include="Assets\weaponsnHealth\killZone.cs" />
     <Compile Include="Assets\server stuff\destoryAfterTime.cs" />
@@ -120,12 +122,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\UserInput.cs" />
     <Compile Include="Assets\uiandhudScripts\FaceObjectToCamera.cs" />
+    <Compile Include="Assets\ReplaySystem.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
     <Compile Include="Assets\server stuff\RoomList.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\MatchRotation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\weaponsnHealth\HealthPickup.cs" />
@@ -133,6 +137,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Movement.cs" />
+    <Compile Include="Assets\ReplayPlayerOnly.cs" />
     <Compile Include="Assets\weaponsnHealth\scoreZone.cs" />
     <Compile Include="Assets\server stuff\RoomManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />

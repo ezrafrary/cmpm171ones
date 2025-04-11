@@ -16,6 +16,9 @@ public class Weapon : MonoBehaviour
         differenlty from how the video does it. 
     */
 
+
+    public GameObject playerShooting;
+
     public Image reloadCircle;
 
     public int damage;
@@ -91,6 +94,7 @@ public class Weapon : MonoBehaviour
 
     private bool wasReloadingLastFrame = false;
 
+    public ReplaySystem replaySystem;
 
 
     public void SetReloadCircle(){
@@ -294,22 +298,30 @@ public class Weapon : MonoBehaviour
         recovering = false;
         playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex);
         if(bulletPrefab){
-            spawnBullet();
-
+            var testBullet = spawnBullet();
         }else{
             Debug.Log("no bullet prefab");
         }
     }
 
 
-    void spawnBullet(){
+    
+
+
+    GameObject spawnBullet(){
         var bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, camera.transform.rotation * bulletPrefab.transform.rotation);
+        //Debug.Log("bullet type: " + bullet.GetType());
         bullet.gameObject.tag = "projectile";
         bullet.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.forward * bulletSpeed;
         
        
 
         Bullet bulletSctipt = bullet.GetComponent<Bullet>();
+
+        bulletSctipt.parentPhotonViewID = playerShooting.GetComponent<PhotonView>().ViewID;
+        bullet.GetComponent<PhotonView>().RPC("syncParentPVID", RpcTarget.AllBuffered, bulletSctipt.parentPhotonViewID);
+        
+        
         bulletSctipt.playerName = playerObjForIgnoreHitbox.GetComponent<PlayerSetup>().nickname;
         bulletSctipt.weaponName = gameObject.name;
         bulletSctipt.killerHealthLeft = playerObjForIgnoreHitbox.GetComponent<Health>().health;
@@ -319,6 +331,8 @@ public class Weapon : MonoBehaviour
         bulletSctipt.playerPhotonSoundManager = playerPhotonSoundManager;
         bulletSctipt.damage = damage;
         bulletSctipt.startPos = bulletStartPoint;
+        
+        
 
 
         // if(bulletSctipt.scalingDirection == "z"){
@@ -343,7 +357,8 @@ public class Weapon : MonoBehaviour
         }else{
             Debug.Log("nohitmarker");
         }
-        
+
+        return bullet;
     }
 
     void Recoil(){

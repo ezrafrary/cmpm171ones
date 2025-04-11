@@ -9,6 +9,7 @@ public class WeaponSwitcher : MonoBehaviour
     public new Animation animation;
     public AnimationClip draw;
 
+
     public int selectedWeapon = 0;
 
 

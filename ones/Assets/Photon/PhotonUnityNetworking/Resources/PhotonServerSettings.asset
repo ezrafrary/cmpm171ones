@@ -55,6 +55,12 @@ MonoBehaviour:
   - createHitIndicator
   - TakeDamageWithObj
   - playDashSound_RPC
+  - clipThatRPC
+  - testKillMessage
+  - GiveBulletReplay
+  - SetupReplaySystem
+  - SetBulletParentPVID
+  - syncParentPVID
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

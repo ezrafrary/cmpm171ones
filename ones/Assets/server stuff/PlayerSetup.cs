@@ -39,6 +39,8 @@ public class PlayerSetup : MonoBehaviour
     int defaultFov = 60;
     private float refreshSettingsTimer = 3;
 
+    [Header("replayStuff")]
+    public ReplaySystem replaySystem;
 
 
 
@@ -116,7 +118,8 @@ public class PlayerSetup : MonoBehaviour
 
         movement.enabled = true;
         camera.SetActive(true);
-        playerModel.GetComponent<SkinnedMeshRenderer>().enabled = false;
+        playerModel.layer = LayerMask.NameToLayer("playerHitBox");
+        //playerModel.GetComponent<SkinnedMeshRenderer>().enabled = false;
         Setup_SetIgnoreHitboxes();
     }
 

@@ -44,6 +44,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public float AutoRespawnTimer;
     public float TimeUntilRespawnAvalible;
     public TextMeshProUGUI respawnTimer;
+    public int deathcamIndex = 0;
+    public ClipHolder clipHolder;
+    public int currentReplayClipIndex = -1;
+
+
 
     private float _AutoRespawnTimer;
     private float _TimeUntilRespawnAvalible;
@@ -132,6 +137,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
 
 
+
+    
+
     public void changeSens(float _sensX, float _sensY){
         playerSensX = _sensX;
         playerSensY = _sensY;
@@ -199,12 +207,36 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void PlayerDied(string _damageDealer, string _weaponName, string _killMethod, int killerHealthLeft){ //gets called by Health.cs when the player dies
+    IEnumerator WaitAndDoSomething()
+    {
+        yield return new WaitForSeconds(2.1f);
+        try{
+            clipHolder.playClip(clipHolder.savedReplays.Count - 1);
+        }catch{
+            
+        }
+    }
+
+
+
+    public void PlayerDied(string _damageDealer, string _weaponName, string _killMethod, int killerHealthLeft, int replayID){ //gets called by Health.cs when the player dies
         //Debug.Log("player died");
         MouseLook.UnlockCursorStatic();
         roomCam.SetActive(true);
         youDiedUi.SetActive(true);
         SetDeathScreenUi(_damageDealer, _weaponName, _killMethod, killerHealthLeft);
+
+
+        Debug.Log("currentClipToPlay: " + clipHolder.savedReplays.Count);
+        
+        
+        StartCoroutine(WaitAndDoSomething());
+        
+
+        // if(replayID != -1){
+        //     Debug.Log("Play replay " + replayID);
+        //     clipHolder.playClip(replayID);
+        // }
     }
 
 

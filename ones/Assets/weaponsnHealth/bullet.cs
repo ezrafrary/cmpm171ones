@@ -11,6 +11,9 @@ public class Bullet : MonoBehaviour
     public string weaponName;
     public string playerName;
     public int killerHealthLeft;
+    public ReplaySystem replaySystem;
+
+    public int parentPhotonViewID;
 
     [Space]
 
@@ -85,6 +88,10 @@ public class Bullet : MonoBehaviour
         if(startPos){
             oldPos.transform.position = startPos.position;
         }
+
+        if(pv.IsMine){
+            pv.RPC("SetupReplaySystem",RpcTarget.AllBuffered);
+        }
     }
     void FixedUpdate(){
         projectilelifetime--;
@@ -108,7 +115,7 @@ public class Bullet : MonoBehaviour
         if(Physics.Linecast(oldPos.transform.position, transform.position, out RaycastHit hit, LayerMask.NameToLayer("clientSidePlayerHitbox"))){
             //Debug.Log("hit: " + hit + " hit.collider: " + hit.collider);
             if(hit.collider.CompareTag("ignoreBullets")){
-                Debug.Log("hit something that ignores bullets");
+                //Debug.Log("hit something that ignores bullets");
             }else if(hit.collider.CompareTag("projectile")){
                 //Debug.Log("hit projecitle");
             }else{
@@ -120,6 +127,41 @@ public class Bullet : MonoBehaviour
         oldPos.transform.position = transform.position;
     }
     
+
+    public static GameObject GetObjectByPhotonID(int photonViewID)
+    {
+        PhotonView targetView = PhotonView.Find(photonViewID);
+        if (targetView != null)
+        {
+            return targetView.gameObject;
+        }
+        else
+        {
+            Debug.LogWarning($"No GameObject found with PhotonView ID {photonViewID}");
+            return null;
+        }
+    }
+
+    [PunRPC]
+    public void syncParentPVID(int viewID){
+        parentPhotonViewID = viewID;
+    }
+
+    [PunRPC]
+    public void clipThatRPC(){
+        replaySystem.clipThatWait2();
+    }
+
+    [PunRPC]
+    public void SetupReplaySystem() {
+        if(GetObjectByPhotonID(parentPhotonViewID)){
+            if(GetObjectByPhotonID(parentPhotonViewID).GetComponent<PlayerSetup>().replaySystem){
+                replaySystem = GetObjectByPhotonID(parentPhotonViewID).GetComponent<PlayerSetup>().replaySystem;
+                //Debug.Log(GetObjectByPhotonID(parentPhotonViewID).GetComponent<PlayerSetup>().nickname); 
+            }
+        }
+        
+    }
 
 
     void bulletHitSomething(Collider other){
@@ -143,7 +185,7 @@ public class Bullet : MonoBehaviour
         if(other.transform.gameObject == ignoreHitbox){
             //Debug.Log("hitignrorehitbox");
             return;
-        }
+        }   
 
         foreach (GameObject ihb in ignoreHitboxes){
             if(other.transform.gameObject == ihb){
@@ -157,6 +199,7 @@ public class Bullet : MonoBehaviour
         bool bulletHitPlayer = false;//used to decide which hitvfx to dispaly
 
         if (other.transform.gameObject.GetComponent<Health>()){
+            int replayID = -1;
             playerPhotonSoundManager.playHitSound();
             if(hitVFX){
                 PhotonNetwork.Instantiate(hitVFX.name, oldPos.transform.position, Quaternion.identity);
@@ -169,8 +212,10 @@ public class Bullet : MonoBehaviour
                 RoomManager.instance.score += scoreGainedForKill;
                 RoomManager.instance.SetHashes();
                 playerPhotonSoundManager.playKillSound();
+                GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
+                replayID = 1;
             }
-            other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage, playerName, weaponName, "body", killerHealthLeft);
+            other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage, playerName, weaponName, "body", killerHealthLeft, replayID);
             other.transform.gameObject.GetComponent<PhotonView>().RPC("createHitIndicator", RpcTarget.All, startLocation);
             //Debug.Log("dealt damage");
             //hitmarker
@@ -180,6 +225,7 @@ public class Bullet : MonoBehaviour
 
 
         if (other.transform.gameObject.GetComponent<damageModifierHitbox>()){
+            int replayID = -1;
             if(hitVFX){
                 PhotonNetwork.Instantiate(hitVFX.name, oldPos.transform.position, Quaternion.identity);
                 bulletHitPlayer = true;
@@ -192,9 +238,11 @@ public class Bullet : MonoBehaviour
                 RoomManager.instance.score += scoreGainedForKill;
                 RoomManager.instance.SetHashes();
                 playerPhotonSoundManager.playKillSound();
+                replayID = 1;
+                GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
             }
 
-            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(damage, playerName, weaponName, null, killerHealthLeft);
+            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(damage, playerName, weaponName, null, killerHealthLeft, replayID);
             if (other.transform.gameObject.GetComponent<damageModifierHitbox>().hitboxId == "head"){   
                 headshotHitmarker.GetComponent<Hitmarker>().createHitmarker();
                 if(!playerDead){
@@ -223,6 +271,7 @@ public class Bullet : MonoBehaviour
     void ExplosionDamage(Vector3 center, float radius)
     {
         Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+        int replayID = -1;
         bool _playerDead = false;
         foreach (var hitCollider in hitColliders)
         {
@@ -232,15 +281,19 @@ public class Bullet : MonoBehaviour
 
                     if (explosiveDamage >= hitCollider.transform.gameObject.GetComponent<Health>().health && hitCollider.transform.gameObject.GetComponent<Health>().health > 0){
                         //kill
+                        
                         playerPhotonSoundManager.playKillSound();
                         if(!hitCollider.transform.gameObject.GetComponent<Health>().IsLocalPlayer){
+                            replayID = 1;
                             RoomManager.instance.kills++;
                             RoomManager.instance.score += scoreGainedForKill;
                             RoomManager.instance.SetHashes();
+                            
+                            GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
                         }
                         _playerDead = true;
                     }
-                    hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage, playerName, weaponName, "explosion", killerHealthLeft);
+                    hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage, playerName, weaponName, "explosion", killerHealthLeft, replayID);
                 }
                 if(!_playerDead){//playhitsound will overwrite playekillsound
                     playerPhotonSoundManager.playHitSound();

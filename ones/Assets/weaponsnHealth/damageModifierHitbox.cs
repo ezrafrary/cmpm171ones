@@ -10,9 +10,9 @@ public class damageModifierHitbox : MonoBehaviour
 
     public GameObject healthHolder;
 
-    public void Modified_TakeDamage(int _damage, string damageDealer, string damagerWeapon, string hitlocation, int killerHealthLeft){
+    public void Modified_TakeDamage(int _damage, string damageDealer, string damagerWeapon, string hitlocation, int killerHealthLeft, int replayID){
         int modifiedDamage = (int)_damage * (int)damageMultiplier;
-        healthHolder.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, modifiedDamage, damageDealer, damagerWeapon, hitboxId, killerHealthLeft);
+        healthHolder.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, modifiedDamage, damageDealer, damagerWeapon, hitboxId, killerHealthLeft, replayID);
     }   
 
 }

@@ -9,6 +9,7 @@ TagManager:
   - projectile
   - ignoreBullets
   - Bullet
+  - recordingCam
   layers:
   - Default
   - TransparentFX
