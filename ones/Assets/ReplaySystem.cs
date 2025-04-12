@@ -24,7 +24,7 @@ public class ReplaySystem : MonoBehaviour
     private ReplayClip currentClip;
 
     private bool IsRecording = false; //not used i guess
-    private bool IsPlaying = false;
+    //private bool IsPlaying = false;
     private float captureTimer = 0f;
     private int maxFrameCount;
 
@@ -117,7 +117,7 @@ public class ReplaySystem : MonoBehaviour
         currentClip = new ReplayClip(renderTexture.width, renderTexture.height, TextureFormat.RGB24);
         IsRecording = true;
         captureTimer = 0f;
-        Debug.Log("Recording started.");
+        //Debug.Log("Recording started.");
     }
 
     void StopRecording()
@@ -126,14 +126,14 @@ public class ReplaySystem : MonoBehaviour
         {
             var globalReplaySystem = FindFirstObjectByType<ClipHolder>();
 
-            Debug.Log("ClipHolder found: " + globalReplaySystem); //tester
+            //Debug.Log("ClipHolder found: " + globalReplaySystem); //tester
             if(globalReplaySystem){
                 globalReplaySystem.savedReplays.Add(currentClip);
                 //Debug.Log(globalReplaySystem.savedReplays.Count);
             }else{
                 Debug.Log("no global replay system");
             }
-            Debug.Log($"Recording stopped. Saved frames: {currentClip.rawFrames.Count}");
+            //Debug.Log($"Recording stopped. Saved frames: {currentClip.rawFrames.Count}");
         }
 
         IsRecording = false;
@@ -154,7 +154,7 @@ public class ReplaySystem : MonoBehaviour
 
     IEnumerator Playback(ReplayClip clip)
     {
-        IsPlaying = true;
+        //IsPlaying = true;
 
         if (playbackImage != null)
             playbackImage.gameObject.SetActive(true);
@@ -172,7 +172,7 @@ public class ReplaySystem : MonoBehaviour
         if (playbackImage != null)
             playbackImage.gameObject.SetActive(false);
 
-        IsPlaying = false;
+        //IsPlaying = false;
         //StartRecording();
     }
 

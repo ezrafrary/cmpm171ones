@@ -15,13 +15,6 @@ public class ClipHolder : MonoBehaviour
     public int clipIndexToPlay = 0;
 
 
-
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.M)){
-            playClip(clipIndexToPlay);
-        }
-    }
-
     public void playClip(int replayID){
         replayObj.PlayClip(savedReplays[replayID]);
     }

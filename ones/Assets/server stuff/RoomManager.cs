@@ -227,7 +227,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         SetDeathScreenUi(_damageDealer, _weaponName, _killMethod, killerHealthLeft);
 
 
-        Debug.Log("currentClipToPlay: " + clipHolder.savedReplays.Count);
+        //Debug.Log("currentClipToPlay: " + clipHolder.savedReplays.Count);
         
         
         StartCoroutine(WaitAndDoSomething());
