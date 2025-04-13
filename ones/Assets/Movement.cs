@@ -140,8 +140,14 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate(){
         if(input.magnitude < 0.5f){
-            if(playerPhotonView){
-                playerPhotonView.RPC("PlayIdleAnimation",RpcTarget.All);
+            if(playerPhotonView != null){
+                if(playerPhotonView.IsMine){
+                    if(playerPhotonView.ViewID != 0){
+                        if(GetComponent<Health>().health > 0){
+                            playerPhotonView.RPC("PlayIdleAnimation",RpcTarget.All);
+                        }
+                    }
+                }
             }
         }
 

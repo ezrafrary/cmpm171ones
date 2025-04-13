@@ -7,6 +7,7 @@ public class destoryAfterTime : MonoBehaviour
 {
     public int TimeUntilDestory = 10;
     private PhotonView pv;
+    public bool isPhotonObject = true;
 
     void Start(){
         pv = gameObject.GetComponent<PhotonView>();
@@ -16,7 +17,11 @@ public class destoryAfterTime : MonoBehaviour
         if(TimeUntilDestory > 0){
             TimeUntilDestory--;
         }else{
-            DestorySelf();
+            if(isPhotonObject){
+                DestorySelf();
+            }else{
+                Destroy(gameObject);
+            }
         }
         
     }

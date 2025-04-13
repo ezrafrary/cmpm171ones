@@ -54,7 +54,9 @@ public class Health : MonoBehaviour
                 RoomManager.instance.deaths++;
                 RoomManager.instance.SetHashes();
             }
+            RoomManager.instance.SpawnRagDoll(transform.position, transform.rotation);
             Destroy(gameObject);
+
         }
     }
 

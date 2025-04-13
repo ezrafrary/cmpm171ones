@@ -71,7 +71,7 @@
     <Compile Include="Assets\server stuff\PlayerSetup.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-    <Compile Include="Assets\ClipHolder.cs" />
+    <Compile Include="Assets\replayLogic\ClipHolder.cs" />
     <Compile Include="Assets\weaponsnHealth\Weapon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\gameplay prefabs\spawnpoint.cs" />
@@ -85,7 +85,6 @@
     <Compile Include="Assets\uiandhudScripts\MainMenu.cs" />
     <Compile Include="Assets\uiandhudScripts\TextManagerScript.cs" />
     <Compile Include="Assets\weaponsnHealth\PlayerHitboxScore.cs" />
-    <Compile Include="Assets\ReplayClip.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PushPhysics.cs" />
     <Compile Include="Assets\weaponsnHealth\killZone.cs" />
     <Compile Include="Assets\server stuff\destoryAfterTime.cs" />
@@ -122,7 +121,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\UserInput.cs" />
     <Compile Include="Assets\uiandhudScripts\FaceObjectToCamera.cs" />
-    <Compile Include="Assets\ReplaySystem.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
     <Compile Include="Assets\server stuff\RoomList.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -137,11 +135,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Movement.cs" />
-    <Compile Include="Assets\ReplayPlayerOnly.cs" />
     <Compile Include="Assets\weaponsnHealth\scoreZone.cs" />
     <Compile Include="Assets\server stuff\RoomManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Localization\language.cs" />
+    <Compile Include="Assets\replayLogic\ReplaySystem.cs" />
     <Compile Include="Assets\weaponsnHealth\AmmoPickup.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\MouseComponent.cs" />
     <Compile Include="Assets\RiveAssets\PermenantEscapeMenu.cs" />
@@ -157,13 +155,12 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\uiandhudScripts\loadoutScreen.cs" />
+    <Compile Include="Assets\replayLogic\ReplayClip.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
-    <Compile Include="Assets\OfflinePlayerLeaderboard.cs" />
     <Compile Include="Assets\RiveDemoMenuController.cs" />
     <Compile Include="Assets\uiandhudScripts\Hitmarker.cs" />
-    <Compile Include="Assets\OfflinePlayerLeaderboardItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
@@ -176,6 +173,7 @@
     <Compile Include="Assets\unityStoreAssets\TeKniKo_Free\Power_Ups\Scripts\ObjectBounce.cs" />
     <Compile Include="Assets\uiandhudScripts\switchMenus.cs" />
     <Compile Include="Assets\sound\PlayerPhotonSoundManager.cs" />
+    <Compile Include="Assets\replayLogic\ReplayPlayerOnly.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
   </ItemGroup>

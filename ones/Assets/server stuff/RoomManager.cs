@@ -91,6 +91,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public string roomNameToJoin = "test";
 
 
+    [Header("Ragdolls")]
+    public GameObject ragdollPrefab;
 
 
 
@@ -217,7 +219,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-
+    public void SpawnRagDoll(Vector3 spawnPos, Quaternion inputQuat){
+        Instantiate(ragdollPrefab, spawnPos, inputQuat);
+    }
 
     public void PlayerDied(string _damageDealer, string _weaponName, string _killMethod, int killerHealthLeft, int replayID){ //gets called by Health.cs when the player dies
         //Debug.Log("player died");
