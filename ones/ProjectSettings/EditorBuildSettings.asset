@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/escapeMenuUI.unity
     guid: d3ed987be3e95f547b235ee52574f452
+  - enabled: 1
+    path: Assets/Scenes/Aquatic_base.unity
+    guid: 03833e0b13f4cdb409e3f6da9d81c5fe
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 8fe596ffed7760b408b03e7d5e7f50ba, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: fdb36885e3b392b46b4acfc620450a6a, type: 2}
