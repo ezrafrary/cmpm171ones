@@ -6201,6 +6201,7 @@ MonoBehaviour:
   playerSensX: 2
   playerSensY: 2
   roomNameToJoin: test
+  ragdollPrefab: {fileID: 7155695674808585518, guid: cba2239967121ff40bfffed554d22932, type: 3}
 --- !u!4 &878254515
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class PermenantEscapeMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    //singleton
+    public static PermenantEscapeMenu Instance;
+
 
     [Header("Rive")]
     [SerializeField] private RiveWidget m_riveWidget;
@@ -40,7 +43,11 @@ public class PermenantEscapeMenu : MonoBehaviour
     private bool buttonWasPressedLastFrame = false;
     private bool optionsMenuOpen = false;
     private bool loadoutMenuOpen = false;
-    
+
+
+    void Awake(){
+        Instance = this;
+    }
 
     void Start()
     {

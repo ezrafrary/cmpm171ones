@@ -46,19 +46,25 @@ public class ColorPicker : MonoBehaviour
 
 
     public void redSliderChanged(){
-        redText.text = redSlider.value.ToString();
+        if(redText){
+            redText.text = redSlider.value.ToString();
+        }
         red = (int)redSlider.value;
         updatePreviewImage();
     }
     
     public void greenSliderChanged(){
-        greenText.text = greenSlider.value.ToString();
+        if(greenText){
+            greenText.text = greenSlider.value.ToString();
+        }
         green = (int)greenSlider.value;
         updatePreviewImage();
     }
     
     public void blueSliderChanged(){
-        blueText.text = blueSlider.value.ToString();
+        if(blueText){
+            blueText.text = blueSlider.value.ToString();
+        }
         blue = (int)blueSlider.value;
         updatePreviewImage();
     }
@@ -81,9 +87,15 @@ public class ColorPicker : MonoBehaviour
         redSlider.value = R;
         greenSlider.value = G;
         blueSlider.value = B;
-        redText.text = R.ToString();
-        greenText.text = G.ToString();
-        blueText.text = B.ToString();
+        if(redText){
+            redText.text = R.ToString();
+        }
+        if(greenText){
+            greenText.text = G.ToString();
+        }
+        if(blueText){
+            blueText.text = B.ToString();
+        }
     }
 
 }

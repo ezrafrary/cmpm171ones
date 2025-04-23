@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
 
     void Start(){
-        optionsMenuObj.loadSettings();
+        //optionsMenuObj.loadSettings();
         loadName();
         SetDefaultWeapons();
         SceneManager.LoadScene(6, LoadSceneMode.Additive); //escapemenu index

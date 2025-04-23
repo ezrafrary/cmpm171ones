@@ -135,6 +135,12 @@ public class OptionsMenu : MonoBehaviour
         crosshairColorPicker.setColor(PlayerPrefs.GetFloat("CrosshairColor_Red", defaultColor), PlayerPrefs.GetFloat("CrosshairColor_Green", defaultColor), PlayerPrefs.GetFloat("CrosshairColor_Blue", defaultColor));
     }
 
+    //---------------------------------------------------
+    //WARNING OF DEATH: DO NOT CALL THIS INSIDE OF saveSettingsButtonPressed, recursive loop with no exit condition that will crash unity. you have been warned
+    //----------------------------------------------------
+    public void permenantEscapeCloseEscapeMenu(){
+        PermenantEscapeMenu.Instance.closeOptionsMenu();
+    }
 
     public void saveSettingsButtonPressed(){
         saveSettings();
