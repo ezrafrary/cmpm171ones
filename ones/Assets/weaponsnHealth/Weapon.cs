@@ -79,6 +79,10 @@ public class Weapon : MonoBehaviour
     public GameObject playerObjForIgnoreHitbox;
     public GameObject[] ignoreHitboxes;
 
+    public bool isShotgun = false;
+    public int numPellets = 1;
+    public float spread = 0.0f;
+
 
     [HideInInspector]
     public bool preventFire = false;
@@ -297,22 +301,49 @@ public class Weapon : MonoBehaviour
         recoiling = true;
         recovering = false;
         playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex);
-        if(bulletPrefab){
-            var testBullet = spawnBullet();
+        
+        if(isShotgun){
+            for(int i = 0; i < numPellets; i++){
+                if(bulletPrefab){
+                    var testBullet = spawnBullet(spread);
+                }else{
+                    Debug.Log("no bullet prefab");
+                }
+            }
         }else{
-            Debug.Log("no bullet prefab");
+            if(bulletPrefab){
+                var testBullet = spawnBullet(spread);
+            }else{
+                Debug.Log("no bullet prefab");
+            }
         }
+        
+
+
+
     }
 
 
     
 
 
-    GameObject spawnBullet(){
-        var bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, camera.transform.rotation * bulletPrefab.transform.rotation);
+    GameObject spawnBullet(float _spread){
+
+
+        Vector3 randomAxis = UnityEngine.Random.onUnitSphere;
+        float randomAngle = UnityEngine.Random.Range(-_spread, _spread);
+        Quaternion spreadRotation = Quaternion.AngleAxis(randomAngle, randomAxis);
+
+        // Apply random rotation to the camera's forward direction
+        Quaternion finalRotation = spreadRotation * camera.transform.rotation;
+
+
+
+        var bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, finalRotation * bulletPrefab.transform.rotation);
         //Debug.Log("bullet type: " + bullet.GetType());
         bullet.gameObject.tag = "projectile";
-        bullet.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.forward * bulletSpeed;
+        bullet.GetComponent<Rigidbody>().linearVelocity = finalRotation * Vector3.forward * bulletSpeed;
+        //bullet.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.forward * bulletSpeed;
         
        
 

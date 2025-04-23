@@ -33,6 +33,18 @@ public class Rive_mainMenu : MonoBehaviour
         //Debug.Log($"Event received, name: \"{evt.Name}\", secondsDelay: {evt.SecondsDelay}");
 
 
+
+        if(evt.Name.StartsWith("Tutorial")){
+                
+                Debug.Log("test2");
+        }
+        
+
+        if(evt.Name.StartsWith("Play")){
+            Debug.Log("playClicked");
+        }
+
+
         if(evt.Name.StartsWith("PlayButtonClicked")){
             MainMenu.SetActive(false);
             LobbyGameobject.SetActive(true);
