@@ -222,6 +222,12 @@ public class Movement : MonoBehaviour
         jump = false;
     }
 
+
+    public void backwardsDash(float _dashStrength){
+        rb.linearVelocity = (-1 * cameraTransform.forward) * (_dashStrength + rb.linearVelocity.magnitude);
+    }
+
+
     private void Dash(){
         rb.linearVelocity = cameraTransform.forward * (dashStrength + rb.linearVelocity.magnitude);
         movementAdder = movementAdder + dashMovementAdder;

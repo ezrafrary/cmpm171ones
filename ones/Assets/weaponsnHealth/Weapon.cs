@@ -84,6 +84,11 @@ public class Weapon : MonoBehaviour
     public float spread = 0.0f;
 
 
+
+    public bool hasBlowBack = false;
+    public float blowBackStrength = 0;
+
+
     [HideInInspector]
     public bool preventFire = false;
 
@@ -318,6 +323,9 @@ public class Weapon : MonoBehaviour
             }
         }
         
+        if(hasBlowBack){
+            playerShooting.GetComponent<Movement>().backwardsDash(blowBackStrength);
+        }
 
 
 
