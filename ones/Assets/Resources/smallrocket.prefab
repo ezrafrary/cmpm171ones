@@ -111,13 +111,13 @@ MonoBehaviour:
   replaySystem: {fileID: 0}
   parentPhotonViewID: 0
   damage: 35
-  explosiveDamage: 20
-  explosiveRadius: 3
+  explosiveDamage: 10
+  explosiveRadius: 1
   scoreGainedForKill: 5
   ignoreHitbox: {fileID: 0}
   ignoreHitboxes: []
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  missVFX: {fileID: 8890763803698331194, guid: d27aaf2be90203e4fa0f4cfab511b7e9, type: 3}
+  hitVFX: {fileID: 3846168617593900068, guid: c1393b684d9c5f74188486bcdf69a42a, type: 3}
+  missVFX: {fileID: 3846168617593900068, guid: c1393b684d9c5f74188486bcdf69a42a, type: 3}
   timeUntilBulletIsVisible: 0
   hitmarker: {fileID: 0}
   headshotHitmarker: {fileID: 0}

@@ -35,6 +35,7 @@ public class OptionsMenu : MonoBehaviour
 
     void Start(){
         loadSettings();
+        gameObject.SetActive(false);
     }
 
     public void sensSliderChanged(){

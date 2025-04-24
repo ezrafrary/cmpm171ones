@@ -11,6 +11,9 @@ public class MainMenu : MonoBehaviour
     public TMP_InputField nameInputField;
     private string defaultname = "test1";
 
+    public GameObject test1;
+
+   
 
     void Start(){
         //optionsMenuObj.loadSettings();
