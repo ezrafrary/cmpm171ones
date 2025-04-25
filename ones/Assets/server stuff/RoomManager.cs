@@ -157,28 +157,46 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
 
-    public void JoinRoomButtonPressed(){
+    public void JoinRoomButtonPressed()
+    {
         Debug.Log("Connecting");
 
+        if (PhotonNetwork.OfflineMode && PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+            StartCoroutine(JoinRoomAfterLeaving());
+            return;
+        }
+
+        JoinRoomNow();
+    }
+
+    private IEnumerator JoinRoomAfterLeaving()
+    {
+        // Wait until the client has actually left the room
+        while (PhotonNetwork.InRoom)
+        {
+            yield return null;
+        }
+
+        JoinRoomNow();
+    }
+
+    private void JoinRoomNow()
+    {
         RoomOptions ro = new RoomOptions();
         ro.CustomRoomProperties = new Hashtable(){
             {"mapSceneIndex", SceneManager.GetActiveScene().buildIndex}
         };
-        
-        ro.CustomRoomPropertiesForLobby = new []
-        {
-            "mapSceneIndex"
-        };
 
-
+        ro.CustomRoomPropertiesForLobby = new[] { "mapSceneIndex" };
 
         PhotonNetwork.JoinOrCreateRoom(PlayerPrefs.GetString("RoomNameToJoin"), ro, null);
 
         nameUI.SetActive(false);
         connectingUI.SetActive(true);
-    
-        
     }
+
 
 
     public override void OnJoinedRoom(){

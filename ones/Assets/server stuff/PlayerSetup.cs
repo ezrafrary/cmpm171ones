@@ -6,6 +6,8 @@ using TMPro;
 
 public class PlayerSetup : MonoBehaviour
 {
+
+
     public Movement movement;
 
 
@@ -42,7 +44,6 @@ public class PlayerSetup : MonoBehaviour
 
     [Header("replayStuff")]
     public ReplaySystem replaySystem;
-
 
 
 

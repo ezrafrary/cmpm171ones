@@ -84,7 +84,10 @@ public class RoomList : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster(){
 
         base.OnConnectedToMaster(); 
-        PhotonNetwork.JoinLobby();
+        if (!PhotonNetwork.OfflineMode)
+        {
+            PhotonNetwork.JoinLobby();
+        }
     }
 
     //if a player disconnects, or gets booted out of a room, we need to call this
@@ -177,5 +180,43 @@ public class RoomList : MonoBehaviourPunCallbacks
         gameObject.SetActive(false);
         SceneManager.LoadScene(_sceneIndex);//change to _sceneIndex
     }
+
+    public void JoinOfflineTutorialRoom()
+    {
+        // Ensure Photon is not connected online
+        //gameObject.SetActive(true);
+        if (PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.Disconnect();
+            StartCoroutine(JoinOfflineAfterDisconnect());
+        }
+        else
+        {
+            StartOfflineMode();
+        }
+    }
+
+    private IEnumerator JoinOfflineAfterDisconnect()
+    {
+        yield return new WaitUntil(() => PhotonNetwork.NetworkClientState == ClientState.Disconnected);
+        StartOfflineMode();
+    }
+    private void StartOfflineMode()
+    {
+        if (PhotonNetwork.IsConnected)
+        {
+            Debug.LogWarning("Tried to enter offline mode while still connected. Wait for disconnection.");
+            return;
+        }
+
+        PhotonNetwork.OfflineMode = true;
+        RoomOptions roomOptions = new RoomOptions() { MaxPlayers = 1 };
+        PhotonNetwork.JoinOrCreateRoom("OfflineTutorial", roomOptions, TypedLobby.Default);
+        SceneManager.LoadScene(5);
+    }
+
+
+
+
 
 }

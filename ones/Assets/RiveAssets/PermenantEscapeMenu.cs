@@ -184,6 +184,7 @@ public class PermenantEscapeMenu : MonoBehaviour
             if(PhotonNetwork.InRoom){
                 PhotonNetwork.LeaveRoom();
             }
+            PhotonNetwork.OfflineMode = false;
             SceneManager.LoadScene(0);
         }
 

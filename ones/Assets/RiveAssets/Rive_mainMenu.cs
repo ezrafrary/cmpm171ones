@@ -20,6 +20,8 @@ public class Rive_mainMenu : MonoBehaviour
     [Header("SettingsIcon")]
     public GameObject SettingsMenuGameobject;
 
+    [Header("roomList")]
+    public RoomList roomList;
 
 
 
@@ -34,15 +36,7 @@ public class Rive_mainMenu : MonoBehaviour
 
 
 
-        if(evt.Name.StartsWith("Tutorial")){
-                
-                Debug.Log("test2");
-        }
         
-
-        if(evt.Name.StartsWith("Play")){
-            Debug.Log("playClicked");
-        }
 
 
         if(evt.Name.StartsWith("PlayButtonClicked")){
@@ -56,6 +50,10 @@ public class Rive_mainMenu : MonoBehaviour
             LoadoutMenuGameObject.SetActive(true);
         }
 
+        if(evt.Name.StartsWith("TutorialClicked")){
+            Debug.Log("start tutorial");
+            roomList.JoinOfflineTutorialRoom();
+        }
 
         if(evt.Name.StartsWith("SettingsButtonClicked")){
             // MenuCanvas.SetActive(false);

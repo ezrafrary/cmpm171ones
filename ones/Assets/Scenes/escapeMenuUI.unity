@@ -650,6 +650,10 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 5009764776506875481, guid: 6294f0bf946b04745bd382cc3525f281, type: 3}
+      propertyPath: m_rivePanel
+      value: 
+      objectReference: {fileID: 1979615024}
     - target: {fileID: 5362439193467930601, guid: 6294f0bf946b04745bd382cc3525f281, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -869,6 +873,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 338476dd2c75ee84d9c9d16fb066698e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1979615024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 102669744923899212, guid: 6294f0bf946b04745bd382cc3525f281, type: 3}
+  m_PrefabInstance: {fileID: 1979615021}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f980c8c19ea824215be0686df1b90726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2108460354
