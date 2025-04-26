@@ -6222,20 +6222,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 50
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 10
   fireRate: 12
-  cameraRecoil: 5
-  horizontalCameraRecoil: 4
-  isAutomatic: 0
   reloadTime: 2
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 15
   maxMags: 30
+  mag: 15
   ammo: 1
   magAmmo: 1
+  isAutomatic: 0
+  cameraRecoil: 5
+  horizontalCameraRecoil: 4
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -6250,7 +6251,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7866606936160352011, guid: 570eea471e5c93d418ab080c53cc53bc, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 5
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -8852,20 +8852,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 55
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 100
   fireRate: 10
-  cameraRecoil: 10
-  horizontalCameraRecoil: 0
-  isAutomatic: 0
   reloadTime: 1
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 40
   maxMags: 60
+  mag: 40
   ammo: 1
   magAmmo: 1
+  isAutomatic: 0
+  cameraRecoil: 10
+  horizontalCameraRecoil: 0
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -8880,7 +8881,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6945840042073291484, guid: 61b7745b67ed77d448d299019b4f5fec, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 100
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -9043,20 +9043,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 15
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 150
   fireRate: 10
-  cameraRecoil: 5
-  horizontalCameraRecoil: 4
-  isAutomatic: 1
   reloadTime: 1.2
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 4
   maxMags: 8
+  mag: 4
   ammo: 30
   magAmmo: 30
+  isAutomatic: 1
+  cameraRecoil: 5
+  horizontalCameraRecoil: 4
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -9071,7 +9072,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 150
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -9345,20 +9345,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 10
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 150
   fireRate: 16
-  cameraRecoil: 5
-  horizontalCameraRecoil: 4
-  isAutomatic: 1
   reloadTime: 1.2
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 4
   maxMags: 8
+  mag: 4
   ammo: 40
   magAmmo: 40
+  isAutomatic: 1
+  cameraRecoil: 5
+  horizontalCameraRecoil: 4
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -9373,7 +9374,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 150
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -9898,20 +9898,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 10
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 150
   fireRate: 12
-  cameraRecoil: 5
-  horizontalCameraRecoil: 4
-  isAutomatic: 0
   reloadTime: 2
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 4
   maxMags: 8
+  mag: 4
   ammo: 1
   magAmmo: 1
+  isAutomatic: 0
+  cameraRecoil: 5
+  horizontalCameraRecoil: 4
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -9926,7 +9927,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 150
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -10113,20 +10113,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 40
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 70
   fireRate: 1
-  cameraRecoil: 10
-  horizontalCameraRecoil: 0
-  isAutomatic: 0
   reloadTime: 2
-  hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
-  mag: 7
   maxMags: 10
+  mag: 7
   ammo: 1
   magAmmo: 1
+  isAutomatic: 0
+  cameraRecoil: 10
+  horizontalCameraRecoil: 0
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -10141,7 +10142,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7866606936160352011, guid: 56e1b3aedf502c543a00de87fc1d8506, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 70
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -10268,20 +10268,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 7
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 80
   fireRate: 30
-  cameraRecoil: 20
-  horizontalCameraRecoil: 0
-  isAutomatic: 1
   reloadTime: 4
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 2
   maxMags: 4
+  mag: 2
   ammo: 60
   magAmmo: 60
+  isAutomatic: 1
+  cameraRecoil: 20
+  horizontalCameraRecoil: 0
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -10296,7 +10297,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 80
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -10523,20 +10523,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 40
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 140
   fireRate: 1.1
-  cameraRecoil: 20
-  horizontalCameraRecoil: 0
-  isAutomatic: 0
   reloadTime: 1
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 4
   maxMags: 10
+  mag: 4
   ammo: 7
   magAmmo: 7
+  isAutomatic: 0
+  cameraRecoil: 20
+  horizontalCameraRecoil: 0
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -10551,7 +10552,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 140
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -10918,20 +10918,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 15
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 100
   fireRate: 5
-  cameraRecoil: 10
-  horizontalCameraRecoil: 0
-  isAutomatic: 0
   reloadTime: 1
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 5
   maxMags: 10
+  mag: 5
   ammo: 30
   magAmmo: 30
+  isAutomatic: 0
+  cameraRecoil: 10
+  horizontalCameraRecoil: 0
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -10946,7 +10947,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 100
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -11071,20 +11071,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 15
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 100
   fireRate: 1
-  cameraRecoil: 15
-  horizontalCameraRecoil: 2
-  isAutomatic: 0
   reloadTime: 2
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 2
   maxMags: 4
+  mag: 2
   ammo: 7
   magAmmo: 7
+  isAutomatic: 0
+  cameraRecoil: 15
+  horizontalCameraRecoil: 2
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -11099,7 +11100,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 100
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}
@@ -11240,20 +11240,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShooting: {fileID: 427471037947456812}
-  reloadCircle: {fileID: 3589875008465337045}
   damage: 20
-  camera: {fileID: 1226191117682152934}
+  bulletSpeed: 130
   fireRate: 7
-  cameraRecoil: 10
-  horizontalCameraRecoil: 2
-  isAutomatic: 1
   reloadTime: 2
-  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
-  mag: 2
   maxMags: 4
+  mag: 2
   ammo: 20
   magAmmo: 20
+  isAutomatic: 1
+  cameraRecoil: 10
+  horizontalCameraRecoil: 2
+  playerShooting: {fileID: 427471037947456812}
+  reloadCircle: {fileID: 3589875008465337045}
+  camera: {fileID: 1226191117682152934}
+  hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
   ammoText: {fileID: 6378571872650939266}
   hitmarker: {fileID: 2704246106289353372}
@@ -11268,7 +11269,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
-  bulletSpeed: 130
   playerObjForIgnoreHitbox: {fileID: 427471037947456812}
   ignoreHitboxes:
   - {fileID: 6644083619080426125}

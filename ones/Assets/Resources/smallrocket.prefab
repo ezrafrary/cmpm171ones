@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeAlive: 0
   timeWhenSpeedIncreaseHappens: 16
-  speedAfterTimer: 170
+  speedAfterTimer: 300
 --- !u!1001 &5766406670248841140
 PrefabInstance:
   m_ObjectHideFlags: 0

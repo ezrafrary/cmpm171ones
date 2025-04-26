@@ -17,35 +17,45 @@ public class Weapon : MonoBehaviour
     */
 
 
+    [Header("WeaponStats")]
+
+
+    public int damage;
+    public float bulletSpeed = 4f;
+    public float fireRate;
+    public float reloadTime = 100f;
+    public int maxMags = 10;
+    public int mag = 5;
+    public int ammo = 30;
+    public int magAmmo = 30;
+    public bool isAutomatic = true;
+    public float cameraRecoil;
+    public float horizontalCameraRecoil = 0;
+
+
+    [Space]
+
+
+
+
     public GameObject playerShooting;
 
     public Image reloadCircle;
 
-    public int damage;
 
     public new Camera camera;
 
-    public float fireRate;
 
-    public float cameraRecoil;
-    public float horizontalCameraRecoil = 0;
-
-    public bool isAutomatic = true;
 
     private float nextFire;
 
 
-    public float reloadTime = 100f;
     private float reloadTimer = 0;
 
     [Header("VFX")]
     public GameObject hitVFX;
 
     [Header("Ammo")]
-    public int mag = 5;
-    public int maxMags = 10;
-    public int ammo = 30;
-    public int magAmmo = 30;
 
     [Header("UI")]
     public TextMeshProUGUI magText;
@@ -75,7 +85,6 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public Transform bulletStartPoint;
-    public float bulletSpeed = 4f;
     public GameObject playerObjForIgnoreHitbox;
     public GameObject[] ignoreHitboxes;
 
@@ -307,8 +316,9 @@ public class Weapon : MonoBehaviour
         recovering = false;
         playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex);
         
-        if(isShotgun){
-            for(int i = 0; i < numPellets; i++){
+        if(isShotgun){ //1 bullet will always be spawned
+            var testBullet2 = spawnBullet(0.0f);
+            for(int i = 1; i < numPellets; i++){
                 if(bulletPrefab){
                     var testBullet = spawnBullet(spread);
                 }else{
