@@ -38,6 +38,11 @@ public class OptionsMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void toggleTwitchChatVisibliity(){
+        PermenantEscapeMenu.Instance.toggleTwitchChatVisibliity();
+    }
+
+
     public void sensSliderChanged(){
         sensInputField.text = sensSlider.value.ToString();
     }

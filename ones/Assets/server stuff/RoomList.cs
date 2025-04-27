@@ -214,9 +214,4 @@ public class RoomList : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinOrCreateRoom("OfflineTutorial", roomOptions, TypedLobby.Default);
         SceneManager.LoadScene(5);
     }
-
-
-
-
-
 }

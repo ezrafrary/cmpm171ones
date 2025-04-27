@@ -39,6 +39,10 @@ public class PermenantEscapeMenu : MonoBehaviour
     [Header("LoadoutMenu")]
     public GameObject loadoutMenu;
 
+
+    [Header("Twitch")]
+    public GameObject twitchChatBox;
+
     //escape button
     private bool buttonWasPressedLastFrame = false;
     private bool optionsMenuOpen = false;
@@ -52,6 +56,7 @@ public class PermenantEscapeMenu : MonoBehaviour
     void Start()
     {
         setMouselook();
+        setTwitchChatBox();
     }
 
     // Update is called once per frame
@@ -80,9 +85,28 @@ public class PermenantEscapeMenu : MonoBehaviour
         }else{
             buttonWasPressedLastFrame = false;
         }
+        setTwitchChatBox();
     }
 
 
+
+    public void setTwitchChatBox(){
+        if(PlayerPrefs.GetInt("TwitchChatVisible", 0) == 1){
+            
+            twitchChatBox.SetActive(true);
+        }else{
+            twitchChatBox.SetActive(false);
+        }
+    }
+
+
+    public void toggleTwitchChatVisibliity(){
+        if(PlayerPrefs.GetInt("TwitchChatVisible", 0) == 1){
+            PlayerPrefs.SetInt("TwitchChatVisible", 0);
+        }else{
+            PlayerPrefs.SetInt("TwitchChatVisible", 1);
+        }
+    }
 
     public void testButton(){
         Debug.Log("ButtonPressed");
