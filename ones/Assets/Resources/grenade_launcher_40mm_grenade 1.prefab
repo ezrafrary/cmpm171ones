@@ -111,12 +111,12 @@ MonoBehaviour:
   parentPhotonViewID: 0
   damage: 1
   explosiveDamage: 20
-  explosiveRadius: 3
+  explosiveRadius: 2
   scoreGainedForKill: 1
   ignoreHitbox: {fileID: 0}
   ignoreHitboxes: []
-  hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
-  missVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
+  hitVFX: {fileID: 7329448396953797967, guid: 7c9ee4a5d296fd14f860d72133d08012, type: 3}
+  missVFX: {fileID: 7329448396953797967, guid: 7c9ee4a5d296fd14f860d72133d08012, type: 3}
   timeUntilBulletIsVisible: 1
   hitmarker: {fileID: 0}
   headshotHitmarker: {fileID: 0}
