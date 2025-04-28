@@ -9195,8 +9195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
-  bulletSpeed: 150
-  fireRate: 10
+  bulletSpeed: 160
+  fireRate: 11
   reloadTime: 1.2
   maxMags: 8
   mag: 4
