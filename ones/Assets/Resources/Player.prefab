@@ -5351,9 +5351,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clampInDegrees: {x: 360, y: 180}
   lockCursor: 1
+  enableSmoothing: 0
+  smoothing: {x: 1, y: 1}
   sensX: 2
   sensY: 2
-  smoothing: {x: 1, y: 1}
   characterBody: {fileID: 427471037947456812}
   scoped: 0
 --- !u!114 &7694710194623385893
