@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8105052982203735708
+--- !u!1 &3384767360641749139
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 930347512146421291}
+  - component: {fileID: 6649179007866562655}
   m_Layer: 0
   m_Name: spawnPos
   m_TagString: Untagged
@@ -16,22 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &930347512146421291
+--- !u!4 &6649179007866562655
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8105052982203735708}
+  m_GameObject: {fileID: 3384767360641749139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7281786308281428168}
+  m_Father: {fileID: 9084946046563459311}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9186599580946605389
+--- !u!1 &3663015274764507035
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,48 +39,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7281786308281428168}
-  - component: {fileID: 1035608507964153272}
+  - component: {fileID: 9084946046563459311}
+  - component: {fileID: 787150235318144510}
   m_Layer: 0
-  m_Name: healthPedestal1 1
+  m_Name: fullhealPedestal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7281786308281428168
+--- !u!4 &9084946046563459311
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9186599580946605389}
+  m_GameObject: {fileID: 3663015274764507035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.89, y: -0.15, z: -14.581619}
+  m_LocalPosition: {x: 17.297314, y: 0, z: 20.389275}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 930347512146421291}
+  - {fileID: 6649179007866562655}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1035608507964153272
+--- !u!114 &787150235318144510
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9186599580946605389}
+  m_GameObject: {fileID: 3663015274764507035}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3a81c82b98665418fe99e912b67942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 1577363767978226200, guid: 77300de0d1b383b4bbb02f6b46ec81bd, type: 3}
-  alternateItemPrefab: {fileID: 6376928092239235038, guid: ccf11055cb626434ca6ac06320b067c0, type: 3}
-  spawnPosition: {fileID: 930347512146421291}
-  respawnCooldown: 10
+  itemPrefab: {fileID: 6376928092239235038, guid: ccf11055cb626434ca6ac06320b067c0, type: 3}
+  spawnPosition: {fileID: 6649179007866562655}
+  respawnCooldown: 30
   repsawnCooldownTimer: 1
   isItemSpawned: 0
-  chanceForAltItem: 0.1
   spawnedItem: {fileID: 0}

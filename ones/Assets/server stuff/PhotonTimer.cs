@@ -81,8 +81,18 @@ public class PhotonTimer : MonoBehaviourPunCallbacks
     private void OnTimerEnd()
     {
         Debug.Log("Timer has ended!");
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("EndGameRPC", RpcTarget.All);
+        }
+    }
+    [PunRPC]
+    void EndGameRPC()
+    {
         roomManager.EndGame();
     }
+        
+
 
     // Function to start the timer manually
     public void StartTimer()

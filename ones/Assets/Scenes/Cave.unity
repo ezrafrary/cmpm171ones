@@ -28678,7 +28678,7 @@ MonoBehaviour:
   mapnameText: {fileID: 346243692}
   RespawnButtonBackground: {fileID: 1221116448}
   AutoRespawnTimer: 10
-  TimeUntilRespawnAvalible: 2
+  TimeUntilRespawnAvalible: 3
   respawnTimer: {fileID: 1318757196}
   deathcamIndex: 0
   clipHolder: {fileID: 636285590}

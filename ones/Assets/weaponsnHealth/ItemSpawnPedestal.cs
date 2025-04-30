@@ -6,11 +6,22 @@ using Photon.Pun;
 
 public class ItemSpawnPedestal : MonoBehaviour
 {
+    
+    [Header("ItemPrefabs")]
     public GameObject itemPrefab;
+    public GameObject alternateItemPrefab;
+
+
+    [Space]
+
+
     public Transform spawnPosition;
     public float respawnCooldown;
     public float repsawnCooldownTimer = 1;
     public bool isItemSpawned = false;
+
+    public float chanceForAltItem = 0.5f;
+
 
     public GameObject spawnedItem;
 
@@ -39,7 +50,19 @@ public class ItemSpawnPedestal : MonoBehaviour
     }
 
     public void SpawnItem(){
-        var itemSpawned = PhotonNetwork.Instantiate(itemPrefab.name, spawnPosition.position, itemPrefab.transform.rotation);
+
+       
+        float randomFloat = Random.Range(0f,1f);
+
+        GameObject itemSpawned;
+
+        if(chanceForAltItem > randomFloat && alternateItemPrefab){
+            itemSpawned = PhotonNetwork.Instantiate(alternateItemPrefab.name, spawnPosition.position, alternateItemPrefab.transform.rotation);
+        }else{
+            itemSpawned = PhotonNetwork.Instantiate(itemPrefab.name, spawnPosition.position, itemPrefab.transform.rotation);
+        }
+
+
         if(itemSpawned.GetComponent<HealthPickup>()){
             itemSpawned.GetComponent<HealthPickup>().itemAttachedTo = gameObject;
         }
