@@ -21,7 +21,7 @@ public class loadoutScreen : MonoBehaviour
             
             _equipmentPannel.gameObject.SetActive(false);
 
-            if(i == PlayerPrefs.GetInt("Slot1_weapon")){
+            if(i == PlayerPrefs.GetInt("Slot1_weapon", 4)){
                 _equipmentPannel.gameObject.SetActive(true);
             }
             if(i == PlayerPrefs.GetInt("Slot2_weapon")){

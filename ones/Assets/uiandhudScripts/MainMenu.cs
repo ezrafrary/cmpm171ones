@@ -36,7 +36,9 @@ public class MainMenu : MonoBehaviour
     }
 
     public void SetDefaultWeapons(){
-
+        if(PlayerPrefs.GetInt("Slot1_weapon") == 0){
+            PlayerPrefs.SetInt("Slot1_weapon", 4);//m4
+        }
         if(PlayerPrefs.GetInt("Slot2_weapon") == 0){
             PlayerPrefs.SetInt("Slot2_weapon", 1); // id for RPG
         }

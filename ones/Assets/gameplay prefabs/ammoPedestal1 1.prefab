@@ -46,10 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 5279194253747057292, guid: dc20fa9bd82c2d44c867f57586691166, type: 3}
+  alternateItemPrefab: {fileID: 7728228366470938701, guid: 7872ee5a6d353264d8ecb92da6617e18, type: 3}
   spawnPosition: {fileID: 2655972477844085885}
   respawnCooldown: 10
   repsawnCooldownTimer: 1
   isItemSpawned: 0
+  chanceForAltItem: 0.25
   spawnedItem: {fileID: 0}
 --- !u!1 &8325666838551062285
 GameObject:
