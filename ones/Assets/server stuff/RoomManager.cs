@@ -140,6 +140,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
 
+    public void openLoadoutMenu(){
+        PermenantEscapeMenu.Instance.openLoadoutMenu();
+    }
     
 
     public void changeSens(float _sensX, float _sensY){

@@ -6230,7 +6230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  bulletSpeed: 10
+  bulletSpeed: 25
   fireRate: 12
   reloadTime: 2
   maxMags: 30
