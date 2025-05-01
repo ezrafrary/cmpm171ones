@@ -41,6 +41,9 @@ public class Bullet : MonoBehaviour
     public GameObject headshotHitmarker;
 
     public Vector3 startLocation = new Vector3(0,0,0);
+    public float distanceUntilDamageFalloffStarts = 10.0f;
+    public float damageLostPerMeter = 1;
+    public int minimumDamage = 0;
 
 
 
@@ -119,7 +122,10 @@ public class Bullet : MonoBehaviour
             }else if(hit.collider.CompareTag("projectile")){
                 //Debug.Log("hit projecitle");
             }else{
-                bulletHitSomething(hit.collider);
+                if(hit.collider){
+                        
+                    bulletHitSomething(hit.collider);
+                }
             }
         }
 
@@ -127,6 +133,24 @@ public class Bullet : MonoBehaviour
         oldPos.transform.position = transform.position;
     }
     
+    public int calculateDamageWithFalloff(){
+
+        float distanceTraveled = Vector3.Distance(startPos.position, transform.position);
+        int distanceTraveledInt = (int)distanceTraveled;
+        
+        int damageWithFalloff = damage;
+        if(distanceTraveledInt > distanceUntilDamageFalloffStarts){
+            damageWithFalloff = (int)damage - (int)((distanceTraveledInt + (int)distanceUntilDamageFalloffStarts) * damageLostPerMeter);
+        }
+
+        if(damageWithFalloff < minimumDamage){
+            damageWithFalloff = minimumDamage;
+        }
+
+        return damageWithFalloff;
+        
+    }
+
 
     public static GameObject GetObjectByPhotonID(int photonViewID)
     {
@@ -206,7 +230,7 @@ public class Bullet : MonoBehaviour
                 bulletHitPlayer = true;
             }
             //PhotonNetwork.LocalPlayer.AddScore(damage); add score for damage
-            if (damage >= other.transform.gameObject.GetComponent<Health>().health){
+            if (calculateDamageWithFalloff() >= other.transform.gameObject.GetComponent<Health>().health && other.transform.gameObject.GetComponent<Health>().hasDied == false){
                 //kill
                 RoomManager.instance.kills++;
                 RoomManager.instance.score += scoreGainedForKill;
@@ -215,7 +239,7 @@ public class Bullet : MonoBehaviour
                 GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
                 replayID = 1;
             }
-            other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage, playerName, weaponName, "body", killerHealthLeft, replayID);
+            other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, calculateDamageWithFalloff(), playerName, weaponName, "body", killerHealthLeft, replayID);
             other.transform.gameObject.GetComponent<PhotonView>().RPC("createHitIndicator", RpcTarget.All, startLocation);
             //Debug.Log("dealt damage");
             //hitmarker
@@ -231,8 +255,8 @@ public class Bullet : MonoBehaviour
                 bulletHitPlayer = true;
             }
             bool playerDead = false;
-            int modifiedDamage = (int)other.transform.gameObject.GetComponent<damageModifierHitbox>().damageMultiplier * (int)damage;
-            if(modifiedDamage >= other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().health){
+            int modifiedDamage = (int)other.transform.gameObject.GetComponent<damageModifierHitbox>().damageMultiplier * (int)calculateDamageWithFalloff();
+            if(modifiedDamage >= other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().health && other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().hasDied == false){
                 playerDead = true;
                 RoomManager.instance.kills++;
                 RoomManager.instance.score += scoreGainedForKill;
@@ -242,7 +266,7 @@ public class Bullet : MonoBehaviour
                 GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
             }
 
-            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(damage, playerName, weaponName, null, killerHealthLeft, replayID);
+            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(calculateDamageWithFalloff(), playerName, weaponName, null, killerHealthLeft, replayID);
             if (other.transform.gameObject.GetComponent<damageModifierHitbox>().hitboxId == "head"){   
                 headshotHitmarker.GetComponent<Hitmarker>().createHitmarker();
                 if(!playerDead){
@@ -279,7 +303,7 @@ public class Bullet : MonoBehaviour
                 if(!hitCollider.transform.gameObject.GetComponent<Health>().hasTakenExplosiveDamageThisTick){
                     hitCollider.transform.gameObject.GetComponent<Health>().hasTakenExplosiveDamageThisTick = true;
 
-                    if (explosiveDamage >= hitCollider.transform.gameObject.GetComponent<Health>().health && hitCollider.transform.gameObject.GetComponent<Health>().health > 0){
+                    if (explosiveDamage >= hitCollider.transform.gameObject.GetComponent<Health>().health && hitCollider.transform.gameObject.GetComponent<Health>().health > 0 && hitCollider.transform.gameObject.GetComponent<Health>().hasDied == false){
                         //kill
                         
                         playerPhotonSoundManager.playKillSound();

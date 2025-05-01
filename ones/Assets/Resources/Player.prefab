@@ -309,7 +309,7 @@ MonoBehaviour:
   jumpHeight: 5
   dashStrength: 16
   dashMovementAdder: 4
-  dashCooldown: 200
+  dashCooldown: 175
   dashCooldownImage: {fileID: 445981631965617065}
   playerPhotonSoundManager: {fileID: 8998652926012223579}
   handAnimation: {fileID: 4642472535017038143}
@@ -478,6 +478,7 @@ MonoBehaviour:
   respawnUI: {fileID: 0}
   hasTakenExplosiveDamageThisTick: 0
   healthBar: {fileID: 1549855588431033792}
+  hasDied: 0
 --- !u!114 &5244040397720563872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6240,6 +6241,9 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 5
   horizontalCameraRecoil: 4
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 0
+  minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -7442,6 +7446,9 @@ MonoBehaviour:
   isAutomatic: 0
   cameraRecoil: 10
   horizontalCameraRecoil: 0
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 0
+  minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -9029,6 +9036,9 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 15
   horizontalCameraRecoil: 5
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 0
+  minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -9263,6 +9273,9 @@ MonoBehaviour:
   isAutomatic: 0
   cameraRecoil: 10
   horizontalCameraRecoil: 0
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 0
+  minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -9454,6 +9467,9 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 5
   horizontalCameraRecoil: 4
+  distanceUntilDamageFalloffStarts: 40
+  damageLostPerMeter: 0.3
+  minimumDamage: 7
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -9822,6 +9838,9 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 5
   horizontalCameraRecoil: 4
+  distanceUntilDamageFalloffStarts: 15
+  damageLostPerMeter: 0.4
+  minimumDamage: 8
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -10592,6 +10611,9 @@ MonoBehaviour:
   isAutomatic: 0
   cameraRecoil: 5
   horizontalCameraRecoil: 4
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 0
+  minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -10615,7 +10637,7 @@ MonoBehaviour:
   - {fileID: 6644083619080426125}
   isShotgun: 1
   numPellets: 5
-  spread: 15
+  spread: 10
   hasBlowBack: 1
   blowBackStrength: 9
   preventFire: 0
@@ -10807,6 +10829,9 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 10
   horizontalCameraRecoil: 0
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 0
+  minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -10962,6 +10987,9 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 20
   horizontalCameraRecoil: 0
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 0
+  minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -11217,6 +11245,9 @@ MonoBehaviour:
   isAutomatic: 0
   cameraRecoil: 20
   horizontalCameraRecoil: 0
+  distanceUntilDamageFalloffStarts: 20
+  damageLostPerMeter: 1
+  minimumDamage: 24
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -11230,8 +11261,8 @@ MonoBehaviour:
   ShootSFXIndex: 2
   playerPhotonSoundManager: {fileID: 8998652926012223579}
   recoverPercent: 0.7
-  recoilUp: 0.06
-  recoilBack: 0.02
+  recoilUp: 0.09
+  recoilBack: 0.08
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
@@ -11601,17 +11632,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 20
   bulletSpeed: 100
   fireRate: 5
   reloadTime: 1
   maxMags: 10
   mag: 5
-  ammo: 30
-  magAmmo: 30
+  ammo: 15
+  magAmmo: 15
   isAutomatic: 0
   cameraRecoil: 10
   horizontalCameraRecoil: 0
+  distanceUntilDamageFalloffStarts: 15
+  damageLostPerMeter: 1
+  minimumDamage: 10
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -11626,7 +11660,7 @@ MonoBehaviour:
   playerPhotonSoundManager: {fileID: 8998652926012223579}
   recoverPercent: 0.7
   recoilUp: 0.02
-  recoilBack: 0.02
+  recoilBack: 0.06
   bulletPrefab: {fileID: 7950140257926317427, guid: 74ed15728e347544abcbb7f45053c81e, type: 3}
   bulletSpawnPoint: {fileID: 3913784687324471846}
   bulletStartPoint: {fileID: 7947005584318160002}
@@ -11765,6 +11799,9 @@ MonoBehaviour:
   isAutomatic: 0
   cameraRecoil: 15
   horizontalCameraRecoil: 2
+  distanceUntilDamageFalloffStarts: 5
+  damageLostPerMeter: 1
+  minimumDamage: 1
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -11934,6 +11971,9 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 10
   horizontalCameraRecoil: 2
+  distanceUntilDamageFalloffStarts: 35
+  damageLostPerMeter: 0.3
+  minimumDamage: 10
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
@@ -12253,6 +12293,9 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 10
   horizontalCameraRecoil: 0
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 0
+  minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}

@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
     public RectTransform healthBar;
     private float originalHealthBarSize;
 
-    private bool hasDied = false; //if the player takes 2 instances of damage in one frame, it duplicates client, this fixes that
+    public bool hasDied = false; //if the player takes 2 instances of damage in one frame, it duplicates client, this fixes that
 
     
 

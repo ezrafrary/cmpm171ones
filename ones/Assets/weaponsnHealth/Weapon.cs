@@ -31,6 +31,9 @@ public class Weapon : MonoBehaviour
     public bool isAutomatic = true;
     public float cameraRecoil;
     public float horizontalCameraRecoil = 0;
+    public float distanceUntilDamageFalloffStarts = 10.0f;
+    public float damageLostPerMeter = 0;
+    public int minimumDamage = 0;
 
 
     [Space]
@@ -379,7 +382,12 @@ public class Weapon : MonoBehaviour
         bulletSctipt.setStartLocation(bulletSpawnPoint.transform.position);
         bulletSctipt.playerPhotonSoundManager = playerPhotonSoundManager;
         bulletSctipt.damage = damage;
-        bulletSctipt.startPos = bulletStartPoint;
+        bulletSctipt.startPos = bulletStartPoint;   
+        bulletSctipt.distanceUntilDamageFalloffStarts = distanceUntilDamageFalloffStarts;
+        bulletSctipt.damageLostPerMeter = damageLostPerMeter;
+        bulletSctipt.minimumDamage = minimumDamage;
+
+
         
         
 

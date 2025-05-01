@@ -243,6 +243,9 @@ MonoBehaviour:
   hitmarker: {fileID: 0}
   headshotHitmarker: {fileID: 0}
   startLocation: {x: 0, y: 0, z: 0}
+  distanceUntilDamageFalloffStarts: 10
+  damageLostPerMeter: 1
+  minimumDamage: 0
   playerPhotonSoundManager: {fileID: 0}
   oldPos: {fileID: 0}
   startPos: {fileID: 0}
