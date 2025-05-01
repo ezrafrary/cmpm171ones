@@ -33,6 +33,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject nameUI;
     public GameObject connectingUI;
     public GameObject mainMenuUI;
+    public GameObject waitingForPlayerScreen;
+    public TextMeshProUGUI playerCountText;
+
 
 
     [Header("game start screen")]
@@ -94,6 +97,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [Header("Ragdolls")]
     public GameObject ragdollPrefab;
 
+    public bool gameStarted = false;
 
 
     
@@ -112,11 +116,19 @@ public class RoomManager : MonoBehaviourPunCallbacks
             mapnameText.text = SceneManager.GetActiveScene().name;
         }
         SceneManager.LoadScene(6, LoadSceneMode.Additive); //escapemenu index
+        UpdatePlayerCount();
     }
 
 
 
     void Update(){
+
+        if(!gameStarted){
+            if(UpdatePlayerCount() > 1){
+                startGame();
+            }
+        }
+
         if(_TimeUntilRespawnAvalible > 0){
             _TimeUntilRespawnAvalible = _TimeUntilRespawnAvalible - Time.deltaTime;
             CanRespawn = false;
@@ -198,6 +210,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         nameUI.SetActive(false);
         connectingUI.SetActive(true);
+        
     }
 
 
@@ -207,15 +220,51 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         Debug.Log("We're connected and in a room!");
         connectingUI.SetActive(false);
-        
-        startGame();
+        waitingForPlayerScreen.SetActive(true);
+        UpdatePlayerCount();
+        //player has connected and is ready to start the game
+
+        if(UpdatePlayerCount() > 1){
+            startGame();
+        }else if(SceneManager.GetActiveScene().name == "TUTORIAL"){
+            startGame();
+        }
     }
 
+
+    public override void OnPlayerEnteredRoom(Player newPlayer){
+        UpdatePlayerCount();
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer){
+        UpdatePlayerCount();
+    }
+
+
+    int UpdatePlayerCount()
+    {
+        if (PhotonNetwork.InRoom)
+        {
+            int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
+            if(playerCountText){
+                playerCountText.text = $"Players in room: {playerCount}";
+            }
+            return playerCount;
+        }
+        else
+        {
+            if(playerCountText){
+                playerCountText.text = "Not in a room.";
+            }
+        }
+        return 0;
+    }
 
     public void startGame(){
         roomCam.SetActive(false);
         SpawnPlayer();
         timer.StartTimer();
+        gameStarted = true;
     }
 
 

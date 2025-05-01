@@ -239,6 +239,11 @@ public class Bullet : MonoBehaviour
                 GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
                 replayID = 1;
             }
+            
+            if(other.transform.gameObject.GetComponent<Health>().hasDied == true){
+                playerPhotonSoundManager.playKillSound();
+            }
+
             other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, calculateDamageWithFalloff(), playerName, weaponName, "body", killerHealthLeft, replayID);
             other.transform.gameObject.GetComponent<PhotonView>().RPC("createHitIndicator", RpcTarget.All, startLocation);
             //Debug.Log("dealt damage");
@@ -264,6 +269,10 @@ public class Bullet : MonoBehaviour
                 playerPhotonSoundManager.playKillSound();
                 replayID = 1;
                 GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
+            }
+
+            if(other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().hasDied == true){
+                playerPhotonSoundManager.playKillSound();
             }
 
             other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(calculateDamageWithFalloff(), playerName, weaponName, null, killerHealthLeft, replayID);
