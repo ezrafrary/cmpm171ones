@@ -60,7 +60,7 @@ public class escapeMenu : MonoBehaviour
             return;
         }
         escapemenu.SetActive(true);
-        weaponSwitcher.preventFire();
+        //weaponSwitcher.preventFire();
         menuOpen = true;
         mouseLook.UnlockCursor();
         mouseLook.LockPlayerMouseMovementRotation();
@@ -70,7 +70,7 @@ public class escapeMenu : MonoBehaviour
             return;
         }
         escapemenu.SetActive(false);
-        weaponSwitcher.allowFire();
+        //weaponSwitcher.allowFire();
         mouseLook.LockCursor();
         mouseLook.UnlockPlayerMouseMovementRotation();
         menuOpen = false;

@@ -6270,7 +6270,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &4104258355244150702
 Animation:
@@ -7475,7 +7476,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!114 &3791226457434588470
 MonoBehaviour:
@@ -9065,7 +9067,8 @@ MonoBehaviour:
   spread: 15
   hasBlowBack: 1
   blowBackStrength: 3
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &5070762257387767810
 Animation:
@@ -9302,7 +9305,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!114 &9163458671868687391
 MonoBehaviour:
@@ -9496,7 +9500,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &3335461373675405863
 Animation:
@@ -9867,7 +9872,8 @@ MonoBehaviour:
   spread: 3
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &1996953705756763102
 Animation:
@@ -10640,7 +10646,8 @@ MonoBehaviour:
   spread: 10
   hasBlowBack: 1
   blowBackStrength: 9
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &5094692723407382679
 Animation:
@@ -10858,7 +10865,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &1664994654226592600
 Animation:
@@ -11016,7 +11024,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &7249086731403113995
 Animation:
@@ -11274,7 +11283,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &5412504385144481106
 Animation:
@@ -11672,7 +11682,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &8904467760402790317
 Animation:
@@ -11828,7 +11839,8 @@ MonoBehaviour:
   spread: 7
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &1164113471857435516
 Animation:
@@ -12000,7 +12012,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &3579979440959624988
 Animation:
@@ -12322,7 +12335,8 @@ MonoBehaviour:
   spread: 0
   hasBlowBack: 0
   blowBackStrength: 0
-  preventFire: 0
+  preventFireWhileReloading: 0
+  globalPreventFire: 0
   replaySystem: {fileID: 2422701998802789798}
 --- !u!111 &1683720300694137070
 Animation:

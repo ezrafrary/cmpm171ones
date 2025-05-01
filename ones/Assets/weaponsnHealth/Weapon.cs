@@ -102,7 +102,10 @@ public class Weapon : MonoBehaviour
 
 
     [HideInInspector]
-    public bool preventFire = false;
+    public bool preventFireWhileReloading = false;
+
+    public bool globalPreventFire = false;
+
 
     private Vector3 originalPosition;
     private Vector3 recoilVelocity = Vector3.zero;
@@ -162,9 +165,9 @@ public class Weapon : MonoBehaviour
 
         if(reloadTimer > 0){
             reloadTimer = reloadTimer - Time.deltaTime;
-            preventFire = true;
+            preventFireWhileReloading = true;
         }else{
-            preventFire = false;
+            preventFireWhileReloading = false;
         }
         //Debug.Log(reloadTimer);
 
@@ -173,7 +176,7 @@ public class Weapon : MonoBehaviour
             nextFire -= Time.deltaTime;
         }
 
-        if (UserInput.instance.AttackHeld && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && !bulletPrefab && !preventFire){
+        if (UserInput.instance.AttackHeld && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && !bulletPrefab && !preventFireWhileReloading && !globalPreventFire){
             nextFire = 1 / fireRate;
             ammo--;
             
@@ -182,7 +185,7 @@ public class Weapon : MonoBehaviour
             Fire();
         }
 
-        if (UserInput.instance.AttackHeld && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFire && isAutomatic){
+        if (UserInput.instance.AttackHeld && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFireWhileReloading && isAutomatic && !globalPreventFire){
             nextFire = 1 / fireRate;
             ammo--;
             
@@ -193,7 +196,7 @@ public class Weapon : MonoBehaviour
 
 
         bool justShot = false;
-        if (UserInput.instance.AttackInput && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFire && !isAutomatic){
+        if (UserInput.instance.AttackInput && nextFire <= 0 && ammo > 0 && animation.isPlaying == false && bulletPrefab && !preventFireWhileReloading && !isAutomatic && !globalPreventFire){
             justShot = true;
             nextFire = 1 / fireRate;
             ammo--;

@@ -6,6 +6,10 @@ using TMPro;
 
 public class WeaponSwitcher : MonoBehaviour
 {
+
+    public static WeaponSwitcher Instance;
+
+
     public new Animation animation;
     public AnimationClip draw;
 
@@ -34,6 +38,10 @@ public class WeaponSwitcher : MonoBehaviour
     public int slot3;
 
     private Dictionary<int, Quaternion> weaponInitialRotations = new Dictionary<int, Quaternion>();
+
+    void Awake(){
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -173,6 +181,9 @@ public class WeaponSwitcher : MonoBehaviour
         }
     }
 
+
+    
+
     public void refillSelectedWeapon(int _numMags){ 
         int i = 0;
         foreach(Transform _weapon in transform){
@@ -183,27 +194,42 @@ public class WeaponSwitcher : MonoBehaviour
         }
     }
 
-    public void preventFire(){
-        int i = 0;
+
+    public void globalPreventFire(){
         foreach(Transform _weapon in transform){
-            if(i == selectedWeapon){
-                _weapon.gameObject.GetComponent<Weapon>().preventFire = true;
-                
-            }
-            i++;
+            _weapon.gameObject.GetComponent<Weapon>().globalPreventFire = true;
         }
     }
 
-    public void allowFire(){
-        int i = 0;
+    public void globalAllowFire(){
         foreach(Transform _weapon in transform){
-            if(i == selectedWeapon){
-                _weapon.gameObject.GetComponent<Weapon>().preventFire = false;
-                
-            }
-            i++;
+            _weapon.gameObject.GetComponent<Weapon>().globalPreventFire = false;
         }
     }
+
+
+
+    // public void preventFire(){
+    //     int i = 0;
+    //     foreach(Transform _weapon in transform){
+    //         if(i == selectedWeapon){
+    //             _weapon.gameObject.GetComponent<Weapon>().preventFire = true;
+                
+    //         }
+    //         i++;
+    //     }
+    // }
+
+    // public void allowFire(){
+    //     int i = 0;
+    //     foreach(Transform _weapon in transform){
+    //         if(i == selectedWeapon){
+    //             _weapon.gameObject.GetComponent<Weapon>().preventFire = false;
+                
+    //         }
+    //         i++;
+    //     }
+    // }
 
     bool isCurrentWeaponReloading(){
         int i = 0;

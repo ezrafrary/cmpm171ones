@@ -89,6 +89,18 @@ public class PermenantEscapeMenu : MonoBehaviour
     }
 
 
+    public void disableShooting(){
+        if(WeaponSwitcher.Instance){
+            WeaponSwitcher.Instance.globalPreventFire();
+        }
+    }
+
+
+    public void enableShooting(){
+        if(WeaponSwitcher.Instance){
+            WeaponSwitcher.Instance.globalAllowFire();
+        }
+    }
 
     public void setTwitchChatBox(){
         if(PlayerPrefs.GetInt("TwitchChatVisible", 0) == 1){
@@ -121,6 +133,8 @@ public class PermenantEscapeMenu : MonoBehaviour
 
     public void openMenu(){
         setMouselook();
+
+        disableShooting();
         escapeMenuRivePannel.SetActive(true);
         menuOpen = true;
         if(mouseLook){
@@ -132,6 +146,7 @@ public class PermenantEscapeMenu : MonoBehaviour
 
     public void closeMenu(){
         setMouselook();
+        enableShooting();
         menuOpen = false;
         escapeMenuRivePannel.SetActive(false);
         if(mouseLook){
@@ -145,6 +160,7 @@ public class PermenantEscapeMenu : MonoBehaviour
 
     public void openLoadoutMenu(){
         closeMenu();
+        disableShooting();
         if(mouseLook){
             mouseLook.UnlockCursor();
             mouseLook.LockPlayerMouseMovementRotation();
@@ -157,11 +173,13 @@ public class PermenantEscapeMenu : MonoBehaviour
         loadoutMenu.SetActive(false);
         openMenu();
         loadoutMenuOpen = false;
+        enableShooting();
     }
 
 
     public void openOptionsMenu(){
         closeMenu();
+        disableShooting();
         optionsMenuOpen = true;
         if(mouseLook){
             mouseLook.UnlockCursor();
@@ -178,6 +196,7 @@ public class PermenantEscapeMenu : MonoBehaviour
         optionsMenuCanvas.SetActive(false);
         openMenu();
         optionsMenuOpen = false;
+        enableShooting();
     }
 
 
