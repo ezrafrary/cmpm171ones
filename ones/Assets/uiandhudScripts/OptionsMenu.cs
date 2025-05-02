@@ -16,7 +16,7 @@ public class OptionsMenu : MonoBehaviour
     public Image testcrosshair;
     public ColorPicker enemyOutlineColorPicker;
     public ColorPicker crosshairColorPicker;
-
+    
 
 
     [Header("places to load the settings")]
@@ -36,6 +36,16 @@ public class OptionsMenu : MonoBehaviour
     void Start(){
         loadSettings();
         gameObject.SetActive(false);
+    }
+
+
+    public void toggleFPSCounter(){
+        if(PlayerPrefs.GetInt("PlayerFPSCounterSettings", 0) == 0){
+            PlayerPrefs.SetInt("PlayerFPSCounterSettings", 1);
+        }else{
+            PlayerPrefs.SetInt("PlayerFPSCounterSettings", 0);
+        }
+        PermenantEscapeMenu.Instance.setFPSCounter();
     }
 
     public void toggleTwitchChatVisibliity(){

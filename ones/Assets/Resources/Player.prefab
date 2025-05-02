@@ -9064,7 +9064,7 @@ MonoBehaviour:
   - {fileID: 6644083619080426125}
   isShotgun: 0
   numPellets: 1
-  spread: 15
+  spread: 10
   hasBlowBack: 1
   blowBackStrength: 3
   preventFireWhileReloading: 0

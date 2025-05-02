@@ -174,6 +174,7 @@
     <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Brick Project Studio\_BPS Basic Assets\Common\Scripts and Animations\Doors\opencloseStallDoor.cs" />
     <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Clock\Scripts\Clock.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\FPScounter.cs" />
     <Compile Include="Assets\unityStoreAssets\Bananadev&apos;s Pack\MouseLook.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\unityStoreAssets\TeKniKo_Free\Power_Ups\Scripts\ObjectBounce.cs" />
@@ -204,7 +205,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\unityStoreAssets\Vefects\Trails VFX URP\VFX\Shaders\SH_Vefects_VFX_Distor.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

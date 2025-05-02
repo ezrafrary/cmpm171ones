@@ -43,6 +43,11 @@ public class PermenantEscapeMenu : MonoBehaviour
     [Header("Twitch")]
     public GameObject twitchChatBox;
 
+
+    [Header("FPSCounter")]
+    public GameObject fpsCounter;
+
+
     //escape button
     private bool buttonWasPressedLastFrame = false;
     private bool optionsMenuOpen = false;
@@ -55,8 +60,10 @@ public class PermenantEscapeMenu : MonoBehaviour
 
     void Start()
     {
+        //handle setting permenant onscreen ui
         setMouselook();
         setTwitchChatBox();
+        setFPSCounter();
     }
 
     // Update is called once per frame
@@ -89,6 +96,15 @@ public class PermenantEscapeMenu : MonoBehaviour
     }
 
 
+    public void setFPSCounter(){
+        if(PlayerPrefs.GetInt("PlayerFPSCounterSettings") == 1){
+            fpsCounter.SetActive(true);
+        }else{
+            fpsCounter.SetActive(false);
+        }
+    }
+
+
     public void disableShooting(){
         if(WeaponSwitcher.Instance){
             WeaponSwitcher.Instance.globalPreventFire();
@@ -104,7 +120,6 @@ public class PermenantEscapeMenu : MonoBehaviour
 
     public void setTwitchChatBox(){
         if(PlayerPrefs.GetInt("TwitchChatVisible", 0) == 1){
-            
             twitchChatBox.SetActive(true);
         }else{
             twitchChatBox.SetActive(false);
