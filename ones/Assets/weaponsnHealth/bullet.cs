@@ -115,6 +115,8 @@ public class Bullet : MonoBehaviour
 
         //Debug.Log("Linecasting between: " + transform.position + " and " + oldPos.transform.position);
         
+        Debug.DrawLine(oldPos.transform.position, transform.position, Color.red, 1f);
+
         if(Physics.Linecast(oldPos.transform.position, transform.position, out RaycastHit hit, LayerMask.NameToLayer("clientSidePlayerHitbox"))){
             //Debug.Log("hit: " + hit + " hit.collider: " + hit.collider);
             if(hit.collider.CompareTag("ignoreBullets")){
@@ -132,7 +134,25 @@ public class Bullet : MonoBehaviour
 
         oldPos.transform.position = transform.position;
     }
-    
+
+    void OnTriggerEnter(Collider other){
+
+        if(other.CompareTag("ignoreBullets")){
+            return;
+        }
+        if(other.CompareTag("projectile")){
+            return;
+        }
+        if(other.gameObject.layer == LayerMask.NameToLayer("clientSidePlayerHitbox")){
+            return;
+        }
+        if(other){
+            bulletHitSomething(other);
+        }
+    }
+
+
+
     public int calculateDamageWithFalloff(){
 
         float distanceTraveled = Vector3.Distance(startPos.position, transform.position);
@@ -150,6 +170,7 @@ public class Bullet : MonoBehaviour
         return damageWithFalloff;
         
     }
+
 
 
     public static GameObject GetObjectByPhotonID(int photonViewID)

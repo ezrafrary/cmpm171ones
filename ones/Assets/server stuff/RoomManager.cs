@@ -96,6 +96,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     [Header("Ragdolls")]
     public GameObject ragdollPrefab;
+    public GameObject headlessRagdollPrefab;
 
     public bool gameStarted = false;
 
@@ -261,6 +262,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
 
     public void startGame(){
+        waitingForPlayerScreen.SetActive(false);
         roomCam.SetActive(false);
         SpawnPlayer();
         timer.StartTimer();
@@ -291,6 +293,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public void SpawnRagDoll(Vector3 spawnPos, Quaternion inputQuat){
         Instantiate(ragdollPrefab, spawnPos, inputQuat);
+    }
+
+    public void SpawnHeadlessRagdoll(Vector3 spawnPos, Quaternion inputQuat){
+        Instantiate(headlessRagdollPrefab, spawnPos, inputQuat);
     }
 
     public void PlayerDied(string _damageDealer, string _weaponName, string _killMethod, int killerHealthLeft, int replayID){ //gets called by Health.cs when the player dies

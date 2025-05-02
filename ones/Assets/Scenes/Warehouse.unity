@@ -41367,6 +41367,8 @@ MonoBehaviour:
   playerSensY: 2
   roomNameToJoin: test
   ragdollPrefab: {fileID: 7155695674808585518, guid: cba2239967121ff40bfffed554d22932, type: 3}
+  headlessRagdollPrefab: {fileID: 8898268757566328193, guid: 35d42af99cd5334429fa19025a3a4a52, type: 3}
+  gameStarted: 0
 --- !u!4 &1961877809
 Transform:
   m_ObjectHideFlags: 0

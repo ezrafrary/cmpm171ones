@@ -115,8 +115,8 @@ MonoBehaviour:
   scoreGainedForKill: 10
   ignoreHitbox: {fileID: 0}
   ignoreHitboxes: []
-  hitVFX: {fileID: 7329448396953797967, guid: 7c9ee4a5d296fd14f860d72133d08012, type: 3}
-  missVFX: {fileID: 7329448396953797967, guid: 7c9ee4a5d296fd14f860d72133d08012, type: 3}
+  hitVFX: {fileID: 2296296012327813564, guid: b68247b4bf01507499a1256fe3890ffc, type: 3}
+  missVFX: {fileID: 2296296012327813564, guid: b68247b4bf01507499a1256fe3890ffc, type: 3}
   timeUntilBulletIsVisible: 1
   hitmarker: {fileID: 0}
   headshotHitmarker: {fileID: 0}

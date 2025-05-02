@@ -25,6 +25,9 @@ public class Health : MonoBehaviour
 
     public RectTransform healthBar;
     private float originalHealthBarSize;
+    public RectTransform TPhealthBar;
+    private float originalTPHealthBarSize;
+
 
     public bool hasDied = false; //if the player takes 2 instances of damage in one frame, it duplicates client, this fixes that
 
@@ -33,6 +36,7 @@ public class Health : MonoBehaviour
     private void Start(){
         originalHealthBarSize = healthBar.sizeDelta.x;
         maxHealth = health;
+        originalTPHealthBarSize = TPhealthBar.sizeDelta.x;
     }
 
 
@@ -46,6 +50,7 @@ public class Health : MonoBehaviour
 
         health -= _damage;
         healthBar.sizeDelta = new Vector2(originalHealthBarSize * health / 100f, healthBar.sizeDelta.y);
+        TPhealthBar.sizeDelta = new Vector2(originalTPHealthBarSize * health / 100f, TPhealthBar.sizeDelta.y);
         healthText.text = health.ToString();
         if(health <= 0){
             hasDied = true;
@@ -54,7 +59,11 @@ public class Health : MonoBehaviour
                 RoomManager.instance.deaths++;
                 RoomManager.instance.SetHashes();
             }
-            RoomManager.instance.SpawnRagDoll(transform.position, transform.rotation);
+            if(killMethod == "head"){
+                RoomManager.instance.SpawnHeadlessRagdoll(transform.position, transform.rotation);
+            }else{
+                RoomManager.instance.SpawnRagDoll(transform.position, transform.rotation);
+            }
             Destroy(gameObject);
 
         }
@@ -67,6 +76,8 @@ public class Health : MonoBehaviour
             health = maxHealth;
         }
         healthBar.sizeDelta = new Vector2(originalHealthBarSize * health / 100f, healthBar.sizeDelta.y);
+        TPhealthBar.sizeDelta = new Vector2(originalTPHealthBarSize * health / 100f, TPhealthBar.sizeDelta.y);
+
         healthText.text = health.ToString();
     }
 

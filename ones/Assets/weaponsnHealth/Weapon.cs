@@ -212,13 +212,16 @@ public class Weapon : MonoBehaviour
         }else if (UserInput.instance.AttackInput && reloadTimer <= 0 && mag > 0 && ammo <= 0 && !justShot){
             Reload();
         } 
-
-
-
+        if(reloadTimer <=0 && mag > 0 && ammo == 0 && !wasReloadingLastFrame){
+            Debug.Log("reloading cuz empty");
+            Reload();
+        }
+        
         if(!IsReloading() && wasReloadingLastFrame){
             doneReloading();
         }
 
+        
 
 
         if(IsReloading()){
