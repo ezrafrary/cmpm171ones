@@ -16,7 +16,8 @@ public class OptionsMenu : MonoBehaviour
     public Image testcrosshair;
     public ColorPicker enemyOutlineColorPicker;
     public ColorPicker crosshairColorPicker;
-    
+    public TMP_InputField masterVolumeInputField;
+    public Slider masterVolumeSlider;
 
 
     [Header("places to load the settings")]
@@ -26,7 +27,7 @@ public class OptionsMenu : MonoBehaviour
     private float defaultSens = 2f;
     private float defaultFov = 60;
     private float defaultColor = 255f;
-
+    private int defaultVolume = 100;
 
 
 
@@ -52,6 +53,21 @@ public class OptionsMenu : MonoBehaviour
         PermenantEscapeMenu.Instance.toggleTwitchChatVisibliity();
     }
 
+
+
+
+    public void masterVolumeSliderChanged(){
+        masterVolumeInputField.text = masterVolumeSlider.value.ToString();
+    }
+
+    public void masterVolumeInputFieldChanged(){
+        try{
+            masterVolumeSlider.value = float.Parse(masterVolumeInputField.text);
+        }catch{
+            masterVolumeInputField.text = "100";
+            masterVolumeSlider.value = defaultVolume;
+        }
+    }
 
     public void sensSliderChanged(){
         sensInputField.text = sensSlider.value.ToString();
@@ -127,6 +143,7 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("CrosshairColor_Green", crosshairColorPicker.getGreen());
         PlayerPrefs.SetFloat("CrosshairColor_Blue", crosshairColorPicker.getBlue());
 
+        PlayerPrefs.SetInt("MasterVolume", (int)masterVolumeSlider.value);
 
         loadSettings();
     }
@@ -135,6 +152,8 @@ public class OptionsMenu : MonoBehaviour
         sensSlider.value = PlayerPrefs.GetFloat("SensXY", defaultSens);
         fovSlider.value = PlayerPrefs.GetInt("FOV", (int)defaultFov);
         
+        masterVolumeSlider.value = PlayerPrefs.GetInt("MasterVolume", defaultVolume);
+
         if(crosshair){
             crosshair.color = getSavedColor();
         }

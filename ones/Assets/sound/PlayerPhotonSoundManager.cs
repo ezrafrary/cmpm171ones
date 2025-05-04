@@ -27,6 +27,20 @@ public class PlayerPhotonSoundManager : MonoBehaviour
 
     public Health _health;
 
+
+
+
+
+
+
+
+
+    public static float GetMasterVolume(){
+        return PlayerPrefs.GetInt("MasterVolume", 100)/100f;
+    }
+
+
+
     public void PlayFootstepsSFX(){
         GetComponent<PhotonView>().RPC("PlayFootstepsSFX_RPC", RpcTarget.All);
     }
@@ -34,19 +48,19 @@ public class PlayerPhotonSoundManager : MonoBehaviour
 
     public void playKillSound(){
         hitFeedbackSource.clip = killSound;
-        hitFeedbackSource.volume = 0.5f;
+        hitFeedbackSource.volume = 0.5f * GetMasterVolume();
         hitFeedbackSource.Play();
     }
 
     public void playHitSound(){
         hitFeedbackSource.clip = hitSound;
-        hitFeedbackSource.volume = 0.5f;
+        hitFeedbackSource.volume = 0.5f * GetMasterVolume();
         hitFeedbackSource.Play();
     }
 
     public void playHeadshotSOund(){
         hitFeedbackSource.clip = headshotSound;
-        hitFeedbackSource.volume = 0.5f;
+        hitFeedbackSource.volume = 0.5f * GetMasterVolume();
         hitFeedbackSource.Play();
     }
 
@@ -59,7 +73,7 @@ public class PlayerPhotonSoundManager : MonoBehaviour
         
         dashSoundSource.clip = dashSound;
 
-        dashSoundSource.volume = 0.2f;
+        dashSoundSource.volume = 0.2f * GetMasterVolume();
         dashSoundSource.Play();
         
     }
@@ -86,7 +100,7 @@ public class PlayerPhotonSoundManager : MonoBehaviour
             AudioSource audioSource = targetObject.AddComponent<AudioSource>();
             audioSource.clip = allExplosionSFX[index];
             audioSource.pitch = 0.7f;
-            audioSource.volume = 0.7f;
+            audioSource.volume = 0.7f * GetMasterVolume();
             //audioSource.spatialBlend = 1.0f; // Make it 3D
             //audioSource.rolloffMode = AudioRolloffMode.Linear;
             //audioSource.maxDistance = 50f; // Set based on your needs
@@ -104,8 +118,7 @@ public class PlayerPhotonSoundManager : MonoBehaviour
     }
     [PunRPC]
     public void playImpactSound_RPC(Vector3 locationToPlaySound, int index){
-
-        AudioSource.PlayClipAtPoint(allExplosionSFX[index], locationToPlaySound, 1.0f);
+        AudioSource.PlayClipAtPoint(allExplosionSFX[index], locationToPlaySound, 1.0f * GetMasterVolume());
     }
 
     [PunRPC]
@@ -118,7 +131,7 @@ public class PlayerPhotonSoundManager : MonoBehaviour
 
         //pitch/volume
         footstepSource.pitch = UnityEngine.Random.Range(0.7f, 1.2f);
-        footstepSource.volume = UnityEngine.Random.Range(0.05f, 0.01f);
+        footstepSource.volume = UnityEngine.Random.Range(0.05f, 0.01f) * GetMasterVolume();
         footstepSource.Play();
     }
 
@@ -132,7 +145,7 @@ public class PlayerPhotonSoundManager : MonoBehaviour
 
         //pitch/volume
         gunShootSource.pitch = UnityEngine.Random.Range(lowpitch, hightpitch);
-        gunShootSource.volume = UnityEngine.Random.Range(lowvol, highvol);
+        gunShootSource.volume = UnityEngine.Random.Range(lowvol, highvol) * GetMasterVolume();
 
         gunShootSource.Play();
     }
