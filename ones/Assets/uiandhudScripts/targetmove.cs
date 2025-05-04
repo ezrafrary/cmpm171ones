@@ -18,6 +18,5 @@ public class targetmove : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         movespeed = movespeed * -1;
-        Debug.Log("entereda");
     }
 }

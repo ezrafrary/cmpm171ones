@@ -201,7 +201,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\unityStoreAssets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
     <None Include="Assets\unityStoreAssets\Vefects\Trails VFX URP\VFX\Shaders\SH_Vefects_VFX_AdvTrail.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\unityStoreAssets\Vefects\Trails VFX URP\VFX\Shaders\SH_Vefects_VFX_Distortion.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />

@@ -213,6 +213,9 @@ public class Bullet : MonoBehaviour
 
 
     void bulletHitSomething(Collider other){
+
+
+
         if(dealtDamage){
             return;
         }
@@ -223,6 +226,7 @@ public class Bullet : MonoBehaviour
         if(!pv.IsMine){ //This line makes projectile collision clientside rather than serverside, but is the only way i could fix the player hitting themself bug
             return;
         }
+
         
         if(other.transform.gameObject.GetComponent<Health>()){
             if(other.transform.gameObject.GetComponent<Health>().IsLocalPlayer){
