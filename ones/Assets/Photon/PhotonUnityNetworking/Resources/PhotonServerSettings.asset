@@ -63,6 +63,10 @@ MonoBehaviour:
   - syncParentPVID
   - SpawnRagDoll
   - EndGameRPC
+  - playExplosionSound
+  - playImpactSound_RPC
+  - PlaySoundFollowingObject_RPC
+  - playFollowingSound_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

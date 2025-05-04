@@ -9,7 +9,7 @@ public class PlayerSetup : MonoBehaviour
 
 
     public Movement movement;
-
+    public Health health;
 
     [Header("next 2 should be the same object")]
     public new GameObject camera;
@@ -47,6 +47,8 @@ public class PlayerSetup : MonoBehaviour
 
 
 
+
+
     void Start(){
         playerOptions.loadSettings();
         SetCameraFov();
@@ -61,6 +63,12 @@ public class PlayerSetup : MonoBehaviour
             playerOptions.loadSettings();
             SetCameraFov();
             setupOutlineColor();
+        }
+
+        if(health){
+            if(health.IsLocalPlayer){
+                movement.enabled = true;
+            }
         }
     }
 

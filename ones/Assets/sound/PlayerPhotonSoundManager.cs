@@ -12,6 +12,7 @@ public class PlayerPhotonSoundManager : MonoBehaviour
 
     public AudioSource gunShootSource;
     public AudioClip[] allGunShootSFX;
+    public AudioClip[] allExplosionSFX;
 
 
     public AudioClip hitSound;
@@ -65,6 +66,48 @@ public class PlayerPhotonSoundManager : MonoBehaviour
 
 
 
+
+    public void playFollowingSound(GameObject target, int index)
+    {
+        PhotonView photonView = GetComponent<PhotonView>();
+        int targetViewID = target.GetComponent<PhotonView>().ViewID;
+        photonView.RPC("playFollowingSound_RPC", RpcTarget.All, targetViewID, index);
+    }
+
+    [PunRPC]
+    public void playFollowingSound_RPC(int targetViewID, int index)
+    {
+        PhotonView targetPhotonView = PhotonView.Find(targetViewID);
+        if (targetPhotonView != null)
+        {
+            GameObject targetObject = targetPhotonView.gameObject;
+
+            // Create a new AudioSource attached to the target object
+            AudioSource audioSource = targetObject.AddComponent<AudioSource>();
+            audioSource.clip = allExplosionSFX[index];
+            audioSource.pitch = 0.7f;
+            audioSource.volume = 0.7f;
+            //audioSource.spatialBlend = 1.0f; // Make it 3D
+            //audioSource.rolloffMode = AudioRolloffMode.Linear;
+            //audioSource.maxDistance = 50f; // Set based on your needs
+            audioSource.Play();
+
+            // Optionally destroy the AudioSource after the clip finishes
+            Destroy(audioSource, allExplosionSFX[index].length);
+        }
+    }
+
+
+
+    public void playImpactSound(Vector3 locationToPlaySound, int index){
+        GetComponent<PhotonView>().RPC("playImpactSound_RPC", RpcTarget.All,locationToPlaySound, index);
+    }
+    [PunRPC]
+    public void playImpactSound_RPC(Vector3 locationToPlaySound, int index){
+
+        AudioSource.PlayClipAtPoint(allExplosionSFX[index], locationToPlaySound, 1.0f);
+    }
+
     [PunRPC]
     public void PlayFootstepsSFX_RPC(){
         if(!playerMovement.getGrounded()){
@@ -79,17 +122,17 @@ public class PlayerPhotonSoundManager : MonoBehaviour
         footstepSource.Play();
     }
 
-    public void PlayShootSFX(int index){
-        GetComponent<PhotonView>().RPC("PlayShootSFX_RPC", RpcTarget.All, index);
+    public void PlayShootSFX(int index, float lowpitch, float highpitch, float lowvol, float highvol){
+        GetComponent<PhotonView>().RPC("PlayShootSFX_RPC", RpcTarget.All, index, lowpitch, highpitch, lowvol, highvol);
     }
 
     [PunRPC]
-    public void PlayShootSFX_RPC(int index){
+    public void PlayShootSFX_RPC(int index, float lowpitch, float hightpitch, float lowvol, float highvol){
         gunShootSource.clip = allGunShootSFX[index];
 
         //pitch/volume
-        gunShootSource.pitch = UnityEngine.Random.Range(0.7f, 1.2f);
-        gunShootSource.volume = UnityEngine.Random.Range(0.1f, 0.3f);
+        gunShootSource.pitch = UnityEngine.Random.Range(lowpitch, hightpitch);
+        gunShootSource.volume = UnityEngine.Random.Range(lowvol, highvol);
 
         gunShootSource.Play();
     }

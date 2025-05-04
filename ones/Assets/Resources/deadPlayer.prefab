@@ -2926,7 +2926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6ab094c267fd54e82ee3a703c682f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeUntilDestory: 100
+  TimeUntilDestory: 300
   isPhotonObject: 0
 --- !u!1 &7232926225140929127
 GameObject:

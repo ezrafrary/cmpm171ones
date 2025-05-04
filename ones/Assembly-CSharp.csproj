@@ -76,7 +76,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\gameplay prefabs\spawnpoint.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\targetmove.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
     <Compile Include="Assets\weaponsnHealth\Health.cs" />
     <Compile Include="Assets\uiandhudScripts\backToMenuScript.cs" />
@@ -85,6 +84,7 @@
     <Compile Include="Assets\uiandhudScripts\MainMenu.cs" />
     <Compile Include="Assets\TwitchIntegrationDemo\Scripts\Menu.cs" />
     <Compile Include="Assets\uiandhudScripts\TextManagerScript.cs" />
+    <Compile Include="Assets\uiandhudScripts\DisplayTwitchChannelName.cs" />
     <Compile Include="Assets\weaponsnHealth\PlayerHitboxScore.cs" />
     <Compile Include="Assets\weaponsnHealth\killZone.cs" />
     <Compile Include="Assets\server stuff\destoryAfterTime.cs" />
@@ -92,10 +92,12 @@
     <Compile Include="Assets\server stuff\RoomItemButton.cs" />
     <Compile Include="Assets\uiandhudScripts\escapeMenu.cs" />
     <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\teleporterscript.cs" />
+    <Compile Include="Assets\uiandhudScripts\MatchRotation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\uiandhudScripts\BackToMenuButton.cs" />
+    <Compile Include="Assets\uiandhudScripts\targetmove.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
@@ -128,14 +130,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\DisplayTwitchChannelName.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\MatchRotation.cs" />
+    <Compile Include="Assets\uiandhudScripts\FPScounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\TwitchIntegrationDemo\Scripts\CommandsOnCooldownDisplay.cs" />
     <Compile Include="Assets\weaponsnHealth\HealthPickup.cs" />
     <Compile Include="Assets\server stuff\PhotonTimer.cs" />
+    <Compile Include="Assets\RiveAssets\RiveDemoMenuController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Movement.cs" />
@@ -146,6 +148,7 @@
     <Compile Include="Assets\replayLogic\ReplaySystem.cs" />
     <Compile Include="Assets\TwitchIntegrationDemo\Scripts\TwitchChatBox.cs" />
     <Compile Include="Assets\weaponsnHealth\AmmoPickup.cs" />
+    <Compile Include="Assets\weaponsnHealth\RPSR_AccelerateAfterTime.cs" />
     <Compile Include="Assets\RiveAssets\PermenantEscapeMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
@@ -162,7 +165,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
-    <Compile Include="Assets\RiveDemoMenuController.cs" />
     <Compile Include="Assets\uiandhudScripts\Hitmarker.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\PushPhysics.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
@@ -174,14 +176,12 @@
     <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Brick Project Studio\_BPS Basic Assets\Common\Scripts and Animations\Doors\opencloseStallDoor.cs" />
     <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Clock\Scripts\Clock.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\FPScounter.cs" />
     <Compile Include="Assets\unityStoreAssets\Bananadev&apos;s Pack\MouseLook.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\unityStoreAssets\TeKniKo_Free\Power_Ups\Scripts\ObjectBounce.cs" />
     <Compile Include="Assets\uiandhudScripts\switchMenus.cs" />
     <Compile Include="Assets\sound\PlayerPhotonSoundManager.cs" />
     <Compile Include="Assets\replayLogic\ReplayPlayerOnly.cs" />
-    <Compile Include="Assets\RPSR_AccelerateAfterTime.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
   </ItemGroup>
@@ -196,12 +196,12 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Roboto-Bold - AFL.txt" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\unityStoreAssets\QuickOutline\Resources\Shaders\OutlineMask.shader" />
     <None Include="Assets\unityStoreAssets\Vefects\Trails VFX URP\VFX\Shaders\SH_Vefects_VFX_AdvTrail.shader" />
+    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\unityStoreAssets\Vefects\Trails VFX URP\VFX\Shaders\SH_Vefects_VFX_Distortion.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />

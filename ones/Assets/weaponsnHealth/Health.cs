@@ -29,9 +29,10 @@ public class Health : MonoBehaviour
     private float originalTPHealthBarSize;
 
 
+
+
     public bool hasDied = false; //if the player takes 2 instances of damage in one frame, it duplicates client, this fixes that
 
-    
 
     private void Start(){
         originalHealthBarSize = healthBar.sizeDelta.x;
@@ -64,8 +65,12 @@ public class Health : MonoBehaviour
             }else{
                 RoomManager.instance.SpawnRagDoll(transform.position, transform.rotation);
             }
-            Destroy(gameObject);
-
+            
+            if(GetComponent<PhotonView>()){
+                if(GetComponent<PhotonView>().IsMine){
+                    PhotonNetwork.Destroy(gameObject);
+                }
+            }
         }
     }
 

@@ -50,6 +50,7 @@ public class Bullet : MonoBehaviour
 
     [Header("SFX")]
     public PlayerPhotonSoundManager playerPhotonSoundManager;
+    public int bulletImpactSoundIndex = -1;
 
 
     public void setStartLocation(Vector3 _startLocation){
@@ -135,6 +136,8 @@ public class Bullet : MonoBehaviour
         oldPos.transform.position = transform.position;
     }
 
+
+    //ihatecolisiondetectionihatecolisiondetectionihatecolisiondetectionihatecolisiondetectionihatecolisiondetectionihatecolisiondetectionihatecolisiondetection
     void OnTriggerEnter(Collider other){
 
         if(other.CompareTag("ignoreBullets")){
@@ -261,9 +264,9 @@ public class Bullet : MonoBehaviour
                 replayID = 1;
             }
             
-            if(other.transform.gameObject.GetComponent<Health>().hasDied == true){
-                playerPhotonSoundManager.playKillSound();
-            }
+            // if(other.transform.gameObject.GetComponent<Health>().hasDied == true){
+            //     playerPhotonSoundManager.playKillSound();
+            // }
 
             other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, calculateDamageWithFalloff(), playerName, weaponName, "body", killerHealthLeft, replayID);
             other.transform.gameObject.GetComponent<PhotonView>().RPC("createHitIndicator", RpcTarget.All, startLocation);
@@ -287,20 +290,24 @@ public class Bullet : MonoBehaviour
                 RoomManager.instance.kills++;
                 RoomManager.instance.score += scoreGainedForKill;
                 RoomManager.instance.SetHashes();
-                playerPhotonSoundManager.playKillSound();
+                if(playerPhotonSoundManager){
+                    playerPhotonSoundManager.playKillSound();
+                }
                 replayID = 1;
                 GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
             }
 
-            if(other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().hasDied == true){
-                playerPhotonSoundManager.playKillSound();
-            }
+            // if(other.transform.gameObject.GetComponent<damageModifierHitbox>().healthHolder.GetComponent<Health>().hasDied == true){
+            //     playerPhotonSoundManager.playKillSound();
+            // }
 
             other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(calculateDamageWithFalloff(), playerName, weaponName, null, killerHealthLeft, replayID);
             if (other.transform.gameObject.GetComponent<damageModifierHitbox>().hitboxId == "head"){   
                 headshotHitmarker.GetComponent<Hitmarker>().createHitmarker();
                 if(!playerDead){
-                    playerPhotonSoundManager.playHeadshotSOund();
+                    if(playerPhotonSoundManager){
+                        playerPhotonSoundManager.playHeadshotSOund();
+                    }
                 }
             }else{
                 hitmarker.GetComponent<Hitmarker>().createHitmarker();
@@ -309,6 +316,14 @@ public class Bullet : MonoBehaviour
             dealtDamage = true;
         }
         
+
+        if(bulletImpactSoundIndex != -1){
+            if(playerPhotonSoundManager){
+                playerPhotonSoundManager.playImpactSound(transform.position, bulletImpactSoundIndex);
+            }
+        }
+
+
         if(!bulletHitPlayer && missVFX){
             PhotonNetwork.Instantiate(missVFX.name, oldPos.transform.position, Quaternion.identity);
         }
@@ -336,7 +351,9 @@ public class Bullet : MonoBehaviour
                     if (explosiveDamage >= hitCollider.transform.gameObject.GetComponent<Health>().health && hitCollider.transform.gameObject.GetComponent<Health>().health > 0 && hitCollider.transform.gameObject.GetComponent<Health>().hasDied == false){
                         //kill
                         
-                        playerPhotonSoundManager.playKillSound();
+                        if(playerPhotonSoundManager){
+                            playerPhotonSoundManager.playKillSound();
+                        }
                         if(!hitCollider.transform.gameObject.GetComponent<Health>().IsLocalPlayer){
                             replayID = 1;
                             RoomManager.instance.kills++;
@@ -350,7 +367,9 @@ public class Bullet : MonoBehaviour
                     hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage, playerName, weaponName, "explosion", killerHealthLeft, replayID);
                 }
                 if(!_playerDead){//playhitsound will overwrite playekillsound
-                    playerPhotonSoundManager.playHitSound();
+                    if(playerPhotonSoundManager){
+                        playerPhotonSoundManager.playHitSound();
+                    }
                 }
             }
         }

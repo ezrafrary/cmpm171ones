@@ -247,6 +247,7 @@ MonoBehaviour:
   damageLostPerMeter: 1
   minimumDamage: 0
   playerPhotonSoundManager: {fileID: 0}
+  bulletImpactSoundIndex: -1
   oldPos: {fileID: 0}
   startPos: {fileID: 0}
 --- !u!54 &8715271385869556481

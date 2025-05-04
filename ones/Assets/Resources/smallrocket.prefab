@@ -234,7 +234,7 @@ MonoBehaviour:
   replaySystem: {fileID: 0}
   parentPhotonViewID: 0
   damage: 35
-  explosiveDamage: 30
+  explosiveDamage: 40
   explosiveRadius: 2
   scoreGainedForKill: 5
   ignoreHitbox: {fileID: 0}
@@ -249,6 +249,7 @@ MonoBehaviour:
   damageLostPerMeter: 1
   minimumDamage: 0
   playerPhotonSoundManager: {fileID: 0}
+  bulletImpactSoundIndex: 2
   oldPos: {fileID: 0}
   startPos: {fileID: 0}
 --- !u!54 &8712635185112596516
@@ -371,6 +372,8 @@ MonoBehaviour:
   timeAlive: 0
   timeWhenSpeedIncreaseHappens: 16
   speedAfterTimer: 300
+  accelerationSFXIndex: 3
+  ParentBullet: {fileID: 7645824307010996962}
 --- !u!1001 &5766406670248841140
 PrefabInstance:
   m_ObjectHideFlags: 0
