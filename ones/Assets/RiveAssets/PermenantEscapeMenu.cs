@@ -48,6 +48,9 @@ public class PermenantEscapeMenu : MonoBehaviour
     public GameObject fpsCounter;
 
 
+    [Space]
+    public bool closeButtonClosesAllTheWay = false;
+
     //escape button
     private bool buttonWasPressedLastFrame = false;
     private bool optionsMenuOpen = false;
@@ -77,7 +80,7 @@ public class PermenantEscapeMenu : MonoBehaviour
                             if(menuOpen){
                                 closeMenu();
                             }else{
-                                openMenu();
+                                openMenu(false);
                             }
                         }else{
                             closeLoadoutMenu();
@@ -93,6 +96,13 @@ public class PermenantEscapeMenu : MonoBehaviour
             buttonWasPressedLastFrame = false;
         }
         setTwitchChatBox();
+    }
+
+
+    public void closeAllMenus(){
+        closeOptionsMenu();
+        closeLoadoutMenu(); 
+        closeMenu();
     }
 
 
@@ -146,8 +156,9 @@ public class PermenantEscapeMenu : MonoBehaviour
     }
 
 
-    public void openMenu(){
+    public void openMenu(bool SETcloseButtonClosesAllTheWay){
         setMouselook();
+        closeButtonClosesAllTheWay = SETcloseButtonClosesAllTheWay;
 
         disableShooting();
         escapeMenuRivePannel.SetActive(true);
@@ -186,14 +197,15 @@ public class PermenantEscapeMenu : MonoBehaviour
 
     public void closeLoadoutMenu(){
         loadoutMenu.SetActive(false);
-        openMenu();
+        openMenu(false);
         loadoutMenuOpen = false;
         enableShooting();
     }
 
 
-    public void openOptionsMenu(){
+    public void openOptionsMenu(bool SETcloseButtonClosesAllTheWay){
         closeMenu();
+        closeButtonClosesAllTheWay = SETcloseButtonClosesAllTheWay;
         disableShooting();
         optionsMenuOpen = true;
         if(mouseLook){
@@ -209,7 +221,10 @@ public class PermenantEscapeMenu : MonoBehaviour
     public void closeOptionsMenu(){
         escapeMenu_optionsMenu.saveSettingsButtonPressed();
         optionsMenuCanvas.SetActive(false);
-        openMenu();
+        if(!closeButtonClosesAllTheWay){
+            openMenu(false);
+            
+        }
         optionsMenuOpen = false;
         enableShooting();
     }
@@ -235,7 +250,7 @@ public class PermenantEscapeMenu : MonoBehaviour
         }
 
         if(evt.Name.StartsWith("OptionsClicked")){
-            openOptionsMenu();
+            openOptionsMenu(false);
         }
 
         if(evt.Name.StartsWith("MenuClicked")){

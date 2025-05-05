@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
 
 
     [PunRPC]
-    public void TakeDamage(int _damage, string damageDealer, string weaponName, string killMethod, int killerHealthLeft, int replayID){
+    public void TakeDamage(int _damage, string damageDealer, string weaponName, string killMethod, int killerHealthLeft, int replayID, Vector3 projectileLinearVelocity){
 
         if (hasDied){ //making sure a player cant die twice in one frame. 
             return;
@@ -61,9 +61,9 @@ public class Health : MonoBehaviour
                 RoomManager.instance.SetHashes();
             }
             if(killMethod == "head"){
-                RoomManager.instance.SpawnHeadlessRagdoll(transform.position, transform.rotation);
+                RoomManager.instance.SpawnHeadlessRagdoll(transform.position, transform.rotation, (projectileLinearVelocity * 0.1f + gameObject.GetComponent<Rigidbody>().linearVelocity));
             }else{
-                RoomManager.instance.SpawnRagDoll(transform.position, transform.rotation);
+                RoomManager.instance.SpawnRagDoll(transform.position, transform.rotation, (projectileLinearVelocity * 0.1f + gameObject.GetComponent<Rigidbody>().linearVelocity) );
             }
             
             if(GetComponent<PhotonView>()){
@@ -91,7 +91,7 @@ public class Health : MonoBehaviour
     [PunRPC]
     public void KillPlayer(){
         if (health > 0){ //This seems pointless, but if you use OnTriggerEnter as a damage field, it gets called twice in one frame, duplicating a client 
-            TakeDamage(health, null, null, null, 0, -1);
+            TakeDamage(health, null, null, null, 0, -1, Vector3.zero);
         }
     }
 }

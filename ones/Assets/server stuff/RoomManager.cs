@@ -291,12 +291,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void SpawnRagDoll(Vector3 spawnPos, Quaternion inputQuat){
-        Instantiate(ragdollPrefab, spawnPos, inputQuat);
+    public void SpawnRagDoll(Vector3 spawnPos, Quaternion inputQuat, Vector3 inputVelocity){
+        var spawnedRagdoll = Instantiate(ragdollPrefab, spawnPos, inputQuat);
+        spawnedRagdoll.GetComponent<DeadPlayerRigidBodyContainer>()._rigidbody.linearVelocity = inputVelocity;
     }
 
-    public void SpawnHeadlessRagdoll(Vector3 spawnPos, Quaternion inputQuat){
-        Instantiate(headlessRagdollPrefab, spawnPos, inputQuat);
+    public void SpawnHeadlessRagdoll(Vector3 spawnPos, Quaternion inputQuat, Vector3 inputVelocity){
+        var spawnedRagdoll = Instantiate(headlessRagdollPrefab, spawnPos, inputQuat);
+        spawnedRagdoll.GetComponent<DeadPlayerRigidBodyContainer>()._rigidbody.linearVelocity = inputVelocity;
     }
 
     public void PlayerDied(string _damageDealer, string _weaponName, string _killMethod, int killerHealthLeft, int replayID){ //gets called by Health.cs when the player dies

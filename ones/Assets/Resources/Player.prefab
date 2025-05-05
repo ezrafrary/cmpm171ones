@@ -9266,7 +9266,7 @@ MonoBehaviour:
   - {fileID: 6644083619080426125}
   isShotgun: 0
   numPellets: 1
-  spread: 10
+  spread: 3
   hasBlowBack: 1
   blowBackStrength: 3
   preventFireWhileReloading: 0
@@ -9666,7 +9666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 13
   bulletSpeed: 160
   fireRate: 11
   reloadTime: 1.2
@@ -11048,7 +11048,7 @@ MonoBehaviour:
   fireRate: 1
   reloadTime: 2
   maxMags: 10
-  mag: 7
+  mag: 4
   ammo: 1
   magAmmo: 1
   isAutomatic: 1
@@ -12034,8 +12034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
-  bulletSpeed: 100
-  fireRate: 1
+  bulletSpeed: 120
+  fireRate: 1.1
   reloadTime: 2
   maxMags: 4
   mag: 2
@@ -12045,7 +12045,7 @@ MonoBehaviour:
   cameraRecoil: 15
   horizontalCameraRecoil: 2
   distanceUntilDamageFalloffStarts: 5
-  damageLostPerMeter: 1
+  damageLostPerMeter: 0.5
   minimumDamage: 1
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}

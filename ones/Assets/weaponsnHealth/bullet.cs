@@ -272,7 +272,7 @@ public class Bullet : MonoBehaviour
             //     playerPhotonSoundManager.playKillSound();
             // }
 
-            other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, calculateDamageWithFalloff(), playerName, weaponName, "body", killerHealthLeft, replayID);
+            other.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, calculateDamageWithFalloff(), playerName, weaponName, "body", killerHealthLeft, replayID, GetComponent<Rigidbody>().linearVelocity);
             other.transform.gameObject.GetComponent<PhotonView>().RPC("createHitIndicator", RpcTarget.All, startLocation);
             //Debug.Log("dealt damage");
             //hitmarker
@@ -305,7 +305,7 @@ public class Bullet : MonoBehaviour
             //     playerPhotonSoundManager.playKillSound();
             // }
 
-            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(calculateDamageWithFalloff(), playerName, weaponName, null, killerHealthLeft, replayID);
+            other.transform.gameObject.GetComponent<damageModifierHitbox>().Modified_TakeDamage(calculateDamageWithFalloff(), playerName, weaponName, null, killerHealthLeft, replayID, GetComponent<Rigidbody>().linearVelocity);
             if (other.transform.gameObject.GetComponent<damageModifierHitbox>().hitboxId == "head"){   
                 headshotHitmarker.GetComponent<Hitmarker>().createHitmarker();
                 if(!playerDead){
@@ -368,7 +368,7 @@ public class Bullet : MonoBehaviour
                         }
                         _playerDead = true;
                     }
-                    hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage, playerName, weaponName, "explosion", killerHealthLeft, replayID);
+                    hitCollider.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, explosiveDamage, playerName, weaponName, "explosion", killerHealthLeft, replayID, GetComponent<Rigidbody>().linearVelocity);
                 }
                 if(!_playerDead){//playhitsound will overwrite playekillsound
                     if(playerPhotonSoundManager){

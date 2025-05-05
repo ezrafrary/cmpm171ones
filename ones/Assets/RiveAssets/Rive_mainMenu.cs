@@ -58,7 +58,7 @@ public class Rive_mainMenu : MonoBehaviour
         if(evt.Name.StartsWith("SettingsButtonClicked")){
             // MenuCanvas.SetActive(false);
             // SettingsMenuGameobject.SetActive(true);
-            PermenantEscapeMenu.Instance.openOptionsMenu();
+            PermenantEscapeMenu.Instance.openOptionsMenu(true);
         }
 
     }
