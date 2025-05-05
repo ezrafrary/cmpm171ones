@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeAlive: 0
-  timeWhenSpeedIncreaseHappens: 16
+  timeWhenSpeedIncreaseHappens: 12
   speedAfterTimer: 300
   accelerationSFXIndex: 3
   ParentBullet: {fileID: 7645824307010996962}

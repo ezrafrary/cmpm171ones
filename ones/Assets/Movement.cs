@@ -203,7 +203,7 @@ public class Movement : MonoBehaviour
 
 
         if(new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).magnitude < sprintSpeed - 1){
-            movementAdder = movementAdder - 0.5f;
+            movementAdder = movementAdder - 1.5f;
         }
         if(movementAdder < 0){
             movementAdder = 0;
