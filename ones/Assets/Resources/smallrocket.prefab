@@ -236,7 +236,7 @@ MonoBehaviour:
   damage: 35
   explosiveDamage: 40
   explosiveRadius: 2
-  scoreGainedForKill: 5
+  scoreGainedForKill: 10
   ignoreHitbox: {fileID: 0}
   ignoreHitboxes: []
   hitVFX: {fileID: 2296296012327813564, guid: b68247b4bf01507499a1256fe3890ffc, type: 3}
@@ -248,6 +248,7 @@ MonoBehaviour:
   distanceUntilDamageFalloffStarts: 10
   damageLostPerMeter: 1
   minimumDamage: 0
+  explosionDebugPrefab: {fileID: 0}
   playerPhotonSoundManager: {fileID: 0}
   bulletImpactSoundIndex: 2
   oldPos: {fileID: 0}

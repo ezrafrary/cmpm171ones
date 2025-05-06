@@ -46,6 +46,8 @@ public class Bullet : MonoBehaviour
     public int minimumDamage = 0;
 
 
+    [Header("Debug")]
+    public GameObject explosionDebugPrefab;
 
 
     [Header("SFX")]
@@ -80,6 +82,10 @@ public class Bullet : MonoBehaviour
     public GameObject oldPos;
     public Transform startPos;
 
+    void Awake(){
+        oldPos = new GameObject();
+    }
+
     void Start(){
         pv = GetComponent<PhotonView>();
         if(timeUntilBulletIsVisible > 0){
@@ -87,7 +93,7 @@ public class Bullet : MonoBehaviour
             GetComponent<MeshRenderer>().enabled = false;
         }
         
-        oldPos = new GameObject();
+        
         //there is no startPos if it is someone else shooting
         if(startPos){
             oldPos.transform.position = startPos.position;
@@ -97,6 +103,10 @@ public class Bullet : MonoBehaviour
             pv.RPC("SetupReplaySystem",RpcTarget.AllBuffered);
         }
     }
+
+
+
+
     void FixedUpdate(){
         projectilelifetime--;
         if (projectilelifetime < 0){
@@ -126,8 +136,7 @@ public class Bullet : MonoBehaviour
                 //Debug.Log("hit projecitle");
             }else{
                 if(hit.collider){
-                        
-                    bulletHitSomething(hit.collider);
+                    bulletHitSomething(hit.collider, hit.point, 1);
                 }
             }
         }
@@ -149,8 +158,23 @@ public class Bullet : MonoBehaviour
         if(other.gameObject.layer == LayerMask.NameToLayer("clientSidePlayerHitbox")){
             return;
         }
+
+        Vector3 impactLocation = transform.position;
+
+        Vector3 direction = transform.position - oldPos.transform.position;
+        float distance = direction.magnitude;
+
+        if (Physics.Raycast(oldPos.transform.position, direction.normalized, out RaycastHit hit, distance + 0.1f)){
+            if(hit.collider == other){
+                impactLocation = hit.point;
+            }
+        }else{
+            Debug.Log("foundwrongcolider, approximating");
+            impactLocation = other.ClosestPoint(transform.position);
+        }
+
         if(other){
-            bulletHitSomething(other);
+            bulletHitSomething(other, impactLocation, 2);
         }
     }
 
@@ -212,10 +236,7 @@ public class Bullet : MonoBehaviour
     }
 
 
-    void bulletHitSomething(Collider other){
-
-
-
+    void bulletHitSomething(Collider other, Vector3 explosiveSpawnPoint, int collisonDetectionMode){
         if(dealtDamage){
             return;
         }
@@ -245,8 +266,7 @@ public class Bullet : MonoBehaviour
             }
         }
 
-        
-        ExplosionDamage(gameObject.transform.position, explosiveRadius);
+        ExplosionDamage(explosiveSpawnPoint, explosiveRadius, collisonDetectionMode);
 
         bool bulletHitPlayer = false;//used to decide which hitvfx to dispaly
 
@@ -254,7 +274,7 @@ public class Bullet : MonoBehaviour
             int replayID = -1;
             playerPhotonSoundManager.playHitSound();
             if(hitVFX){
-                PhotonNetwork.Instantiate(hitVFX.name, oldPos.transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate(hitVFX.name, explosiveSpawnPoint, Quaternion.identity);
                 bulletHitPlayer = true;
             }
             //PhotonNetwork.LocalPlayer.AddScore(damage); add score for damage
@@ -284,7 +304,7 @@ public class Bullet : MonoBehaviour
         if (other.transform.gameObject.GetComponent<damageModifierHitbox>()){
             int replayID = -1;
             if(hitVFX){
-                PhotonNetwork.Instantiate(hitVFX.name, oldPos.transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate(hitVFX.name, explosiveSpawnPoint, Quaternion.identity);
                 bulletHitPlayer = true;
             }
             bool playerDead = false;
@@ -329,7 +349,7 @@ public class Bullet : MonoBehaviour
 
 
         if(!bulletHitPlayer && missVFX){
-            PhotonNetwork.Instantiate(missVFX.name, oldPos.transform.position, Quaternion.identity);
+            PhotonNetwork.Instantiate(missVFX.name, explosiveSpawnPoint, Quaternion.identity);
         }
             
         if(pv){
@@ -341,8 +361,24 @@ public class Bullet : MonoBehaviour
     }
 
 
-    void ExplosionDamage(Vector3 center, float radius)
+
+
+
+
+    void ExplosionDamage(Vector3 center, float radius, int colorMode)
     {
+
+        if (explosionDebugPrefab != null)
+        {
+            GameObject debugObj = Instantiate(explosionDebugPrefab, center, Quaternion.identity);
+            ExplosionDebugCircle debugScript = debugObj.GetComponent<ExplosionDebugCircle>();
+            debugScript.colormode = colorMode;
+            debugScript.radius = radius;
+            debugScript.duration = 1.0f;
+        }
+
+
+
         Collider[] hitColliders = Physics.OverlapSphere(center, radius);
         int replayID = -1;
         bool _playerDead = false;
