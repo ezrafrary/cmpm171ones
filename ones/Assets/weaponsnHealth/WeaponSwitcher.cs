@@ -67,13 +67,13 @@ public class WeaponSwitcher : MonoBehaviour
 
         if(!lockWeaponSwitch){
             int previousSelectedWeapon = selectedWeapon;
-            if (Input.GetKeyDown(KeyCode.Alpha1)){
+            if (UserInput.instance.Slot1Held){
                 selectedWeapon = 0;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2)){
+            if (UserInput.instance.Slot2Held){
                 selectedWeapon = 1;
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3)){
+            if (UserInput.instance.Slot3Held){
                 selectedWeapon = 2;
             }
 

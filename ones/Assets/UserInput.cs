@@ -26,6 +26,12 @@ public class UserInput : MonoBehaviour
 
     public bool ReloadJustPressed {get; private set;}
 
+    public bool Slot1Held {get; private set;}
+    public bool Slot2Held {get; private set;}
+    public bool Slot3Held {get; private set;}
+    
+    public bool ScoreboardHeld {get; private set;}
+
 
     private PlayerInput _playerInput;
 
@@ -37,6 +43,10 @@ public class UserInput : MonoBehaviour
     private InputAction _menuOpenAction;
     private InputAction _sprintAction;
     private InputAction _reloadAction;
+    private InputAction _slot1Action;
+    private InputAction _slot2Action;
+    private InputAction _slot3Action;
+    private InputAction _scoreboardAction;
 
 
     private void Awake(){
@@ -61,6 +71,10 @@ public class UserInput : MonoBehaviour
         _menuOpenAction = _playerInput.actions["Escape"];
         _sprintAction = _playerInput.actions["Sprint"];
         _reloadAction = _playerInput.actions["Reload"];
+        _slot1Action = _playerInput.actions["Slot1"];
+        _slot2Action = _playerInput.actions["Slot2"];
+        _slot3Action = _playerInput.actions["Slot3"];
+        _scoreboardAction = _playerInput.actions["Scoreboard"];
     }
 
     private void UpdateInputs(){
@@ -76,6 +90,11 @@ public class UserInput : MonoBehaviour
         SprintJustPressed = _sprintAction.WasPressedThisFrame();
         SprintBeingHeld = _sprintAction.IsPressed();
         ReloadJustPressed = _reloadAction.WasPressedThisFrame();
+        Slot1Held = _slot1Action.IsPressed();
+        Slot2Held = _slot2Action.IsPressed();
+        Slot3Held = _slot3Action.IsPressed();
+        ScoreboardHeld = _scoreboardAction.IsPressed();
+
     }
 
 

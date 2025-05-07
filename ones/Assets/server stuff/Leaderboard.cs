@@ -95,7 +95,7 @@ public class Leaderboard : MonoBehaviour
 
     private void Update(){
         if(isToggleableWithTab){  
-            playersHolder.SetActive(Input.GetKey(KeyCode.Tab));
+            playersHolder.SetActive(UserInput.instance.ScoreboardHeld);
         }
     }
 }
