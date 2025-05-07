@@ -234,7 +234,7 @@ MonoBehaviour:
   replaySystem: {fileID: 0}
   parentPhotonViewID: 0
   damage: 35
-  explosiveDamage: 40
+  explosiveDamage: 50
   explosiveRadius: 2
   scoreGainedForKill: 10
   ignoreHitbox: {fileID: 0}

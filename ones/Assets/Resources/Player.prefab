@@ -6423,9 +6423,9 @@ MonoBehaviour:
   damage: 30
   bulletSpeed: 25
   fireRate: 12
-  reloadTime: 2
-  maxMags: 30
-  mag: 15
+  reloadTime: 2.5
+  maxMags: 6
+  mag: 4
   ammo: 1
   magAmmo: 1
   isAutomatic: 1
@@ -9669,7 +9669,7 @@ MonoBehaviour:
   damage: 13
   bulletSpeed: 160
   fireRate: 11
-  reloadTime: 1.2
+  reloadTime: 1.5
   maxMags: 8
   mag: 4
   ammo: 30
@@ -11044,7 +11044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
-  bulletSpeed: 70
+  bulletSpeed: 80
   fireRate: 1
   reloadTime: 2
   maxMags: 10

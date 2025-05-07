@@ -110,9 +110,9 @@ MonoBehaviour:
   replaySystem: {fileID: 0}
   parentPhotonViewID: 0
   damage: 35
-  explosiveDamage: 20
+  explosiveDamage: 25
   explosiveRadius: 4
-  scoreGainedForKill: 5
+  scoreGainedForKill: 10
   ignoreHitbox: {fileID: 0}
   ignoreHitboxes: []
   hitVFX: {fileID: 740645771309040646, guid: 74de3e6dc7d3dc348bc862d4b5b6b435, type: 3}
