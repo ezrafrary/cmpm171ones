@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class MainMenu : MonoBehaviour
     private string defaultname = "test1";
 
     public GameObject test1;
+    public InputActionAsset inputActionAsset;
 
    
 
@@ -20,6 +22,28 @@ public class MainMenu : MonoBehaviour
         loadName();
         SetDefaultWeapons();
         SceneManager.LoadScene(6, LoadSceneMode.Additive); //escapemenu index
+        LoadAllBindingOverrides(inputActionAsset);
+    }
+
+
+
+    public static void LoadAllBindingOverrides(InputActionAsset inputActionAsset)
+    {
+        foreach (var map in inputActionAsset.actionMaps)
+        {
+            foreach (var action in map.actions)
+            {
+                for (int i = 0; i < action.bindings.Count; i++)
+                {
+                    string key = $"rebind_{map.name}_{action.name}_{i}";
+                    if (PlayerPrefs.HasKey(key))
+                    {
+                        string overridePath = PlayerPrefs.GetString(key);
+                        action.ApplyBindingOverride(i, overridePath);
+                    }
+                }
+            }
+        }
     }
 
 

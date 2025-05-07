@@ -285,6 +285,7 @@ MonoBehaviour:
   optionsMenuObj: {fileID: 0}
   nameInputField: {fileID: 2081186612}
   test1: {fileID: 0}
+  inputActionAsset: {fileID: -944628639613478452, guid: dec14857f7343da408a961ffd4ab93fb, type: 3}
 --- !u!1 &161303118
 GameObject:
   m_ObjectHideFlags: 0
