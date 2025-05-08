@@ -182,10 +182,12 @@
     <Compile Include="Assets\unityStoreAssets\Bananadev&apos;s Pack\MouseLook.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\unityStoreAssets\TeKniKo_Free\Power_Ups\Scripts\ObjectBounce.cs" />
+    <Compile Include="Assets\JoinGameScrenRive.cs" />
     <Compile Include="Assets\uiandhudScripts\switchMenus.cs" />
     <Compile Include="Assets\sound\PlayerPhotonSoundManager.cs" />
     <Compile Include="Assets\replayLogic\ReplayPlayerOnly.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
+    <Compile Include="Assets\CreateRoomScreenRive.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
   </ItemGroup>
   <ItemGroup>

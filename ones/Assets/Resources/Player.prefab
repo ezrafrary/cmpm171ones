@@ -10224,7 +10224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5491752151180823898, guid: 6294f0bf946b04745bd382cc3525f281, type: 3}
       propertyPath: m_text
-      value: Back
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5532530601255653317, guid: 6294f0bf946b04745bd382cc3525f281, type: 3}
       propertyPath: m_AnchorMax.y
@@ -10348,11 +10348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8906602347825940851, guid: 6294f0bf946b04745bd382cc3525f281, type: 3}
       propertyPath: m_text
-      value: Forward
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8925310986779721289, guid: 6294f0bf946b04745bd382cc3525f281, type: 3}
       propertyPath: m_text
-      value: J
+      value: Tab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
