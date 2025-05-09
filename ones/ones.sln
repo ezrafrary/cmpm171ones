@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonRealtime", "PhotonRea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Editor", "PhotonUnityNetworking.Editor.csproj", "{E142EC70-E52A-78FD-A3E1-DAC54638FC51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchIntegration", "TwitchIntegration.csproj", "{AB462791-F59E-B5E7-F559-1C7C7AAE789C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking", "PhotonUnityNetworking.csproj", "{62F2F2E8-2521-A93C-6EFC-173A887C2F56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchIntegration", "TwitchIntegration.csproj", "{AB462791-F59E-B5E7-F559-1C7C7AAE789C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonUnityNetworking.Demos", "PhotonUnityNetworking.Demos.csproj", "{4F6D1074-DB7D-4C36-287F-7E642F7507BC}"
 EndProject
@@ -49,14 +49,14 @@ Global
 		{E142EC70-E52A-78FD-A3E1-DAC54638FC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E142EC70-E52A-78FD-A3E1-DAC54638FC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E142EC70-E52A-78FD-A3E1-DAC54638FC51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB462791-F59E-B5E7-F559-1C7C7AAE789C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB462791-F59E-B5E7-F559-1C7C7AAE789C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB462791-F59E-B5E7-F559-1C7C7AAE789C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB462791-F59E-B5E7-F559-1C7C7AAE789C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62F2F2E8-2521-A93C-6EFC-173A887C2F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62F2F2E8-2521-A93C-6EFC-173A887C2F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62F2F2E8-2521-A93C-6EFC-173A887C2F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62F2F2E8-2521-A93C-6EFC-173A887C2F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB462791-F59E-B5E7-F559-1C7C7AAE789C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB462791-F59E-B5E7-F559-1C7C7AAE789C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB462791-F59E-B5E7-F559-1C7C7AAE789C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB462791-F59E-B5E7-F559-1C7C7AAE789C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4F6D1074-DB7D-4C36-287F-7E642F7507BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F6D1074-DB7D-4C36-287F-7E642F7507BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F6D1074-DB7D-4C36-287F-7E642F7507BC}.Release|Any CPU.ActiveCfg = Release|Any CPU

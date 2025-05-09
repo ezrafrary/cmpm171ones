@@ -72,7 +72,7 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\replayLogic\ClipHolder.cs" />
-    <Compile Include="Assets\DeadPlayerRigidBodyContainer.cs" />
+    <Compile Include="Assets\unityStoreAssets\TwitchIntegrationDemo\Scripts\CommandsOnCooldownDisplay.cs" />
     <Compile Include="Assets\weaponsnHealth\Weapon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\gameplay prefabs\spawnpoint.cs" />
@@ -83,7 +83,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
     <Compile Include="Assets\uiandhudScripts\MainMenu.cs" />
-    <Compile Include="Assets\TwitchIntegrationDemo\Scripts\Menu.cs" />
     <Compile Include="Assets\uiandhudScripts\TextManagerScript.cs" />
     <Compile Include="Assets\uiandhudScripts\DisplayTwitchChannelName.cs" />
     <Compile Include="Assets\weaponsnHealth\PlayerHitboxScore.cs" />
@@ -99,7 +98,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\uiandhudScripts\BackToMenuButton.cs" />
     <Compile Include="Assets\uiandhudScripts\targetmove.cs" />
-    <Compile Include="Assets\OptionsMenuPageChanger.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
@@ -108,6 +106,7 @@
     <Compile Include="Assets\server stuff\Leaderboard.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
     <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Brick Project Studio\_BPS Basic Assets\Common\Scripts and Animations\Doors\opencloseDoor.cs" />
+    <Compile Include="Assets\uiandhudScripts\JoinGameScrenRive.cs" />
     <Compile Include="Assets\unityStoreAssets\Vefects\Trails VFX URP\Scripts\Demo_FreeCam.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\weaponsnHealth\damageModifierHitbox.cs" />
@@ -119,11 +118,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\RiveAssets\ReportedEventListener.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
-    <Compile Include="Assets\ExplosionCircleDebug.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
     <Compile Include="Assets\uiandhudScripts\DamageIndicator.cs" />
     <Compile Include="Assets\weaponsnHealth\bullet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\unityStoreAssets\TwitchIntegrationDemo\Scripts\Menu.cs" />
     <Compile Include="Assets\uiandhudScripts\OptionsMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\UserInput.cs" />
@@ -137,19 +136,21 @@
     <Compile Include="Assets\uiandhudScripts\FPScounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\TwitchIntegrationDemo\Scripts\CommandsOnCooldownDisplay.cs" />
     <Compile Include="Assets\weaponsnHealth\HealthPickup.cs" />
+    <Compile Include="Assets\uiandhudScripts\CreateRoomScreenRive.cs" />
     <Compile Include="Assets\server stuff\PhotonTimer.cs" />
     <Compile Include="Assets\RiveAssets\RiveDemoMenuController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Movement.cs" />
+    <Compile Include="Assets\unityStoreAssets\TwitchIntegrationDemo\Scripts\TwitchChatBox.cs" />
     <Compile Include="Assets\weaponsnHealth\scoreZone.cs" />
+    <Compile Include="Assets\client sisde prefabs\DeadPlayerRigidBodyContainer.cs" />
     <Compile Include="Assets\server stuff\RoomManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
+    <Compile Include="Assets\client sisde prefabs\ExplosionCircleDebug.cs" />
     <Compile Include="Assets\Localization\language.cs" />
     <Compile Include="Assets\replayLogic\ReplaySystem.cs" />
-    <Compile Include="Assets\TwitchIntegrationDemo\Scripts\TwitchChatBox.cs" />
     <Compile Include="Assets\weaponsnHealth\AmmoPickup.cs" />
     <Compile Include="Assets\weaponsnHealth\RPSR_AccelerateAfterTime.cs" />
     <Compile Include="Assets\RiveAssets\PermenantEscapeMenu.cs" />
@@ -182,13 +183,12 @@
     <Compile Include="Assets\unityStoreAssets\Bananadev&apos;s Pack\MouseLook.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\unityStoreAssets\TeKniKo_Free\Power_Ups\Scripts\ObjectBounce.cs" />
-    <Compile Include="Assets\JoinGameScrenRive.cs" />
     <Compile Include="Assets\uiandhudScripts\switchMenus.cs" />
     <Compile Include="Assets\sound\PlayerPhotonSoundManager.cs" />
     <Compile Include="Assets\replayLogic\ReplayPlayerOnly.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
-    <Compile Include="Assets\CreateRoomScreenRive.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
+    <Compile Include="Assets\uiandhudScripts\OptionsMenuPageChanger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
