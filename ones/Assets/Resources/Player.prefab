@@ -6420,7 +6420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf9ee909e8eeeb41b05b234b65396d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 40
   bulletSpeed: 25
   fireRate: 12
   reloadTime: 2.5
@@ -10043,7 +10043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  bulletSpeed: 150
+  bulletSpeed: 100
   fireRate: 16
   reloadTime: 1.2
   maxMags: 8
@@ -11896,7 +11896,7 @@ MonoBehaviour:
   mag: 5
   ammo: 15
   magAmmo: 15
-  isAutomatic: 0
+  isAutomatic: 1
   cameraRecoil: 10
   horizontalCameraRecoil: 0
   distanceUntilDamageFalloffStarts: 15
@@ -12237,8 +12237,8 @@ MonoBehaviour:
   isAutomatic: 1
   cameraRecoil: 10
   horizontalCameraRecoil: 2
-  distanceUntilDamageFalloffStarts: 35
-  damageLostPerMeter: 0.3
+  distanceUntilDamageFalloffStarts: 60
+  damageLostPerMeter: 0.1
   minimumDamage: 10
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}

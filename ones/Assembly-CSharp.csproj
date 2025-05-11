@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\weaponsnHealth\WeaponSwitcher.cs" />
-    <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Brick Project Studio\_BPS Basic Assets\Common\Scripts and Animations\Doors\opencloseDoor1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\server stuff\timerScript.cs" />
     <Compile Include="Assets\server stuff\PlayerSetup.cs" />
@@ -91,7 +90,6 @@
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
     <Compile Include="Assets\server stuff\RoomItemButton.cs" />
     <Compile Include="Assets\uiandhudScripts\escapeMenu.cs" />
-    <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\teleporterscript.cs" />
     <Compile Include="Assets\uiandhudScripts\MatchRotation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -105,7 +103,6 @@
     <Compile Include="Assets\sound\SendAnimationEventToSFXManager.cs" />
     <Compile Include="Assets\server stuff\Leaderboard.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
-    <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Brick Project Studio\_BPS Basic Assets\Common\Scripts and Animations\Doors\opencloseDoor.cs" />
     <Compile Include="Assets\uiandhudScripts\JoinGameScrenRive.cs" />
     <Compile Include="Assets\unityStoreAssets\Vefects\Trails VFX URP\Scripts\Demo_FreeCam.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -142,8 +139,8 @@
     <Compile Include="Assets\RiveAssets\RiveDemoMenuController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\Movement.cs" />
     <Compile Include="Assets\unityStoreAssets\TwitchIntegrationDemo\Scripts\TwitchChatBox.cs" />
+    <Compile Include="Assets\Movement.cs" />
     <Compile Include="Assets\weaponsnHealth\scoreZone.cs" />
     <Compile Include="Assets\client sisde prefabs\DeadPlayerRigidBodyContainer.cs" />
     <Compile Include="Assets\server stuff\RoomManager.cs" />
@@ -177,8 +174,6 @@
     <Compile Include="Assets\unityStoreAssets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\uiandhudScripts\FindInputAction.cs" />
     <Compile Include="Assets\uiandhudScripts\weaponDisplayInfo.cs" />
-    <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Brick Project Studio\_BPS Basic Assets\Common\Scripts and Animations\Doors\opencloseStallDoor.cs" />
-    <Compile Include="Assets\mapprefabfolder\hospitalPrefabsandmaterials\Clock\Scripts\Clock.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\unityStoreAssets\Bananadev&apos;s Pack\MouseLook.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\LightFlicker.cs" />
@@ -214,6 +209,7 @@
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
@@ -1226,12 +1222,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Addressables.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
