@@ -22,6 +22,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public static RoomManager instance;
 
+    public bool IsMatchmakingLobby = false;
+
     public GameObject player;
     [Space]
     public Transform[] spawnPoints;

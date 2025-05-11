@@ -141,9 +141,20 @@ public class RoomList : MonoBehaviourPunCallbacks
         return false;
     }
 
+
+
     public void printAllRoomNames(){
+        Debug.Log("regular rooms:");
         foreach (var room in cachedRoomList){
-            Debug.Log(room.Name);
+            if(room.Name.Length <= 16){
+                Debug.Log(room.Name);
+            }
+        }
+        Debug.Log("Matchmaking Rooms:");
+        foreach (var room in cachedRoomList){
+            if(room.Name.Length > 16){
+                Debug.Log(room.Name);
+            }
         }
     }
 
@@ -154,22 +165,28 @@ public class RoomList : MonoBehaviourPunCallbacks
 
 
         foreach (var room in cachedRoomList){
-            if(room.PlayerCount > 0){
-                GameObject roomItem = Instantiate(roomListItemPrefab, roomListParent);
-                roomItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = room.Name;
-                roomItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = room.PlayerCount + "/16";
-                
-                roomItem.GetComponent<RoomItemButton>().RoomName = room.Name;
 
-                int roomSceneIndex = 1;
+            if(room.Name.Length > 16){ //any roomname longer than 16 is a matchmaking room
+                 
+            }else{
+                if(room.PlayerCount > 0){
+                    GameObject roomItem = Instantiate(roomListItemPrefab, roomListParent);
+                    roomItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = room.Name;
+                    roomItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = room.PlayerCount + "/16";
+                    
+                    roomItem.GetComponent<RoomItemButton>().RoomName = room.Name;
 
-                object sceneIndexObject;
-                if(room.CustomProperties.TryGetValue("mapSceneIndex", out sceneIndexObject)){
-                    roomSceneIndex = (int)sceneIndexObject;
+                    int roomSceneIndex = 1;
+
+                    object sceneIndexObject;
+                    if(room.CustomProperties.TryGetValue("mapSceneIndex", out sceneIndexObject)){
+                        roomSceneIndex = (int)sceneIndexObject;
+                    }
+
+                    roomItem.GetComponent<RoomItemButton>().SceneIndex = roomSceneIndex;
                 }
-
-                roomItem.GetComponent<RoomItemButton>().SceneIndex = roomSceneIndex;
             }
+            
             
         }
 

@@ -11487,7 +11487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 40
   bulletSpeed: 140
-  fireRate: 1.1
+  fireRate: 1.2
   reloadTime: 1
   maxMags: 10
   mag: 4
@@ -12055,8 +12055,8 @@ MonoBehaviour:
   reloadTime: 2
   maxMags: 4
   mag: 2
-  ammo: 7
-  magAmmo: 7
+  ammo: 5
+  magAmmo: 5
   isAutomatic: 0
   cameraRecoil: 15
   horizontalCameraRecoil: 2
