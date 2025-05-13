@@ -82,5 +82,5 @@ MonoBehaviour:
   respawnCooldown: 10
   repsawnCooldownTimer: 1
   isItemSpawned: 0
-  chanceForAltItem: 0.1
+  chanceForAltItem: 0.2
   spawnedItem: {fileID: 0}

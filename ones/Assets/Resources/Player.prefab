@@ -9228,7 +9228,7 @@ MonoBehaviour:
   damage: 45
   bulletSpeed: 60
   fireRate: 1
-  reloadTime: 3
+  reloadTime: 2
   maxMags: 6
   mag: 3
   ammo: 1
@@ -11890,7 +11890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   bulletSpeed: 100
-  fireRate: 5
+  fireRate: 7.5
   reloadTime: 1
   maxMags: 10
   mag: 5
@@ -11900,8 +11900,8 @@ MonoBehaviour:
   cameraRecoil: 10
   horizontalCameraRecoil: 0
   distanceUntilDamageFalloffStarts: 15
-  damageLostPerMeter: 1
-  minimumDamage: 10
+  damageLostPerMeter: 0.5
+  minimumDamage: 5
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   camera: {fileID: 1226191117682152934}
