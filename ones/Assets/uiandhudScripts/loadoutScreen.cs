@@ -37,11 +37,19 @@ public class loadoutScreen : MonoBehaviour
 
     public void saveSlot1(int _weaponIndex){
         PlayerPrefs.SetInt("Slot1_weapon", _weaponIndex);
+        setupLoadoutScreen();
     }
     public void saveSlot2(int _weaponIndex){
         PlayerPrefs.SetInt("Slot2_weapon", _weaponIndex);
+        setupLoadoutScreen();
     }
     public void saveSlot3(int _weaponIndex){
         PlayerPrefs.SetInt("Slot3_weapon", _weaponIndex);
+        setupLoadoutScreen();
     }
+
+    public void closeLoadoutMenu(){
+        PermenantEscapeMenu.Instance.closeLoadoutMenu();
+    }
+
 }

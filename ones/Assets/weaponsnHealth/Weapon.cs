@@ -17,10 +17,13 @@ public class Weapon : MonoBehaviour
     */
 
 
+    public string weaponFullName = "";
+    public string weaponDescription = "default description";
     [Header("WeaponStats")]
 
 
     public int damage;
+    public int splashDamage = 0;
     public float bulletSpeed = 4f;
     public float fireRate;
     public float reloadTime = 100f;
@@ -65,6 +68,8 @@ public class Weapon : MonoBehaviour
     public TextMeshProUGUI ammoText;
     public GameObject hitmarker;
     public GameObject headshotHitmarker;
+    public Sprite weaponIconSprite;
+
 
     [Header("Animation")]
     public new Animation animation;
@@ -391,6 +396,7 @@ public class Weapon : MonoBehaviour
         bulletSctipt.setStartLocation(bulletSpawnPoint.transform.position);
         bulletSctipt.playerPhotonSoundManager = playerPhotonSoundManager;
         bulletSctipt.damage = damage;
+        bulletSctipt.explosiveDamage = splashDamage;
         bulletSctipt.startPos = bulletStartPoint;   
         bulletSctipt.distanceUntilDamageFalloffStarts = distanceUntilDamageFalloffStarts;
         bulletSctipt.damageLostPerMeter = damageLostPerMeter;

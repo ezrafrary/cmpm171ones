@@ -184,8 +184,9 @@ public class PermenantEscapeMenu : MonoBehaviour
 
 
 
-    public void openLoadoutMenu(){
+    public void openLoadoutMenu(bool SETcloseButtonClosesAllTheWay){
         closeMenu();
+        closeButtonClosesAllTheWay = SETcloseButtonClosesAllTheWay;
         disableShooting();
         if(mouseLook){
             mouseLook.UnlockCursor();
@@ -197,7 +198,9 @@ public class PermenantEscapeMenu : MonoBehaviour
 
     public void closeLoadoutMenu(){
         loadoutMenu.SetActive(false);
-        openMenu(false);
+        if(!closeButtonClosesAllTheWay){
+            openMenu(false);
+        }
         loadoutMenuOpen = false;
         enableShooting();
     }
@@ -262,7 +265,7 @@ public class PermenantEscapeMenu : MonoBehaviour
         }
 
         if(evt.Name.StartsWith("LoadoutClicked")){
-            openLoadoutMenu();
+            openLoadoutMenu(false);
         }
 
     }

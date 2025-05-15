@@ -156,7 +156,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
     public void openLoadoutMenu(){
-        PermenantEscapeMenu.Instance.openLoadoutMenu();
+        PermenantEscapeMenu.Instance.openLoadoutMenu(false);
     }
     
 
