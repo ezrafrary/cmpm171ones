@@ -11930,7 +11930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponFullName: Pistol
   weaponDescription: default description
-  damage: 20
+  damage: 15
   splashDamage: 0
   bulletSpeed: 100
   fireRate: 7.5
