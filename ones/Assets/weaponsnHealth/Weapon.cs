@@ -82,7 +82,8 @@ public class Weapon : MonoBehaviour
     public float highpitch = 1.2f;
     public float lowvol = 0.1f;
     public float highvol = 0.3f;
-
+    public bool varyPitch = true;
+    public bool varyVol = true;
 
     [Header("Recoil Settings")]
     [Range(0,1)]
@@ -297,7 +298,7 @@ public class Weapon : MonoBehaviour
     void Fire(){
 
         //camera.gameObject.transform.position = new Vector3(camera.gameObject.transform.position.x,camera.gameObject.transform.position.y + 1, camera.gameObject.transform.position.z );//Camera recoil
-        playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex, lowpitch, highpitch, lowvol, highvol);
+        playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex, lowpitch, highpitch, lowvol, highvol, varyPitch, varyVol);
 
         recoiling = true;
         recovering = false;
@@ -331,7 +332,7 @@ public class Weapon : MonoBehaviour
 
         recoiling = true;
         recovering = false;
-        playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex, lowpitch, highpitch, lowvol, highvol);
+        playerPhotonSoundManager.PlayShootSFX(ShootSFXIndex, lowpitch, highpitch, lowvol, highvol, varyPitch, varyVol);
         
         if(isShotgun){ //1 bullet will always be spawned
             var testBullet2 = spawnBullet(0.0f);

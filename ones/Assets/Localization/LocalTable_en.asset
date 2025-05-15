@@ -570,7 +570,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 9004472581120000
-    m_Localized: Ammo is displayed on the bottom right, alongside your weapons
+    m_Localized: The mag icon shows how much ammo you have left
     m_Metadata:
       m_Items: []
   - m_Id: 9017603319554048

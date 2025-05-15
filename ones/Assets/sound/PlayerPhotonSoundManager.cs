@@ -135,17 +135,23 @@ public class PlayerPhotonSoundManager : MonoBehaviour
         footstepSource.Play();
     }
 
-    public void PlayShootSFX(int index, float lowpitch, float highpitch, float lowvol, float highvol){
-        GetComponent<PhotonView>().RPC("PlayShootSFX_RPC", RpcTarget.All, index, lowpitch, highpitch, lowvol, highvol);
+    public void PlayShootSFX(int index, float lowpitch, float highpitch, float lowvol, float highvol, bool varyPitch, bool varyVol){
+        GetComponent<PhotonView>().RPC("PlayShootSFX_RPC", RpcTarget.All, index, lowpitch, highpitch, lowvol, highvol, varyPitch, varyVol);
     }
 
     [PunRPC]
-    public void PlayShootSFX_RPC(int index, float lowpitch, float hightpitch, float lowvol, float highvol){
+    public void PlayShootSFX_RPC(int index, float lowpitch, float hightpitch, float lowvol, float highvol, bool varyPitch, bool varyVol){
         gunShootSource.clip = allGunShootSFX[index];
 
         //pitch/volume
-        gunShootSource.pitch = UnityEngine.Random.Range(lowpitch, hightpitch);
-        gunShootSource.volume = UnityEngine.Random.Range(lowvol, highvol) * GetMasterVolume();
+        if (varyPitch)
+        {
+            gunShootSource.pitch = UnityEngine.Random.Range(lowpitch, hightpitch);
+        }
+        if (varyVol)
+        {
+            gunShootSource.volume = UnityEngine.Random.Range(lowvol, highvol) * GetMasterVolume();
+        }
 
         gunShootSource.Play();
     }

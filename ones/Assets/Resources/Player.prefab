@@ -516,6 +516,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dd2b662535e544a46b6eef05cb00f7cc, type: 3}
   - {fileID: 8300000, guid: adbdbec33e83aa141b1f23dbffd9a10d, type: 3}
   - {fileID: 8300000, guid: 7dc9cd63ca20c814a90df62a5d9de435, type: 3}
+  - {fileID: 8300000, guid: 7111d093565744545bbec8424ce3d2e3, type: 3}
   allExplosionSFX:
   - {fileID: 8300000, guid: db143ff1c50ef7542b8aa3286f1e614e, type: 3}
   - {fileID: 8300000, guid: f0185594679298c4a9c0fe314ded99a5, type: 3}
@@ -6454,6 +6455,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.07
@@ -7668,6 +7671,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.09
@@ -9267,6 +9272,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.07
@@ -9513,6 +9520,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.09
@@ -9716,6 +9725,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.07
@@ -10096,6 +10107,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.07
@@ -10894,6 +10907,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.07
@@ -11121,6 +11136,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.2
   recoilBack: 0.5
@@ -11288,6 +11305,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.07
@@ -11555,6 +11574,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.09
   recoilBack: 0.08
@@ -11962,6 +11983,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.06
@@ -12127,6 +12150,8 @@ MonoBehaviour:
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.12
   recoilBack: 0.5
@@ -12302,12 +12327,14 @@ MonoBehaviour:
   weaponIconSprite: {fileID: 21300000, guid: 639ef06cfb4b0d24881757c57a583d6d, type: 3}
   animation: {fileID: 3579979440959624988}
   reload: {fileID: 7400000, guid: c8b19a9da4fcba7429155d7716756ea5, type: 2}
-  ShootSFXIndex: 2
+  ShootSFXIndex: 4
   playerPhotonSoundManager: {fileID: 8998652926012223579}
   lowpitch: 0.7
   highpitch: 1.2
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 0
+  varyVol: 0
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.07
@@ -12639,6 +12666,8 @@ MonoBehaviour:
   highpitch: 0.8
   lowvol: 0.1
   highvol: 0.3
+  varyPitch: 1
+  varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
   recoilBack: 0.28

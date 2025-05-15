@@ -2724,7 +2724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &111255108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41273,6 +41273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14926ed480bbac444899f3d37ca6aeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMatchmakingLobby: 0
   player: {fileID: 427471037947456812, guid: df552f3a01b8d4e4aab801be0744ed7e, type: 3}
   spawnPoints:
   - {fileID: 152325445}
