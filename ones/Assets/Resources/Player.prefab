@@ -517,6 +517,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: adbdbec33e83aa141b1f23dbffd9a10d, type: 3}
   - {fileID: 8300000, guid: 7dc9cd63ca20c814a90df62a5d9de435, type: 3}
   - {fileID: 8300000, guid: 7111d093565744545bbec8424ce3d2e3, type: 3}
+  - {fileID: 8300000, guid: 4522914fdd9d00d4cb68347b34ed98bd, type: 3}
+  - {fileID: 8300000, guid: 1cfdbfb7405f99e438a3dec1204e5d31, type: 3}
+  - {fileID: 8300000, guid: ecc73d5cc2cee714e9101f63710f9f42, type: 3}
+  - {fileID: 8300000, guid: f98b869f637594a4398828b681912a0f, type: 3}
+  - {fileID: 8300000, guid: 1a1b3004b0f985145b69f9a76537d85d, type: 3}
   allExplosionSFX:
   - {fileID: 8300000, guid: db143ff1c50ef7542b8aa3286f1e614e, type: 3}
   - {fileID: 8300000, guid: f0185594679298c4a9c0fe314ded99a5, type: 3}
@@ -9266,13 +9271,13 @@ MonoBehaviour:
   weaponIconSprite: {fileID: 21300000, guid: c03215703fce264458be625739e2d328, type: 3}
   animation: {fileID: 5070762257387767810}
   reload: {fileID: 7400000, guid: 7a6f62c97d053754b9fde6c16c262da8, type: 2}
-  ShootSFXIndex: 2
+  ShootSFXIndex: 9
   playerPhotonSoundManager: {fileID: 8998652926012223579}
-  lowpitch: 0.7
-  highpitch: 1.2
-  lowvol: 0.1
-  highvol: 0.3
-  varyPitch: 1
+  lowpitch: 0.4
+  highpitch: 0.5
+  lowvol: 0.05
+  highvol: 0.1
+  varyPitch: 0
   varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
@@ -10101,13 +10106,13 @@ MonoBehaviour:
   weaponIconSprite: {fileID: 21300000, guid: 658703cc062235e4e85d9eb3a1a3c198, type: 3}
   animation: {fileID: 1996953705756763102}
   reload: {fileID: 7400000, guid: c8b19a9da4fcba7429155d7716756ea5, type: 2}
-  ShootSFXIndex: 2
+  ShootSFXIndex: 8
   playerPhotonSoundManager: {fileID: 8998652926012223579}
   lowpitch: 0.7
   highpitch: 1.2
-  lowvol: 0.1
-  highvol: 0.3
-  varyPitch: 1
+  lowvol: 0.3
+  highvol: 0.4
+  varyPitch: 0
   varyVol: 1
   recoverPercent: 0.7
   recoilUp: 0.02
@@ -10901,10 +10906,10 @@ MonoBehaviour:
   weaponIconSprite: {fileID: 21300000, guid: 47f4a3e411215074ea77bddbefa81426, type: 3}
   animation: {fileID: 5094692723407382679}
   reload: {fileID: 7400000, guid: 7a6f62c97d053754b9fde6c16c262da8, type: 2}
-  ShootSFXIndex: 2
+  ShootSFXIndex: 5
   playerPhotonSoundManager: {fileID: 8998652926012223579}
-  lowpitch: 0.7
-  highpitch: 1.2
+  lowpitch: 1.5
+  highpitch: 1.6
   lowvol: 0.1
   highvol: 0.3
   varyPitch: 1
@@ -11568,7 +11573,7 @@ MonoBehaviour:
   weaponIconSprite: {fileID: 21300000, guid: b6f6a51d1f6dbaa45903a600c5c334e7, type: 3}
   animation: {fileID: 5412504385144481106}
   reload: {fileID: 7400000, guid: 7a6f62c97d053754b9fde6c16c262da8, type: 2}
-  ShootSFXIndex: 2
+  ShootSFXIndex: 7
   playerPhotonSoundManager: {fileID: 8998652926012223579}
   lowpitch: 0.7
   highpitch: 1.2
@@ -11977,7 +11982,7 @@ MonoBehaviour:
   weaponIconSprite: {fileID: 21300000, guid: 41dc44c6252a72941a2951561a2d4088, type: 3}
   animation: {fileID: 8904467760402790317}
   reload: {fileID: 7400000, guid: c8b19a9da4fcba7429155d7716756ea5, type: 2}
-  ShootSFXIndex: 2
+  ShootSFXIndex: 6
   playerPhotonSoundManager: {fileID: 8998652926012223579}
   lowpitch: 0.7
   highpitch: 1.2
@@ -12144,12 +12149,12 @@ MonoBehaviour:
   weaponIconSprite: {fileID: 21300000, guid: 85be563fabc69774ea7ec4c9e529ed66, type: 3}
   animation: {fileID: 1164113471857435516}
   reload: {fileID: 7400000, guid: c8b19a9da4fcba7429155d7716756ea5, type: 2}
-  ShootSFXIndex: 2
+  ShootSFXIndex: 5
   playerPhotonSoundManager: {fileID: 8998652926012223579}
-  lowpitch: 0.7
+  lowpitch: 1
   highpitch: 1.2
-  lowvol: 0.1
-  highvol: 0.3
+  lowvol: 0.3
+  highvol: 0.5
   varyPitch: 1
   varyVol: 1
   recoverPercent: 0.7

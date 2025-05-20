@@ -284,6 +284,7 @@ public class Bullet : MonoBehaviour
                 RoomManager.instance.score += scoreGainedForKill;
                 RoomManager.instance.SetHashes();
                 playerPhotonSoundManager.playKillSound();
+                AnalyticsManager.Instance.PlayerKilled(weaponName);
                 GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
                 replayID = 1;
             }
@@ -314,7 +315,9 @@ public class Bullet : MonoBehaviour
                 RoomManager.instance.kills++;
                 RoomManager.instance.score += scoreGainedForKill;
                 RoomManager.instance.SetHashes();
-                if(playerPhotonSoundManager){
+                AnalyticsManager.Instance.PlayerKilled(weaponName);
+                if (playerPhotonSoundManager)
+                {
                     playerPhotonSoundManager.playKillSound();
                 }
                 replayID = 1;
@@ -399,6 +402,7 @@ public class Bullet : MonoBehaviour
                             RoomManager.instance.kills++;
                             RoomManager.instance.score += scoreGainedForKill;
                             RoomManager.instance.SetHashes();
+                            AnalyticsManager.Instance.PlayerKilled(weaponName);
                             
                             GetComponent<PhotonView>().RPC("clipThatRPC", RpcTarget.All);
                         }

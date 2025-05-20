@@ -156,7 +156,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
     public void openLoadoutMenu(){
-        PermenantEscapeMenu.Instance.openLoadoutMenu(false);
+        PermenantEscapeMenu.Instance.openLoadoutMenu(true);
     }
     
 
@@ -369,16 +369,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
     public void respawnPlayer(){
-        if(CanRespawn){
+        if (CanRespawn)
+        {
             roomCam.SetActive(false);
             youDiedUi.SetActive(false);
             SpawnPlayer();
+            PermenantEscapeMenu.Instance.closeAllMenus();
         }
     }
 
     public void EndGame(){ //this may be buggy, needs testing, called by PhotonTimer.cs
-        
-
         
         
         try{

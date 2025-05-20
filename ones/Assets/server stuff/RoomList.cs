@@ -58,6 +58,7 @@ public class RoomList : MonoBehaviourPunCallbacks
             roomTakenPopup.text = "Room Name " + cachedRoomNameToCreate + " is taken right now!";
             Debug.Log("Room name taken!");
         }else{
+            AnalyticsManager.Instance.GameStarted(roomJoinSceneIndex);
             JoinRoomByName(cachedRoomNameToCreate, roomJoinSceneIndex);
         }
     }

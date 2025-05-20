@@ -83,6 +83,8 @@ public class PhotonTimer : MonoBehaviourPunCallbacks
         Debug.Log("Timer has ended!");
         if (PhotonNetwork.IsMasterClient)
         {
+            
+            AnalyticsManager.Instance.GameCompleted();
             photonView.RPC("EndGameRPC", RpcTarget.All);
         }
     }
