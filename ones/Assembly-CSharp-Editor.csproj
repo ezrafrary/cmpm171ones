@@ -64,6 +64,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.28f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Garrett_Contract\MeshCombiner\Editor\MeshCombinerEditor.cs" />
+    <Compile Include="Assets\Garrett_Contract\IgniteCoders\Simple Water Shader\Info\Scripts\Editor\ReadmeEditor.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\Editor\ChatEditor.cs" />
   </ItemGroup>
   <ItemGroup>
