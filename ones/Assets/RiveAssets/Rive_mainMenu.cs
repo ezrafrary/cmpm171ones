@@ -40,12 +40,15 @@ public class Rive_mainMenu : MonoBehaviour
 
 
         if(evt.Name.StartsWith("PlayButtonClicked")){
+            Debug.Log("test1");
             MainMenu.SetActive(false);
             LobbyGameobject.SetActive(true);
         }
+        
 
 
-        if(evt.Name.StartsWith("LoadoutButtonClicked")){
+        if (evt.Name.StartsWith("LoadoutButtonClicked"))
+        {
             // MenuCanvas.SetActive(false);
             // LoadoutMenuGameObject.SetActive(true);
             PermenantEscapeMenu.Instance.openLoadoutMenu(true);

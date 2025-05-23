@@ -11965,7 +11965,7 @@ MonoBehaviour:
   mag: 5
   ammo: 15
   magAmmo: 15
-  isAutomatic: 1
+  isAutomatic: 0
   cameraRecoil: 10
   horizontalCameraRecoil: 0
   distanceUntilDamageFalloffStarts: 15
