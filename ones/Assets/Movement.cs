@@ -252,7 +252,7 @@ public class Movement : MonoBehaviour
 
 
     private void OnTriggerStay(Collider other){ //handling checking if the player is grounded. we will change this later(probably)
-        if(other.gameObject.tag == "NotJumpable" || other.gameObject.tag == "projectile"){
+        if(other.gameObject.tag == "NotJumpable" || other.gameObject.tag == "projectile" || other.gameObject.layer == LayerMask.NameToLayer("NotJumpable")){
             //Debug.Log("not jumpable");
         }else{
             grounded = true;

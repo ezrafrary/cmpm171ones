@@ -211,8 +211,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Plugin\Changelogs\LegacyLudiqCore\Changelog_1_0_2.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Plugin\Changelogs\Changelog_1_0_0.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Dependencies\ReorderableList\SerializedPropertyAdaptor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Inspection\EditorAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Reflection\CodebaseSubset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Inspection\EditorAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Inspection\Primitives\StringInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Plugin\Changelogs\LegacyLudiqGraphs\Changelog_1_1_1.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Interface\LudiqGUI.cs" />
@@ -304,10 +304,10 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Inspection\InspectorProvider.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Threading\BackgroundWorker.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Utilities\AssetUtility.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Interface\Fuzzy\FuzzyOptionProvider.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Windows\WindowClose.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Serialization\SerializableTypeExtensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Plugin\Migrations\Migration_1_5_1_to_1_5_2.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Interface\Fuzzy\FuzzyOptionProvider.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Plugins\PluginManifest.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Plugin\Changelogs\LegacyLudiqCore\Changelog_1_4_12.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\SerializedProperties\SerializedPropertyProviderProvider.cs" />

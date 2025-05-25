@@ -196,8 +196,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Framework\Events\CustomEventArgs.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Framework\Events\Physics\OnCollisionEnter.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Framework\Events\Editor\OnDrawGizmosSelected.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Dependencies\NCalc\BinaryExpression.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Dependencies\NCalc\NCalcParser.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Dependencies\NCalc\BinaryExpression.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Framework\Math\Vector2\Vector2Absolute.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Framework\Math\Vector3\Vector3MoveTowards.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Framework\Math\Vector3\Vector3Multiply.cs" />

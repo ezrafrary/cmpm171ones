@@ -40,7 +40,6 @@ public class Rive_mainMenu : MonoBehaviour
 
 
         if(evt.Name.StartsWith("PlayButtonClicked")){
-            Debug.Log("test1");
             MainMenu.SetActive(false);
             LobbyGameobject.SetActive(true);
         }

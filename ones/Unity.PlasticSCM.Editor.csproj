@@ -245,8 +245,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\Views\Merge\Developer\DirectoryConflicts\ConflictResolutionState.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\AssetsUtils\Processor\AssetsProcessor.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\AssetMenu\AssetMenuOperations.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\UI\UnityMenuItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\Gluon\IncomingChangesNotifier.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\UI\UnityMenuItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\GetRelativePath.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\Developer\UpdateReport\UpdateReportLineListViewItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\UI\UIElements\ProgressControlsForDialogs.cs" />

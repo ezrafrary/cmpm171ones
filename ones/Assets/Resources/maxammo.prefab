@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2913828954251011094}
   - component: {fileID: 2404027959259214456}
   - component: {fileID: 5334283074478142195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: maxammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 388865067733601933}
   - component: {fileID: 3958189973605003681}
   - component: {fileID: 7765383439346053451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerUp_Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

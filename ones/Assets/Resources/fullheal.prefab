@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3971950551427048136}
   - component: {fileID: 2726695115966655853}
   - component: {fileID: 3148678881291129566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerUp_Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7628141260614581189}
   - component: {fileID: 8244378039247061358}
   - component: {fileID: 7699927655135157605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fullheal
   m_TagString: ignoreBullets
   m_Icon: {fileID: 0}

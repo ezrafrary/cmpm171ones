@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 293299906983270843}
   - component: {fileID: 8574158944683025825}
   - component: {fileID: 8431385665722100429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Heal_Up 1
   m_TagString: ignoreBullets
   m_Icon: {fileID: 0}

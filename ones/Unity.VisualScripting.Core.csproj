@@ -93,8 +93,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Collections\IMergedCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Graphs\IGraphItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Listeners\MonoBehaviour\UnityOnMouseDownMessageListener.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Reflection\Operators\DecrementHandler.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Listeners\GlobalMessageListener.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Reflection\Operators\DecrementHandler.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Reflection\Optimization\ReflectionInvoker.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Collections\NonNullableList.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Dependencies\FullSerializer\Converters\Unity\GUIStyleState_DirectConverter.cs" />
@@ -487,8 +487,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Exceptions\InvalidImplementationException.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Reflection\Optimization\IOptimizedAccessor.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Reflection\Operators\SubtractionHandler.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Serialization\SerializeAsAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\EditorBinding\Inspector\InspectViaImplementationsAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Serialization\SerializeAsAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Dependencies\FullSerializer\fsExceptions.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Ensure\EnsureThat.Strings.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Core\Collections\NonNullableHashSet.cs" />
