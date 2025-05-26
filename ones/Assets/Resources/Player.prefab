@@ -100,12 +100,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227751867467652092}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6216851757095982426}
+  m_Father: {fileID: 8862625936572163508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1059,6 +1059,9 @@ MonoBehaviour:
   equipmentSlot2RectTransform: {fileID: 4953760538188940236}
   equipmentSlot3Text: {fileID: 7663643480681327335}
   equipmentSlot3RectTransform: {fileID: 2256801541144589404}
+  crosshairs:
+  - {fileID: 227751867467652092}
+  - {fileID: 4153807239078945664}
   slot1: 0
   slot2: 0
   slot3: 0
@@ -3299,6 +3302,43 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3199779724864635151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8862625936572163508}
+  m_Layer: 5
+  m_Name: Crosshairs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8862625936572163508
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199779724864635151}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7217576818385205021}
+  - {fileID: 4363137789640589748}
+  m_Father: {fileID: 6216851757095982426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3369833148228173001
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,6 +4137,81 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &4153807239078945664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4363137789640589748}
+  - component: {fileID: 8820182270060727012}
+  - component: {fileID: 5668118302899264016}
+  m_Layer: 5
+  m_Name: ShotgunCrosshair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4363137789640589748
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153807239078945664}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.19, y: 1.19, z: 5.9500003}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 8862625936572163508}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8820182270060727012
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153807239078945664}
+  m_CullTransparentMesh: 1
+--- !u!114 &5668118302899264016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153807239078945664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6d3b875fd39a3b34ba1dd3f1b98d47c9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4423003828862029130
 GameObject:
   m_ObjectHideFlags: 0
@@ -5734,7 +5849,7 @@ RectTransform:
   m_Children:
   - {fileID: 7134034253333658676}
   - {fileID: 6426212099941638402}
-  - {fileID: 7217576818385205021}
+  - {fileID: 8862625936572163508}
   - {fileID: 1435565097486899677}
   - {fileID: 1169539887957964612}
   - {fileID: 3195236070087486428}
@@ -6445,6 +6560,7 @@ MonoBehaviour:
   minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -7661,6 +7777,7 @@ MonoBehaviour:
   minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -9262,6 +9379,7 @@ MonoBehaviour:
   minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -9510,6 +9628,7 @@ MonoBehaviour:
   minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -9715,6 +9834,7 @@ MonoBehaviour:
   minimumDamage: 7
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -10097,6 +10217,7 @@ MonoBehaviour:
   minimumDamage: 8
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -10897,6 +11018,7 @@ MonoBehaviour:
   minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -11126,6 +11248,7 @@ MonoBehaviour:
   minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 374084849934840222, guid: 497432ca0b179924eae6f4a20096cb1c, type: 3}
   magText: {fileID: 468428386907781018}
@@ -11295,6 +11418,7 @@ MonoBehaviour:
   minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -11564,6 +11688,7 @@ MonoBehaviour:
   minimumDamage: 24
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -11973,6 +12098,7 @@ MonoBehaviour:
   minimumDamage: 5
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -12140,6 +12266,7 @@ MonoBehaviour:
   minimumDamage: 1
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 1
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -12323,6 +12450,7 @@ MonoBehaviour:
   minimumDamage: 10
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
@@ -12656,6 +12784,7 @@ MonoBehaviour:
   minimumDamage: 0
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}

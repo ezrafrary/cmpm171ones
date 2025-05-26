@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour
     public GameObject playerShooting;
 
     public Image reloadCircle;
-
+    public int crosshairId = 0;
 
     public new Camera camera;
 

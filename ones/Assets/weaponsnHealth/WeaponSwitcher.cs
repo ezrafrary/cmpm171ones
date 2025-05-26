@@ -29,7 +29,7 @@ public class WeaponSwitcher : MonoBehaviour
     public RectTransform equipmentSlot2RectTransform;
     public TextMeshProUGUI equipmentSlot3Text;
     public RectTransform equipmentSlot3RectTransform;
-
+    public GameObject[] crosshairs;
 
 
     [Header("currentWeaponIds")]
@@ -96,6 +96,21 @@ public class WeaponSwitcher : MonoBehaviour
             if (previousSelectedWeapon != selectedWeapon){
                 SelectWeapon();
             }
+        }
+    }
+
+
+    public void setCrosshair(){
+        foreach(GameObject _crosshair in crosshairs){
+            _crosshair.SetActive(false);
+        }
+
+        int i = 0;
+        foreach(Transform _weapon in transform){
+            if(i == getSelectedWeaponID()){
+                crosshairs[_weapon.gameObject.GetComponent<Weapon>().crosshairId].SetActive(true);
+            }
+            i++;
         }
     }
 
@@ -208,29 +223,6 @@ public class WeaponSwitcher : MonoBehaviour
     }
 
 
-
-    // public void preventFire(){
-    //     int i = 0;
-    //     foreach(Transform _weapon in transform){
-    //         if(i == selectedWeapon){
-    //             _weapon.gameObject.GetComponent<Weapon>().preventFire = true;
-                
-    //         }
-    //         i++;
-    //     }
-    // }
-
-    // public void allowFire(){
-    //     int i = 0;
-    //     foreach(Transform _weapon in transform){
-    //         if(i == selectedWeapon){
-    //             _weapon.gameObject.GetComponent<Weapon>().preventFire = false;
-                
-    //         }
-    //         i++;
-    //     }
-    // }
-
     bool isCurrentWeaponReloading(){
         int i = 0;
         foreach(Transform _weapon in transform){
@@ -294,6 +286,6 @@ public class WeaponSwitcher : MonoBehaviour
 
             i++;
         }
-        
+        setCrosshair();
     }
 }

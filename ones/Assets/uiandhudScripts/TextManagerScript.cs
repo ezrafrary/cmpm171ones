@@ -20,7 +20,7 @@ public class TextManagerScript : MonoBehaviour
         var wasdaction = actionMap.FindAction("Move").controls[0].displayName + actionMap.FindAction("Move").controls[2].displayName + actionMap.FindAction("Move").controls[1].displayName + actionMap.FindAction("Move").controls[3].displayName;
         //var shootcontrol = shootaction.controls[0];
         //wasdtext.text = shootcontrol.displayName;
-        wasdtext.text = "Press " + wasdaction + " to move and " + jumpcontrolaction + " to jump. Holding " + jumpcontrolaction + " preserves your momentum";
+        //wasdtext.text = "Press " + wasdaction + " to move and " + jumpcontrolaction + " to jump. Holding " + jumpcontrolaction + " preserves your momentum";
         shootreloadtext.text = "Press " + actionMap.FindAction("Fire").controls[0] .displayName + " to shoot and " + actionMap.FindAction("Reload").controls[0].displayName + " to reload. Swap between weapons with 1, 2, and 3.";
         dashtext.text = "Press " + actionMap.FindAction("Dash").controls[0] .displayName + " to dash in the direction you're looking. Holding " + jumpcontrolaction + " after this preserves the increased dash speed";
     }

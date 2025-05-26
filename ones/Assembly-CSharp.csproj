@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\weaponsnHealth\WeaponSwitcher.cs" />
     <Compile Include="Assets\AnalyticsManager.cs" />
+    <Compile Include="Assets\HintManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\server stuff\timerScript.cs" />
     <Compile Include="Assets\server stuff\PlayerSetup.cs" />
@@ -233,7 +234,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\unityStoreAssets\QuickOutline\Resources\Shaders\OutlineFill.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
