@@ -9,9 +9,11 @@ public class Rive_mainMenu : MonoBehaviour
     [SerializeField] private RiveWidget m_riveWidget;
 
 
-    [Header("Play Button")]
+    [Header("Host Button")]
     public GameObject MainMenu;
     public GameObject LobbyGameobject;
+    public GameObject JoinGameScreenObject;
+    public GameObject CreateRoomScreenObject;
 
     [Header("LoadoutButton")]
     public GameObject MenuCanvas;
@@ -22,7 +24,7 @@ public class Rive_mainMenu : MonoBehaviour
 
     [Header("roomList")]
     public RoomList roomList;
-
+    public MatchmakingButton mathcmakingButton;
 
 
     private void OnEnable()
@@ -36,12 +38,24 @@ public class Rive_mainMenu : MonoBehaviour
 
 
 
-        
+        if(evt.Name.StartsWith("JoinClicked")){
+            MainMenu.SetActive(false);
+            LobbyGameobject.SetActive(true);
+            JoinGameScreenObject.SetActive(true);
+            CreateRoomScreenObject.SetActive(false);
+        }
+
+
+        if(evt.Name.StartsWith("HostClicked")){
+            MainMenu.SetActive(false);
+            LobbyGameobject.SetActive(true);
+            JoinGameScreenObject.SetActive(false);
+            CreateRoomScreenObject.SetActive(true);
+        }
 
 
         if(evt.Name.StartsWith("PlayButtonClicked")){
-            MainMenu.SetActive(false);
-            LobbyGameobject.SetActive(true);
+            mathcmakingButton.OnMatchmakingButtonPressed();
         }
         
 

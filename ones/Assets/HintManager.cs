@@ -26,7 +26,7 @@ public class HintManager : MonoBehaviour
             if (data.hints != null && data.hints.Count > 0)
             {
                 string randomHint = data.hints[Random.Range(0, data.hints.Count)];
-                hintText.text = randomHint;
+                hintText.text = "Tip: \n" + randomHint;
             }
         }
         else

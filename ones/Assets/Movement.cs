@@ -185,13 +185,21 @@ public class Movement : MonoBehaviour
             if(movementAdder > 0){
                 movementAdder = movementAdder - 0.1f;
             }
+            
         }else{
-            if(sprinting){
-                rb.linearVelocity +=  CalculateMovement(sprintSpeed + movementAdder, 0.2f);
+            int intVelocity = (int)new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z).magnitude;
+            if(intVelocity < 7){
+                rb.linearVelocity += CalculateMovement(sprintSpeed + movementAdder, 0.6f);
             }else{
-
-                rb.linearVelocity += CalculateMovement(walkSpeed + movementAdder/2, 0.2f);
+                if (sprinting){
+                    rb.linearVelocity += CalculateMovement(sprintSpeed + movementAdder, 0.2f);
+                }
+                else{
+                    rb.linearVelocity += CalculateMovement(walkSpeed + movementAdder / 2, 0.2f);
+                }
             }
+
+            
         }
 
         

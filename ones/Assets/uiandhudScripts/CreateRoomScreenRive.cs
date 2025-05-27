@@ -6,6 +6,9 @@ using Rive.Components;
 public class CreateRoomScreenRive : MonoBehaviour
 {
     [SerializeField] private RiveWidget m_riveWidget;
+    public GameObject MainMenu;
+    public GameObject lobby;
+
 
     
     public RoomList roomList;
@@ -51,4 +54,11 @@ public class CreateRoomScreenRive : MonoBehaviour
     {
         m_riveWidget.OnRiveEventReported -= OnRiveEventReported;
     }
+
+    public void BackButtonPressed(){
+        lobby.SetActive(false);
+        MainMenu.SetActive(true);
+    }
+
+
 }

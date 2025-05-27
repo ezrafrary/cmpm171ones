@@ -12259,14 +12259,14 @@ MonoBehaviour:
   ammo: 5
   magAmmo: 5
   isAutomatic: 0
-  cameraRecoil: 15
+  cameraRecoil: 50
   horizontalCameraRecoil: 2
   distanceUntilDamageFalloffStarts: 5
   damageLostPerMeter: 0.5
   minimumDamage: 1
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
-  crosshairId: 1
+  crosshairId: 0
   camera: {fileID: 1226191117682152934}
   hitVFX: {fileID: 8890763803698331194, guid: cc3cf0eaf0b3a6947ad00ad4cb6c610e, type: 3}
   magText: {fileID: 468428386907781018}
