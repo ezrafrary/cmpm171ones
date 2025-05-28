@@ -59,7 +59,9 @@ public class RoomList : MonoBehaviourPunCallbacks
             Debug.Log("Room name taken!");
         }else{
             AnalyticsManager.Instance.GameStarted(roomJoinSceneIndex);
+            Debug.Log("creating room with name " + cachedRoomNameToCreate);
             JoinRoomByName(cachedRoomNameToCreate, roomJoinSceneIndex);
+
         }
     }
 
@@ -193,10 +195,14 @@ public class RoomList : MonoBehaviourPunCallbacks
 
     }
 
-    public void JoinRoomByName(string _name, int _sceneIndex){
+    public int JoinRoomByName(string _name, int _sceneIndex){
+        if(_sceneIndex < 0){
+            return -1;
+        }
         PlayerPrefs.SetString("RoomNameToJoin", _name);
         gameObject.SetActive(false);
         SceneManager.LoadScene(_sceneIndex);//change to _sceneIndex
+        return 1;
     }
 
     public void JoinOfflineTutorialRoom()
@@ -232,4 +238,29 @@ public class RoomList : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinOrCreateRoom("OfflineTutorial", roomOptions, TypedLobby.Default);
         SceneManager.LoadScene(5);
     }
+
+    public int getMapSceneIndex(string roomname)
+    {
+        foreach (var room in cachedRoomList)
+        {
+            if (room.Name == roomname)
+            {
+                object sceneIndexObject;
+                if (room.CustomProperties.TryGetValue("mapSceneIndex", out sceneIndexObject))
+                {
+                    return (int)sceneIndexObject;
+                }
+                else
+                {
+                    Debug.LogWarning("Room found but has no 'mapSceneIndex' custom property. Returning default index.");
+                    return roomJoinSceneIndex; // fallback if mapSceneIndex isn't set
+                }
+            }
+        }
+
+        //Debug.LogWarning("Room with name " + roomname + " not found in cachedRoomList.");
+        return -1; // return -1 to indicate room not found
+    }
+
+
 }

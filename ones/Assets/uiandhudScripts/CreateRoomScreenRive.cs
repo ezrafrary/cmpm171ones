@@ -23,12 +23,8 @@ public class CreateRoomScreenRive : MonoBehaviour
     {
         //Debug.Log($"Event received, name: \"{evt.Name}\", secondsDelay: {evt.SecondsDelay}");
 
-
-
-        
-
-
         if(evt.Name.StartsWith("CreateGame")){
+            generateLobbyName();
             roomList.CreateRoomByIndex();
         }
 
@@ -60,5 +56,23 @@ public class CreateRoomScreenRive : MonoBehaviour
         MainMenu.SetActive(true);
     }
 
+    private void generateLobbyName(){
+        roomList.ChangeRoomToCreateName(GenerateRandomString(5));
+        
+    }
+
+
+    private string GenerateRandomString(int length)
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        char[] stringChars = new char[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            stringChars[i] = chars[Random.Range(0, chars.Length)];
+        }
+
+        return new string(stringChars);
+    }
 
 }

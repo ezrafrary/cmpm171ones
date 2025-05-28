@@ -6547,9 +6547,9 @@ MonoBehaviour:
   splashDamage: 30
   bulletSpeed: 25
   fireRate: 12
-  reloadTime: 2.5
-  maxMags: 6
-  mag: 4
+  reloadTime: 2
+  maxMags: 12
+  mag: 6
   ammo: 1
   magAmmo: 1
   isAutomatic: 1
@@ -7762,11 +7762,11 @@ MonoBehaviour:
   weaponDescription: default description
   damage: 55
   splashDamage: 0
-  bulletSpeed: 100
+  bulletSpeed: 90
   fireRate: 10
-  reloadTime: 1
-  maxMags: 60
-  mag: 40
+  reloadTime: 1.4
+  maxMags: 30
+  mag: 20
   ammo: 1
   magAmmo: 1
   isAutomatic: 0
@@ -12251,7 +12251,7 @@ MonoBehaviour:
   weaponDescription: default description
   damage: 10
   splashDamage: 0
-  bulletSpeed: 120
+  bulletSpeed: 125
   fireRate: 1.1
   reloadTime: 2
   maxMags: 4
@@ -12259,7 +12259,7 @@ MonoBehaviour:
   ammo: 5
   magAmmo: 5
   isAutomatic: 0
-  cameraRecoil: 50
+  cameraRecoil: 150
   horizontalCameraRecoil: 2
   distanceUntilDamageFalloffStarts: 5
   damageLostPerMeter: 0.5
@@ -12295,7 +12295,7 @@ MonoBehaviour:
   - {fileID: 6644083619080426125}
   isShotgun: 1
   numPellets: 12
-  spread: 7
+  spread: 5
   hasBlowBack: 0
   blowBackStrength: 0
   preventFireWhileReloading: 0
