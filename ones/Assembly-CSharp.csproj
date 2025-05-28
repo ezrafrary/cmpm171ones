@@ -101,6 +101,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\uiandhudScripts\BackToMenuButton.cs" />
     <Compile Include="Assets\uiandhudScripts\targetmove.cs" />
+    <Compile Include="Assets\RoomCodeHelper.cs" />
     <Compile Include="Assets\unityStoreAssets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />

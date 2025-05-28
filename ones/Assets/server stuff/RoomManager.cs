@@ -448,6 +448,23 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
+
+
+    public string findRoomName(){
+        if (PhotonNetwork.InRoom)
+        {
+            string _roomName = PhotonNetwork.CurrentRoom.Name;
+            //Debug.Log("You are in room: " + _roomName);
+            return _roomName;
+        }
+        else
+        {
+            Debug.LogWarning("You are not currently in a room.");
+            return "defaultStatement";
+        }
+    }
+
+
     public void SpawnPlayer(){
 
         Transform spawnPoint = spawnPoints[0];
