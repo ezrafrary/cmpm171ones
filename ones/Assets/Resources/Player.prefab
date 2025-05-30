@@ -10200,7 +10200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponFullName: Uzi
   weaponDescription: default description
-  damage: 10
+  damage: 8
   splashDamage: 0
   bulletSpeed: 100
   fireRate: 16
@@ -10214,7 +10214,7 @@ MonoBehaviour:
   horizontalCameraRecoil: 4
   distanceUntilDamageFalloffStarts: 15
   damageLostPerMeter: 0.4
-  minimumDamage: 8
+  minimumDamage: 5
   playerShooting: {fileID: 427471037947456812}
   reloadCircle: {fileID: 3589875008465337045}
   crosshairId: 0
@@ -10246,7 +10246,7 @@ MonoBehaviour:
   - {fileID: 6644083619080426125}
   isShotgun: 0
   numPellets: 1
-  spread: 3
+  spread: 2
   hasBlowBack: 0
   blowBackStrength: 0
   preventFireWhileReloading: 0

@@ -111,7 +111,7 @@ MonoBehaviour:
   parentPhotonViewID: 0
   damage: 35
   explosiveDamage: 25
-  explosiveRadius: 4
+  explosiveRadius: 3.5
   scoreGainedForKill: 10
   ignoreHitbox: {fileID: 0}
   ignoreHitboxes: []
