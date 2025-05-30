@@ -9,6 +9,7 @@ public class HintData
     public List<string> hints;
 }
 
+
 public class HintManager : MonoBehaviour
 {
     public TextMeshProUGUI hintText; // Reference to your TMP UI text
