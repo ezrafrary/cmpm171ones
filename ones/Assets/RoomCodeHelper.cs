@@ -9,6 +9,9 @@ public class RoomCodeHelper : MonoBehaviour
     private float _updateTimer;
 
 
+
+    
+
     void Start(){
         updateRoomCodeText();
     }
@@ -31,7 +34,6 @@ public class RoomCodeHelper : MonoBehaviour
             if(tempText.Length > 15){ //matchmaking lobby, dont display roomname
                 return;
             }
-
             if(tempText != "defaultStatement"){ //returned if player isnt in a room
                 roomCodeText.text = "Room Code: " + tempText;
             }else{
