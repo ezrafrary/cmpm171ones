@@ -10,6 +10,10 @@ public class PlayerPhotonSoundManager : MonoBehaviour
     public AudioSource footstepSource;
     public AudioClip footstepSFX;
 
+    public AudioSource jumpSource;
+    public AudioClip jumpSFX;
+    public bool muteJumpSfx = true;
+
     public AudioSource gunShootSource;
     public AudioClip[] allGunShootSFX;
     public AudioClip[] allExplosionSFX;
@@ -37,6 +41,21 @@ public class PlayerPhotonSoundManager : MonoBehaviour
 
     public static float GetMasterVolume(){
         return PlayerPrefs.GetInt("MasterVolume", 100)/100f;
+    }
+
+
+    public void PlayJumpSFX(){
+        if(!muteJumpSfx){
+            GetComponent<PhotonView>().RPC("PlayJumpSFX_RPC", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    public void PlayJumpSFX_RPC(){
+        jumpSource.clip = jumpSFX;
+        jumpSource.volume = 0.5f * GetMasterVolume() * UnityEngine.Random.Range(0.8f, 1.1f);
+        jumpSource.pitch = UnityEngine.Random.Range(0.8f, 1.0f);
+        jumpSource.Play();
     }
 
 

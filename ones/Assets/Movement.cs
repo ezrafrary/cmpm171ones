@@ -256,6 +256,7 @@ public class Movement : MonoBehaviour
 
     private void Jump(){
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpHeight, rb.linearVelocity.z);
+        playerPhotonSoundManager.PlayJumpSFX();
     }
 
 
